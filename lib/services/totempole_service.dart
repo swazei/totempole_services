@@ -48,7 +48,7 @@ class TotempoleService {
       await database.deleteDocument(
         databaseId: '6351859dee3a309dc94a', //DATABASEID
         collectionId: '635185c37dd4590870e8', //COLLECTIONID USERTOTEMPOELS
-        documentId: friend.id,
+        documentId: friend.id!,
       );
     }
   }

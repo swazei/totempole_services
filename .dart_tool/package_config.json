@@ -359,10 +359,10 @@
       "name": "totempole_services",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-03-17T15:01:42.317942Z",
+  "generated": "2023-03-17T15:11:22.349026Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

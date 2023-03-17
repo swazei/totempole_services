@@ -7,7 +7,7 @@ part 'totempole.g.dart';
 @freezed
 abstract class Totempole with _$Totempole {
   const factory Totempole({
-    @Default("") @JsonKey(name: "\$id", includeIfNull: false) String id,
+    @JsonKey(name: "\$id", includeIfNull: false) String? id,
     @JsonKey(name: "display_image", includeIfNull: false) String? displayImage,
     @Default([]) List<String> admins,
     @JsonKey(name: "open_to_join", includeIfNull: false)
@@ -18,7 +18,7 @@ abstract class Totempole with _$Totempole {
     @Default(true)
         bool isActive,
     required String name,
-    @Default("") String description,
+    @JsonKey(includeIfNull: false) String? description,
     @Default("") String phone,
     @JsonKey(includeIfNull: false) double? latitude,
     @JsonKey(includeIfNull: false) List<String>? resources,

@@ -7,7 +7,7 @@ part of 'totempole.dart';
 // **************************************************************************
 
 _$_Totempole _$$_TotempoleFromJson(Map<String, dynamic> json) => _$_Totempole(
-      id: json[r'$id'] as String? ?? "",
+      id: json[r'$id'] as String?,
       displayImage: json['display_image'] as String?,
       admins: (json['admins'] as List<dynamic>?)
               ?.map((e) => e as String)
@@ -17,7 +17,7 @@ _$_Totempole _$$_TotempoleFromJson(Map<String, dynamic> json) => _$_Totempole(
       hidden: json['hidden'] as bool? ?? false,
       isActive: json['is_active'] as bool? ?? true,
       name: json['name'] as String,
-      description: json['description'] as String? ?? "",
+      description: json['description'] as String?,
       phone: json['phone'] as String? ?? "",
       latitude: (json['latitude'] as num?)?.toDouble(),
       resources: (json['resources'] as List<dynamic>?)
@@ -38,9 +38,7 @@ _$_Totempole _$$_TotempoleFromJson(Map<String, dynamic> json) => _$_Totempole(
     );
 
 Map<String, dynamic> _$$_TotempoleToJson(_$_Totempole instance) {
-  final val = <String, dynamic>{
-    r'$id': instance.id,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -48,13 +46,14 @@ Map<String, dynamic> _$$_TotempoleToJson(_$_Totempole instance) {
     }
   }
 
+  writeNotNull(r'$id', instance.id);
   writeNotNull('display_image', instance.displayImage);
   val['admins'] = instance.admins;
   val['open_to_join'] = instance.openToJoin;
   val['hidden'] = instance.hidden;
   val['is_active'] = instance.isActive;
   val['name'] = instance.name;
-  val['description'] = instance.description;
+  writeNotNull('description', instance.description);
   val['phone'] = instance.phone;
   writeNotNull('latitude', instance.latitude);
   writeNotNull('resources', instance.resources);

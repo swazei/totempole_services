@@ -21,7 +21,7 @@ Totempole _$TotempoleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Totempole {
   @JsonKey(name: "\$id", includeIfNull: false)
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: "display_image", includeIfNull: false)
   String? get displayImage => throw _privateConstructorUsedError;
   List<String> get admins => throw _privateConstructorUsedError;
@@ -31,7 +31,8 @@ mixin _$Totempole {
   @JsonKey(name: "is_active", includeIfNull: false)
   bool get isActive => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get description => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
   double? get latitude => throw _privateConstructorUsedError;
@@ -68,7 +69,7 @@ abstract class $TotempoleCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "\$id", includeIfNull: false)
-          String id,
+          String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
           String? displayImage,
       List<String> admins,
@@ -78,7 +79,8 @@ abstract class $TotempoleCopyWith<$Res> {
       @JsonKey(name: "is_active", includeIfNull: false)
           bool isActive,
       String name,
-      String description,
+      @JsonKey(includeIfNull: false)
+          String? description,
       String phone,
       @JsonKey(includeIfNull: false)
           double? latitude,
@@ -116,14 +118,14 @@ class _$TotempoleCopyWithImpl<$Res, $Val extends Totempole>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? displayImage = freezed,
     Object? admins = null,
     Object? openToJoin = null,
     Object? hidden = null,
     Object? isActive = null,
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? phone = null,
     Object? latitude = freezed,
     Object? resources = freezed,
@@ -138,10 +140,10 @@ class _$TotempoleCopyWithImpl<$Res, $Val extends Totempole>
     Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       displayImage: freezed == displayImage
           ? _value.displayImage
           : displayImage // ignore: cast_nullable_to_non_nullable
@@ -166,10 +168,10 @@ class _$TotempoleCopyWithImpl<$Res, $Val extends Totempole>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -231,7 +233,7 @@ abstract class _$$_TotempoleCopyWith<$Res> implements $TotempoleCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "\$id", includeIfNull: false)
-          String id,
+          String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
           String? displayImage,
       List<String> admins,
@@ -241,7 +243,8 @@ abstract class _$$_TotempoleCopyWith<$Res> implements $TotempoleCopyWith<$Res> {
       @JsonKey(name: "is_active", includeIfNull: false)
           bool isActive,
       String name,
-      String description,
+      @JsonKey(includeIfNull: false)
+          String? description,
       String phone,
       @JsonKey(includeIfNull: false)
           double? latitude,
@@ -277,14 +280,14 @@ class __$$_TotempoleCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? displayImage = freezed,
     Object? admins = null,
     Object? openToJoin = null,
     Object? hidden = null,
     Object? isActive = null,
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? phone = null,
     Object? latitude = freezed,
     Object? resources = freezed,
@@ -299,10 +302,10 @@ class __$$_TotempoleCopyWithImpl<$Res>
     Object? updatedAt = null,
   }) {
     return _then(_$_Totempole(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       displayImage: freezed == displayImage
           ? _value.displayImage
           : displayImage // ignore: cast_nullable_to_non_nullable
@@ -327,10 +330,10 @@ class __$$_TotempoleCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -388,7 +391,7 @@ class __$$_TotempoleCopyWithImpl<$Res>
 class _$_Totempole implements _Totempole {
   const _$_Totempole(
       {@JsonKey(name: "\$id", includeIfNull: false)
-          this.id = "",
+          this.id,
       @JsonKey(name: "display_image", includeIfNull: false)
           this.displayImage,
       final List<String> admins = const [],
@@ -398,7 +401,8 @@ class _$_Totempole implements _Totempole {
       @JsonKey(name: "is_active", includeIfNull: false)
           this.isActive = true,
       required this.name,
-      this.description = "",
+      @JsonKey(includeIfNull: false)
+          this.description,
       this.phone = "",
       @JsonKey(includeIfNull: false)
           this.latitude,
@@ -430,7 +434,7 @@ class _$_Totempole implements _Totempole {
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
-  final String id;
+  final String? id;
   @override
   @JsonKey(name: "display_image", includeIfNull: false)
   final String? displayImage;
@@ -455,8 +459,8 @@ class _$_Totempole implements _Totempole {
   @override
   final String name;
   @override
-  @JsonKey()
-  final String description;
+  @JsonKey(includeIfNull: false)
+  final String? description;
   @override
   @JsonKey()
   final String phone;
@@ -598,7 +602,7 @@ class _$_Totempole implements _Totempole {
 abstract class _Totempole implements Totempole {
   const factory _Totempole(
       {@JsonKey(name: "\$id", includeIfNull: false)
-          final String id,
+          final String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
           final String? displayImage,
       final List<String> admins,
@@ -608,7 +612,8 @@ abstract class _Totempole implements Totempole {
       @JsonKey(name: "is_active", includeIfNull: false)
           final bool isActive,
       required final String name,
-      final String description,
+      @JsonKey(includeIfNull: false)
+          final String? description,
       final String phone,
       @JsonKey(includeIfNull: false)
           final double? latitude,
@@ -637,7 +642,7 @@ abstract class _Totempole implements Totempole {
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
-  String get id;
+  String? get id;
   @override
   @JsonKey(name: "display_image", includeIfNull: false)
   String? get displayImage;
@@ -654,7 +659,8 @@ abstract class _Totempole implements Totempole {
   @override
   String get name;
   @override
-  String get description;
+  @JsonKey(includeIfNull: false)
+  String? get description;
   @override
   String get phone;
   @override

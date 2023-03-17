@@ -21,7 +21,9 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       pref: json['pref'] == null
           ? const UserPref()
           : UserPref.fromJson(json['pref'] as Map<String, dynamic>),
-      userProfile: json['userProfile'] ?? const UserProfile(),
+      userProfile: json['userProfile'] == null
+          ? const UserProfile()
+          : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) {

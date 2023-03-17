@@ -63,6 +63,7 @@ abstract class $UserCopyWith<$Res> {
       UserProfile? userProfile});
 
   $UserPrefCopyWith<$Res> get pref;
+  $UserProfileCopyWith<$Res>? get userProfile;
 }
 
 /// @nodoc
@@ -155,6 +156,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       return _then(_value.copyWith(pref: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserProfileCopyWith<$Res>? get userProfile {
+    if (_value.userProfile == null) {
+      return null;
+    }
+
+    return $UserProfileCopyWith<$Res>(_value.userProfile!, (value) {
+      return _then(_value.copyWith(userProfile: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -180,6 +193,8 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $UserPrefCopyWith<$Res> get pref;
+  @override
+  $UserProfileCopyWith<$Res>? get userProfile;
 }
 
 /// @nodoc
@@ -350,8 +365,8 @@ class _$_User implements _User {
             (identical(other.phoneVerification, phoneVerification) ||
                 other.phoneVerification == phoneVerification) &&
             (identical(other.pref, pref) || other.pref == pref) &&
-            const DeepCollectionEquality()
-                .equals(other.userProfile, userProfile));
+            (identical(other.userProfile, userProfile) ||
+                other.userProfile == userProfile));
   }
 
   @JsonKey(ignore: true)
@@ -370,7 +385,7 @@ class _$_User implements _User {
       emailVerification,
       phoneVerification,
       pref,
-      const DeepCollectionEquality().hash(userProfile));
+      userProfile);
 
   @JsonKey(ignore: true)
   @override

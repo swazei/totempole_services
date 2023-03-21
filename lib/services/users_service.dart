@@ -29,5 +29,7 @@ class UsersService {
     }
   }
 
-  createFakeUsers() {}
+  Future deleteUserById(String userId) async {
+    await users.delete(userId: userId);
+  }
 }

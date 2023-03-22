@@ -40,15 +40,16 @@ class UsernameService {
 
   Future<void> deleteAllUsernames() async {
     final usernames = await getAllUsernames();
-
-    print(usernames.length);
-
-    for (var friend in usernames) {
-      await database.deleteDocument(
-        databaseId: '634d7cac5a7a4ada2259',
-        collectionId: '634d7d09e65bbc4b37b6',
-        documentId: friend.id!,
-      );
+    for (var username in usernames) {
+      await deleteUsernameByUserId(username.id!);
     }
+  }
+
+  Future deleteUsernameByUserId(String userId) async {
+    await database.deleteDocument(
+      databaseId: '634d7cac5a7a4ada2259',
+      collectionId: '634d7d09e65bbc4b37b6',
+      documentId: userId,
+    );
   }
 }

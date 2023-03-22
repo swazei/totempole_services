@@ -17,7 +17,7 @@ _$_UserProfile _$$_UserProfileFromJson(Map<String, dynamic> json) =>
       address: json['address'] as String? ?? "",
       pincode: json['pincode'] as String? ?? "",
       city: json['city'] as String? ?? "",
-      avatar: json['avatar'] as String? ?? "",
+      avatar: json['avatar'] as String?,
       userType: $enumDecodeNullable(_$UserTypeEnumMap, json['user_type']) ??
           UserType.user,
       dob: json['dob'] as String? ?? "",
@@ -41,7 +41,7 @@ Map<String, dynamic> _$$_UserProfileToJson(_$_UserProfile instance) {
   val['address'] = instance.address;
   val['pincode'] = instance.pincode;
   val['city'] = instance.city;
-  val['avatar'] = instance.avatar;
+  writeNotNull('avatar', instance.avatar);
   val['user_type'] = _$UserTypeEnumMap[instance.userType]!;
   val['dob'] = instance.dob;
   return val;

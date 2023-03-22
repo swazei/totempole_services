@@ -14,7 +14,7 @@ class UserProfile with _$UserProfile {
     @Default("") String address,
     @Default("") String pincode,
     @Default("") String city,
-    @Default("") String avatar,
+    @JsonKey(includeIfNull: false) String? avatar,
     @Default(UserType.user) @JsonKey(name: "user_type") UserType userType,
     @Default("") String dob,
   }) = _UserProfile;

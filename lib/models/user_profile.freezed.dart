@@ -34,7 +34,8 @@ mixin _$UserProfile {
   String get address => throw _privateConstructorUsedError;
   String get pincode => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
-  String get avatar => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: "user_type")
   UserType get userType => throw _privateConstructorUsedError;
   String get dob => throw _privateConstructorUsedError;
@@ -61,7 +62,7 @@ abstract class $UserProfileCopyWith<$Res> {
       String address,
       String pincode,
       String city,
-      String avatar,
+      @JsonKey(includeIfNull: false) String? avatar,
       @JsonKey(name: "user_type") UserType userType,
       String dob});
 }
@@ -88,7 +89,7 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
     Object? address = null,
     Object? pincode = null,
     Object? city = null,
-    Object? avatar = null,
+    Object? avatar = freezed,
     Object? userType = null,
     Object? dob = null,
   }) {
@@ -129,10 +130,10 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
-      avatar: null == avatar
+      avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -163,7 +164,7 @@ abstract class _$$_UserProfileCopyWith<$Res>
       String address,
       String pincode,
       String city,
-      String avatar,
+      @JsonKey(includeIfNull: false) String? avatar,
       @JsonKey(name: "user_type") UserType userType,
       String dob});
 }
@@ -188,7 +189,7 @@ class __$$_UserProfileCopyWithImpl<$Res>
     Object? address = null,
     Object? pincode = null,
     Object? city = null,
-    Object? avatar = null,
+    Object? avatar = freezed,
     Object? userType = null,
     Object? dob = null,
   }) {
@@ -226,10 +227,10 @@ class __$$_UserProfileCopyWithImpl<$Res>
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
-      avatar: null == avatar
+      avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -255,7 +256,7 @@ class _$_UserProfile implements _UserProfile {
       this.address = "",
       this.pincode = "",
       this.city = "",
-      this.avatar = "",
+      @JsonKey(includeIfNull: false) this.avatar,
       @JsonKey(name: "user_type") this.userType = UserType.user,
       this.dob = ""});
 
@@ -290,8 +291,8 @@ class _$_UserProfile implements _UserProfile {
   @JsonKey()
   final String city;
   @override
-  @JsonKey()
-  final String avatar;
+  @JsonKey(includeIfNull: false)
+  final String? avatar;
   @override
   @JsonKey(name: "user_type")
   final UserType userType;
@@ -375,7 +376,8 @@ abstract class _UserProfile implements UserProfile {
       final String address,
       final String pincode,
       final String city,
-      final String avatar,
+      @JsonKey(includeIfNull: false)
+          final String? avatar,
       @JsonKey(name: "user_type")
           final UserType userType,
       final String dob}) = _$_UserProfile;
@@ -407,7 +409,8 @@ abstract class _UserProfile implements UserProfile {
   @override
   String get city;
   @override
-  String get avatar;
+  @JsonKey(includeIfNull: false)
+  String? get avatar;
   @override
   @JsonKey(name: "user_type")
   UserType get userType;

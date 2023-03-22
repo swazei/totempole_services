@@ -45,14 +45,16 @@ class ProfileService {
   Future<void> deleteAllProfiles() async {
     final profiles = await getAllProfiles();
 
-    print(profiles.length);
-
     for (var profile in profiles) {
-      await database.deleteDocument(
-        databaseId: '634d7cac5a7a4ada2259', //DATABASEID
-        collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
-        documentId: profile.id!,
-      );
+      await deleteProfileByUserId(profile.id!);
     }
+  }
+
+  Future deleteProfileByUserId(String userId) async {
+    await database.deleteDocument(
+      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
+      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      documentId: userId,
+    );
   }
 }

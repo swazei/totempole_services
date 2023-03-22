@@ -16,16 +16,16 @@ Future<void> start() async {
 
   //final friendsService = FriendService(database: database);
   // final usersService = UsersService(users: users);
-  final totempoleService = TotempoleService(database: database);
-  // final profileService = ProfileService(database: database);
-  //final usernameService = UsernameService(database: database);
+  // final totempoleService = TotempoleService(database: database);
+  //final profileService = ProfileService(database: database);
+  final usernameService = UsernameService(database: database);
   //final totempoleStorage = TotempoleStorageService(storage: storage);
 //  await friendsService.createFakeFriendList(alltheUsers, 65);
   // final member = MemberService(totempoleID: '', database: database);
   // final x = await member.deleteMembersRelatedToToempole();
-  var x = await totempoleService.getAllTotempoles();
-  print(x.length);
-//  log(x.toString());
+  // var x = await totempoleService.getAllTotempoles();
+  // await profileService.deleteAllProfiles();
+  await usernameService.deleteAllUsernames();
   // await totempoleService.deleteAllTotempoles();
   //totempoleStorage.deleteAllTotemPoleAvtars();
   // await friendsService.deleteAllFriends();

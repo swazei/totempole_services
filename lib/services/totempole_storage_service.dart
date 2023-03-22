@@ -5,7 +5,7 @@ class TotempoleStorageService {
   final Storage storage;
   const TotempoleStorageService({required this.storage});
 
-  Future deleteTotempoleFile(String fileId) async {
+  Future deleteTotempoleAvatarFile(String fileId) async {
     await storage.deleteFile(bucketId: '6358cb9f9856542086c9', fileId: fileId);
   }
 
@@ -16,7 +16,11 @@ class TotempoleStorageService {
   Future deleteAllTotemPoleAvtars() async {
     final files = await listAllTotempoleFiles();
     for (var file in files.files) {
-      await deleteTotempoleFile(file.$id);
+      await deleteTotempoleAvatarFile(file.$id);
     }
+  }
+
+  Future deleteResourceFile(String fileId) async {
+    await storage.deleteFile(bucketId: '635187011992b2b43d94', fileId: fileId);
   }
 }

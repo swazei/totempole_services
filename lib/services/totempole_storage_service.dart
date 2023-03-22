@@ -6,11 +6,11 @@ class TotempoleStorageService {
   const TotempoleStorageService({required this.storage});
 
   Future deleteTotempoleFile(String fileId) async {
-    storage.deleteFile(bucketId: '6358cb9f9856542086c9', fileId: fileId);
+    await storage.deleteFile(bucketId: '6358cb9f9856542086c9', fileId: fileId);
   }
 
   Future<FileList> listAllTotempoleFiles() async {
-    return storage.listFiles(bucketId: '6358cb9f9856542086c9');
+    return await storage.listFiles(bucketId: '6358cb9f9856542086c9');
   }
 
   Future deleteAllTotemPoleAvtars() async {

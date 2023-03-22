@@ -6,3 +6,4 @@ export 'profile_service.dart';
 export 'username_service.dart';
 export 'totempole_storage_service.dart';
 export 'notification_service.dart';
+export 'user_avatar_storage_service.dart';

@@ -20,11 +20,13 @@ AppNotification _$AppNotificationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppNotification {
+  @JsonKey(name: "\$id", includeIfNull: false)
+  String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
-  String? get subtitle => throw _privateConstructorUsedError;
   String get to => throw _privateConstructorUsedError;
   String get from => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get subtitle => throw _privateConstructorUsedError;
   @JsonKey(name: "totempole_id", includeIfNull: false)
   String? get totempoleId => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
@@ -52,11 +54,13 @@ abstract class $AppNotificationCopyWith<$Res> {
       _$AppNotificationCopyWithImpl<$Res, AppNotification>;
   @useResult
   $Res call(
-      {String title,
-      @JsonKey(includeIfNull: false)
-          String? subtitle,
+      {@JsonKey(name: "\$id", includeIfNull: false)
+          String? id,
+      String title,
       String to,
       String from,
+      @JsonKey(includeIfNull: false)
+          String? subtitle,
       @JsonKey(name: "totempole_id", includeIfNull: false)
           String? totempoleId,
       @JsonKey(includeIfNull: false)
@@ -85,10 +89,11 @@ class _$AppNotificationCopyWithImpl<$Res, $Val extends AppNotification>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = null,
-    Object? subtitle = freezed,
     Object? to = null,
     Object? from = null,
+    Object? subtitle = freezed,
     Object? totempoleId = freezed,
     Object? image = freezed,
     Object? type = null,
@@ -98,14 +103,14 @@ class _$AppNotificationCopyWithImpl<$Res, $Val extends AppNotification>
     Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
       to: null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
@@ -114,6 +119,10 @@ class _$AppNotificationCopyWithImpl<$Res, $Val extends AppNotification>
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
               as String,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       totempoleId: freezed == totempoleId
           ? _value.totempoleId
           : totempoleId // ignore: cast_nullable_to_non_nullable
@@ -155,11 +164,13 @@ abstract class _$$_AppNotificationCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
-      @JsonKey(includeIfNull: false)
-          String? subtitle,
+      {@JsonKey(name: "\$id", includeIfNull: false)
+          String? id,
+      String title,
       String to,
       String from,
+      @JsonKey(includeIfNull: false)
+          String? subtitle,
       @JsonKey(name: "totempole_id", includeIfNull: false)
           String? totempoleId,
       @JsonKey(includeIfNull: false)
@@ -186,10 +197,11 @@ class __$$_AppNotificationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = null,
-    Object? subtitle = freezed,
     Object? to = null,
     Object? from = null,
+    Object? subtitle = freezed,
     Object? totempoleId = freezed,
     Object? image = freezed,
     Object? type = null,
@@ -199,14 +211,14 @@ class __$$_AppNotificationCopyWithImpl<$Res>
     Object? updatedAt = freezed,
   }) {
     return _then(_$_AppNotification(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
       to: null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
@@ -215,6 +227,10 @@ class __$$_AppNotificationCopyWithImpl<$Res>
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
               as String,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       totempoleId: freezed == totempoleId
           ? _value.totempoleId
           : totempoleId // ignore: cast_nullable_to_non_nullable
@@ -251,10 +267,11 @@ class __$$_AppNotificationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AppNotification implements _AppNotification {
   const _$_AppNotification(
-      {required this.title,
-      @JsonKey(includeIfNull: false) this.subtitle,
+      {@JsonKey(name: "\$id", includeIfNull: false) this.id,
+      required this.title,
       required this.to,
       required this.from,
+      @JsonKey(includeIfNull: false) this.subtitle,
       @JsonKey(name: "totempole_id", includeIfNull: false) this.totempoleId,
       @JsonKey(includeIfNull: false) this.image,
       this.type = Type.general,
@@ -267,14 +284,17 @@ class _$_AppNotification implements _AppNotification {
       _$$_AppNotificationFromJson(json);
 
   @override
-  final String title;
+  @JsonKey(name: "\$id", includeIfNull: false)
+  final String? id;
   @override
-  @JsonKey(includeIfNull: false)
-  final String? subtitle;
+  final String title;
   @override
   final String to;
   @override
   final String from;
+  @override
+  @JsonKey(includeIfNull: false)
+  final String? subtitle;
   @override
   @JsonKey(name: "totempole_id", includeIfNull: false)
   final String? totempoleId;
@@ -299,7 +319,7 @@ class _$_AppNotification implements _AppNotification {
 
   @override
   String toString() {
-    return 'AppNotification(title: $title, subtitle: $subtitle, to: $to, from: $from, totempoleId: $totempoleId, image: $image, type: $type, collectionId: $collectionId, databaseId: $databaseId, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'AppNotification(id: $id, title: $title, to: $to, from: $from, subtitle: $subtitle, totempoleId: $totempoleId, image: $image, type: $type, collectionId: $collectionId, databaseId: $databaseId, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -307,11 +327,12 @@ class _$_AppNotification implements _AppNotification {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppNotification &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
             (identical(other.to, to) || other.to == to) &&
             (identical(other.from, from) || other.from == from) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle) &&
             (identical(other.totempoleId, totempoleId) ||
                 other.totempoleId == totempoleId) &&
             (identical(other.image, image) || other.image == image) &&
@@ -328,7 +349,7 @@ class _$_AppNotification implements _AppNotification {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, subtitle, to, from,
+  int get hashCode => Object.hash(runtimeType, id, title, to, from, subtitle,
       totempoleId, image, type, collectionId, databaseId, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
@@ -347,11 +368,13 @@ class _$_AppNotification implements _AppNotification {
 
 abstract class _AppNotification implements AppNotification {
   const factory _AppNotification(
-      {required final String title,
-      @JsonKey(includeIfNull: false)
-          final String? subtitle,
+      {@JsonKey(name: "\$id", includeIfNull: false)
+          final String? id,
+      required final String title,
       required final String to,
       required final String from,
+      @JsonKey(includeIfNull: false)
+          final String? subtitle,
       @JsonKey(name: "totempole_id", includeIfNull: false)
           final String? totempoleId,
       @JsonKey(includeIfNull: false)
@@ -370,14 +393,17 @@ abstract class _AppNotification implements AppNotification {
       _$_AppNotification.fromJson;
 
   @override
-  String get title;
+  @JsonKey(name: "\$id", includeIfNull: false)
+  String? get id;
   @override
-  @JsonKey(includeIfNull: false)
-  String? get subtitle;
+  String get title;
   @override
   String get to;
   @override
   String get from;
+  @override
+  @JsonKey(includeIfNull: false)
+  String? get subtitle;
   @override
   @JsonKey(name: "totempole_id", includeIfNull: false)
   String? get totempoleId;

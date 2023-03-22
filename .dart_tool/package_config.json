@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///C:/Users/shiba/AppData/Local/Pub/Cache/hosted/pub.dev/_fe_analyzer_shared-55.0.0",
+      "rootUri": "file:///C:/Users/shiba/AppData/Local/Pub/Cache/hosted/pub.dev/_fe_analyzer_shared-57.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///C:/Users/shiba/AppData/Local/Pub/Cache/hosted/pub.dev/analyzer-5.7.1",
+      "rootUri": "file:///C:/Users/shiba/AppData/Local/Pub/Cache/hosted/pub.dev/analyzer-5.9.0",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -362,7 +362,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-03-21T05:25:07.191600Z",
+  "generated": "2023-03-22T06:13:27.096214Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

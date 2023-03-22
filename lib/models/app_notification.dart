@@ -5,10 +5,11 @@ part 'app_notification.g.dart';
 @freezed
 class AppNotification with _$AppNotification {
   const factory AppNotification({
+    @JsonKey(name: "\$id", includeIfNull: false) String? id,
     required String title,
-    @JsonKey(includeIfNull: false) String? subtitle,
     required String to,
     required String from,
+    @JsonKey(includeIfNull: false) String? subtitle,
     @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
     @JsonKey(includeIfNull: false) String? image,
     @Default(Type.general) Type type,

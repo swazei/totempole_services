@@ -6,7 +6,7 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json[r'$id'] as String?,
       createdAt: json[r'$createdAt'] as String?,
       updatedAt: json[r'$updatedAt'] as String?,
@@ -26,7 +26,7 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) {
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -51,14 +51,15 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) {
   return val;
 }
 
-_$_UserPref _$$_UserPrefFromJson(Map<String, dynamic> json) => _$_UserPref(
+_$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
+    _$UserPrefImpl(
       deviceTokens: json['device_tokens'] as String? ?? "",
       isUnderworld: json['is_underworld'] as bool? ?? false,
       underWorldPin: json['under_world_pin'] as String? ?? "",
       username: json['username'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_UserPrefToJson(_$_UserPref instance) =>
+Map<String, dynamic> _$$UserPrefImplToJson(_$UserPrefImpl instance) =>
     <String, dynamic>{
       'device_tokens': instance.deviceTokens,
       'is_underworld': instance.isUnderworld,

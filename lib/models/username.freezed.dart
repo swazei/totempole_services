@@ -86,10 +86,11 @@ class _$UsernameCopyWithImpl<$Res, $Val extends Username>
 }
 
 /// @nodoc
-abstract class _$$_UsernameCopyWith<$Res> implements $UsernameCopyWith<$Res> {
-  factory _$$_UsernameCopyWith(
-          _$_Username value, $Res Function(_$_Username) then) =
-      __$$_UsernameCopyWithImpl<$Res>;
+abstract class _$$UsernameImplCopyWith<$Res>
+    implements $UsernameCopyWith<$Res> {
+  factory _$$UsernameImplCopyWith(
+          _$UsernameImpl value, $Res Function(_$UsernameImpl) then) =
+      __$$UsernameImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +101,11 @@ abstract class _$$_UsernameCopyWith<$Res> implements $UsernameCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UsernameCopyWithImpl<$Res>
-    extends _$UsernameCopyWithImpl<$Res, _$_Username>
-    implements _$$_UsernameCopyWith<$Res> {
-  __$$_UsernameCopyWithImpl(
-      _$_Username _value, $Res Function(_$_Username) _then)
+class __$$UsernameImplCopyWithImpl<$Res>
+    extends _$UsernameCopyWithImpl<$Res, _$UsernameImpl>
+    implements _$$UsernameImplCopyWith<$Res> {
+  __$$UsernameImplCopyWithImpl(
+      _$UsernameImpl _value, $Res Function(_$UsernameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +116,7 @@ class __$$_UsernameCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? username = null,
   }) {
-    return _then(_$_Username(
+    return _then(_$UsernameImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -138,15 +139,15 @@ class __$$_UsernameCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Username implements _Username {
-  const _$_Username(
+class _$UsernameImpl implements _Username {
+  const _$UsernameImpl(
       {@JsonKey(name: '\$id', includeIfNull: false) this.id,
       @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
       required this.username});
 
-  factory _$_Username.fromJson(Map<String, dynamic> json) =>
-      _$$_UsernameFromJson(json);
+  factory _$UsernameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsernameImplFromJson(json);
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -169,7 +170,7 @@ class _$_Username implements _Username {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Username &&
+            other is _$UsernameImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -187,12 +188,12 @@ class _$_Username implements _Username {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsernameCopyWith<_$_Username> get copyWith =>
-      __$$_UsernameCopyWithImpl<_$_Username>(this, _$identity);
+  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith =>
+      __$$UsernameImplCopyWithImpl<_$UsernameImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsernameToJson(
+    return _$$UsernameImplToJson(
       this,
     );
   }
@@ -200,15 +201,15 @@ class _$_Username implements _Username {
 
 abstract class _Username implements Username {
   const factory _Username(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
       @JsonKey(name: '\$createdAt', includeIfNull: false)
-          final String? createdAt,
+      final String? createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          final String? updatedAt,
-      required final String username}) = _$_Username;
+      final String? updatedAt,
+      required final String username}) = _$UsernameImpl;
 
-  factory _Username.fromJson(Map<String, dynamic> json) = _$_Username.fromJson;
+  factory _Username.fromJson(Map<String, dynamic> json) =
+      _$UsernameImpl.fromJson;
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -223,6 +224,6 @@ abstract class _Username implements Username {
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$$_UsernameCopyWith<_$_Username> get copyWith =>
+  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

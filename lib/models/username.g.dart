@@ -6,14 +6,15 @@ part of 'username.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Username _$$_UsernameFromJson(Map<String, dynamic> json) => _$_Username(
+_$UsernameImpl _$$UsernameImplFromJson(Map<String, dynamic> json) =>
+    _$UsernameImpl(
       id: json[r'$id'] as String?,
       createdAt: json[r'$createdAt'] as String?,
       updatedAt: json[r'$updatedAt'] as String?,
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$_UsernameToJson(_$_Username instance) {
+Map<String, dynamic> _$$UsernameImplToJson(_$UsernameImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -6,8 +6,9 @@ part of 'notification_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotificationList _$$_NotificationListFromJson(Map<String, dynamic> json) =>
-    _$_NotificationList(
+_$NotificationListImpl _$$NotificationListImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NotificationListImpl(
       notifications: (json['notifications'] as List<dynamic>?)
               ?.map((e) => AppNotification.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -15,7 +16,8 @@ _$_NotificationList _$$_NotificationListFromJson(Map<String, dynamic> json) =>
       total: json['total'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_NotificationListToJson(_$_NotificationList instance) =>
+Map<String, dynamic> _$$NotificationListImplToJson(
+        _$NotificationListImpl instance) =>
     <String, dynamic>{
       'notifications': instance.notifications,
       'total': instance.total,

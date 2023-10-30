@@ -6,7 +6,8 @@ part of 'totempole.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Totempole _$$_TotempoleFromJson(Map<String, dynamic> json) => _$_Totempole(
+_$TotempoleImpl _$$TotempoleImplFromJson(Map<String, dynamic> json) =>
+    _$TotempoleImpl(
       id: json[r'$id'] as String?,
       displayImage: json['display_image'] as String?,
       admins: (json['admins'] as List<dynamic>?)
@@ -37,7 +38,7 @@ _$_Totempole _$$_TotempoleFromJson(Map<String, dynamic> json) => _$_Totempole(
       updatedAt: json[r'$updatedAt'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_TotempoleToJson(_$_Totempole instance) {
+Map<String, dynamic> _$$TotempoleImplToJson(_$TotempoleImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

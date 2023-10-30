@@ -171,9 +171,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -198,9 +199,10 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -220,7 +222,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? pref = null,
     Object? userProfile = freezed,
   }) {
-    return _then(_$_User(
+    return _then(_$UserImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -279,8 +281,8 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  const _$_User(
+class _$UserImpl implements _User {
+  const _$UserImpl(
       {@JsonKey(name: '\$id', includeIfNull: false) this.id,
       @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
@@ -295,7 +297,8 @@ class _$_User implements _User {
       this.pref = const UserPref(),
       this.userProfile = const UserProfile()});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserImplFromJson(json);
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -346,7 +349,7 @@ class _$_User implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$UserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -390,12 +393,12 @@ class _$_User implements _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$UserImplToJson(
       this,
     );
   }
@@ -403,12 +406,11 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
       @JsonKey(name: '\$createdAt', includeIfNull: false)
-          final String? createdAt,
+      final String? createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          final String? updatedAt,
+      final String? updatedAt,
       final String name,
       final String registration,
       final bool status,
@@ -418,9 +420,9 @@ abstract class _User implements User {
       final bool emailVerification,
       final bool phoneVerification,
       final UserPref pref,
-      final UserProfile? userProfile}) = _$_User;
+      final UserProfile? userProfile}) = _$UserImpl;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -453,7 +455,8 @@ abstract class _User implements User {
   UserProfile? get userProfile;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 UserPref _$UserPrefFromJson(Map<String, dynamic> json) {
@@ -528,10 +531,11 @@ class _$UserPrefCopyWithImpl<$Res, $Val extends UserPref>
 }
 
 /// @nodoc
-abstract class _$$_UserPrefCopyWith<$Res> implements $UserPrefCopyWith<$Res> {
-  factory _$$_UserPrefCopyWith(
-          _$_UserPref value, $Res Function(_$_UserPref) then) =
-      __$$_UserPrefCopyWithImpl<$Res>;
+abstract class _$$UserPrefImplCopyWith<$Res>
+    implements $UserPrefCopyWith<$Res> {
+  factory _$$UserPrefImplCopyWith(
+          _$UserPrefImpl value, $Res Function(_$UserPrefImpl) then) =
+      __$$UserPrefImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -542,11 +546,11 @@ abstract class _$$_UserPrefCopyWith<$Res> implements $UserPrefCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserPrefCopyWithImpl<$Res>
-    extends _$UserPrefCopyWithImpl<$Res, _$_UserPref>
-    implements _$$_UserPrefCopyWith<$Res> {
-  __$$_UserPrefCopyWithImpl(
-      _$_UserPref _value, $Res Function(_$_UserPref) _then)
+class __$$UserPrefImplCopyWithImpl<$Res>
+    extends _$UserPrefCopyWithImpl<$Res, _$UserPrefImpl>
+    implements _$$UserPrefImplCopyWith<$Res> {
+  __$$UserPrefImplCopyWithImpl(
+      _$UserPrefImpl _value, $Res Function(_$UserPrefImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -557,7 +561,7 @@ class __$$_UserPrefCopyWithImpl<$Res>
     Object? underWorldPin = null,
     Object? username = null,
   }) {
-    return _then(_$_UserPref(
+    return _then(_$UserPrefImpl(
       deviceTokens: null == deviceTokens
           ? _value.deviceTokens
           : deviceTokens // ignore: cast_nullable_to_non_nullable
@@ -580,15 +584,15 @@ class __$$_UserPrefCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserPref implements _UserPref {
-  const _$_UserPref(
+class _$UserPrefImpl implements _UserPref {
+  const _$UserPrefImpl(
       {@JsonKey(name: 'device_tokens') this.deviceTokens = "",
       @JsonKey(name: 'is_underworld') this.isUnderworld = false,
       @JsonKey(name: 'under_world_pin') this.underWorldPin = "",
       this.username = ""});
 
-  factory _$_UserPref.fromJson(Map<String, dynamic> json) =>
-      _$$_UserPrefFromJson(json);
+  factory _$UserPrefImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserPrefImplFromJson(json);
 
   @override
   @JsonKey(name: 'device_tokens')
@@ -612,7 +616,7 @@ class _$_UserPref implements _UserPref {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserPref &&
+            other is _$UserPrefImpl &&
             (identical(other.deviceTokens, deviceTokens) ||
                 other.deviceTokens == deviceTokens) &&
             (identical(other.isUnderworld, isUnderworld) ||
@@ -631,12 +635,12 @@ class _$_UserPref implements _UserPref {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserPrefCopyWith<_$_UserPref> get copyWith =>
-      __$$_UserPrefCopyWithImpl<_$_UserPref>(this, _$identity);
+  _$$UserPrefImplCopyWith<_$UserPrefImpl> get copyWith =>
+      __$$UserPrefImplCopyWithImpl<_$UserPrefImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserPrefToJson(
+    return _$$UserPrefImplToJson(
       this,
     );
   }
@@ -647,9 +651,10 @@ abstract class _UserPref implements UserPref {
       {@JsonKey(name: 'device_tokens') final String deviceTokens,
       @JsonKey(name: 'is_underworld') final bool isUnderworld,
       @JsonKey(name: 'under_world_pin') final String underWorldPin,
-      final String username}) = _$_UserPref;
+      final String username}) = _$UserPrefImpl;
 
-  factory _UserPref.fromJson(Map<String, dynamic> json) = _$_UserPref.fromJson;
+  factory _UserPref.fromJson(Map<String, dynamic> json) =
+      _$UserPrefImpl.fromJson;
 
   @override
   @JsonKey(name: 'device_tokens')
@@ -664,6 +669,6 @@ abstract class _UserPref implements UserPref {
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$$_UserPrefCopyWith<_$_UserPref> get copyWith =>
+  _$$UserPrefImplCopyWith<_$UserPrefImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

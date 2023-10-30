@@ -54,26 +54,19 @@ abstract class $AppNotificationCopyWith<$Res> {
       _$AppNotificationCopyWithImpl<$Res, AppNotification>;
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
       String title,
       String to,
       String from,
-      @JsonKey(includeIfNull: false)
-          String? subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false)
-          String? totempoleId,
-      @JsonKey(includeIfNull: false)
-          String? image,
+      @JsonKey(includeIfNull: false) String? subtitle,
+      @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
+      @JsonKey(includeIfNull: false) String? image,
       Type type,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-          String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-          String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          String? updatedAt});
+      String? collectionId,
+      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
+      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
+      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
 }
 
 /// @nodoc
@@ -156,42 +149,35 @@ class _$AppNotificationCopyWithImpl<$Res, $Val extends AppNotification>
 }
 
 /// @nodoc
-abstract class _$$_AppNotificationCopyWith<$Res>
+abstract class _$$AppNotificationImplCopyWith<$Res>
     implements $AppNotificationCopyWith<$Res> {
-  factory _$$_AppNotificationCopyWith(
-          _$_AppNotification value, $Res Function(_$_AppNotification) then) =
-      __$$_AppNotificationCopyWithImpl<$Res>;
+  factory _$$AppNotificationImplCopyWith(_$AppNotificationImpl value,
+          $Res Function(_$AppNotificationImpl) then) =
+      __$$AppNotificationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
       String title,
       String to,
       String from,
-      @JsonKey(includeIfNull: false)
-          String? subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false)
-          String? totempoleId,
-      @JsonKey(includeIfNull: false)
-          String? image,
+      @JsonKey(includeIfNull: false) String? subtitle,
+      @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
+      @JsonKey(includeIfNull: false) String? image,
       Type type,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-          String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-          String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          String? updatedAt});
+      String? collectionId,
+      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
+      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
+      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
 }
 
 /// @nodoc
-class __$$_AppNotificationCopyWithImpl<$Res>
-    extends _$AppNotificationCopyWithImpl<$Res, _$_AppNotification>
-    implements _$$_AppNotificationCopyWith<$Res> {
-  __$$_AppNotificationCopyWithImpl(
-      _$_AppNotification _value, $Res Function(_$_AppNotification) _then)
+class __$$AppNotificationImplCopyWithImpl<$Res>
+    extends _$AppNotificationCopyWithImpl<$Res, _$AppNotificationImpl>
+    implements _$$AppNotificationImplCopyWith<$Res> {
+  __$$AppNotificationImplCopyWithImpl(
+      _$AppNotificationImpl _value, $Res Function(_$AppNotificationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +196,7 @@ class __$$_AppNotificationCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$_AppNotification(
+    return _then(_$AppNotificationImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -265,8 +251,8 @@ class __$$_AppNotificationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppNotification implements _AppNotification {
-  const _$_AppNotification(
+class _$AppNotificationImpl implements _AppNotification {
+  const _$AppNotificationImpl(
       {@JsonKey(name: "\$id", includeIfNull: false) this.id,
       required this.title,
       required this.to,
@@ -280,8 +266,8 @@ class _$_AppNotification implements _AppNotification {
       @JsonKey(name: "\$createdAt", includeIfNull: false) this.createdAt,
       @JsonKey(name: "\$updatedAt", includeIfNull: false) this.updatedAt});
 
-  factory _$_AppNotification.fromJson(Map<String, dynamic> json) =>
-      _$$_AppNotificationFromJson(json);
+  factory _$AppNotificationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppNotificationImplFromJson(json);
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
@@ -326,7 +312,7 @@ class _$_AppNotification implements _AppNotification {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppNotification &&
+            other is _$AppNotificationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.to, to) || other.to == to) &&
@@ -355,12 +341,13 @@ class _$_AppNotification implements _AppNotification {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppNotificationCopyWith<_$_AppNotification> get copyWith =>
-      __$$_AppNotificationCopyWithImpl<_$_AppNotification>(this, _$identity);
+  _$$AppNotificationImplCopyWith<_$AppNotificationImpl> get copyWith =>
+      __$$AppNotificationImplCopyWithImpl<_$AppNotificationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AppNotificationToJson(
+    return _$$AppNotificationImplToJson(
       this,
     );
   }
@@ -368,29 +355,26 @@ class _$_AppNotification implements _AppNotification {
 
 abstract class _AppNotification implements AppNotification {
   const factory _AppNotification(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) final String? id,
       required final String title,
       required final String to,
       required final String from,
-      @JsonKey(includeIfNull: false)
-          final String? subtitle,
+      @JsonKey(includeIfNull: false) final String? subtitle,
       @JsonKey(name: "totempole_id", includeIfNull: false)
-          final String? totempoleId,
-      @JsonKey(includeIfNull: false)
-          final String? image,
+      final String? totempoleId,
+      @JsonKey(includeIfNull: false) final String? image,
       final Type type,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          final String? collectionId,
+      final String? collectionId,
       @JsonKey(name: "\$databaseId", includeIfNull: false)
-          final String? databaseId,
+      final String? databaseId,
       @JsonKey(name: "\$createdAt", includeIfNull: false)
-          final String? createdAt,
+      final String? createdAt,
       @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          final String? updatedAt}) = _$_AppNotification;
+      final String? updatedAt}) = _$AppNotificationImpl;
 
   factory _AppNotification.fromJson(Map<String, dynamic> json) =
-      _$_AppNotification.fromJson;
+      _$AppNotificationImpl.fromJson;
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
@@ -426,6 +410,6 @@ abstract class _AppNotification implements AppNotification {
   String? get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_AppNotificationCopyWith<_$_AppNotification> get copyWith =>
+  _$$AppNotificationImplCopyWith<_$AppNotificationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

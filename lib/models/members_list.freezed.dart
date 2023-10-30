@@ -68,22 +68,22 @@ class _$MembersListCopyWithImpl<$Res, $Val extends MembersList>
 }
 
 /// @nodoc
-abstract class _$$_MembersListCopyWith<$Res>
+abstract class _$$MembersListImplCopyWith<$Res>
     implements $MembersListCopyWith<$Res> {
-  factory _$$_MembersListCopyWith(
-          _$_MembersList value, $Res Function(_$_MembersList) then) =
-      __$$_MembersListCopyWithImpl<$Res>;
+  factory _$$MembersListImplCopyWith(
+          _$MembersListImpl value, $Res Function(_$MembersListImpl) then) =
+      __$$MembersListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int total, List<Member> members});
 }
 
 /// @nodoc
-class __$$_MembersListCopyWithImpl<$Res>
-    extends _$MembersListCopyWithImpl<$Res, _$_MembersList>
-    implements _$$_MembersListCopyWith<$Res> {
-  __$$_MembersListCopyWithImpl(
-      _$_MembersList _value, $Res Function(_$_MembersList) _then)
+class __$$MembersListImplCopyWithImpl<$Res>
+    extends _$MembersListCopyWithImpl<$Res, _$MembersListImpl>
+    implements _$$MembersListImplCopyWith<$Res> {
+  __$$MembersListImplCopyWithImpl(
+      _$MembersListImpl _value, $Res Function(_$MembersListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_MembersListCopyWithImpl<$Res>
     Object? total = null,
     Object? members = null,
   }) {
-    return _then(_$_MembersList(
+    return _then(_$MembersListImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -107,12 +107,13 @@ class __$$_MembersListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MembersList implements _MembersList {
-  const _$_MembersList({this.total = 0, final List<Member> members = const []})
+class _$MembersListImpl implements _MembersList {
+  const _$MembersListImpl(
+      {this.total = 0, final List<Member> members = const []})
       : _members = members;
 
-  factory _$_MembersList.fromJson(Map<String, dynamic> json) =>
-      _$$_MembersListFromJson(json);
+  factory _$MembersListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MembersListImplFromJson(json);
 
   @override
   @JsonKey()
@@ -135,7 +136,7 @@ class _$_MembersList implements _MembersList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MembersList &&
+            other is _$MembersListImpl &&
             (identical(other.total, total) || other.total == total) &&
             const DeepCollectionEquality().equals(other._members, _members));
   }
@@ -148,12 +149,12 @@ class _$_MembersList implements _MembersList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MembersListCopyWith<_$_MembersList> get copyWith =>
-      __$$_MembersListCopyWithImpl<_$_MembersList>(this, _$identity);
+  _$$MembersListImplCopyWith<_$MembersListImpl> get copyWith =>
+      __$$MembersListImplCopyWithImpl<_$MembersListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MembersListToJson(
+    return _$$MembersListImplToJson(
       this,
     );
   }
@@ -161,10 +162,10 @@ class _$_MembersList implements _MembersList {
 
 abstract class _MembersList implements MembersList {
   const factory _MembersList({final int total, final List<Member> members}) =
-      _$_MembersList;
+      _$MembersListImpl;
 
   factory _MembersList.fromJson(Map<String, dynamic> json) =
-      _$_MembersList.fromJson;
+      _$MembersListImpl.fromJson;
 
   @override
   int get total;
@@ -172,6 +173,6 @@ abstract class _MembersList implements MembersList {
   List<Member> get members;
   @override
   @JsonKey(ignore: true)
-  _$$_MembersListCopyWith<_$_MembersList> get copyWith =>
+  _$$MembersListImplCopyWith<_$MembersListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

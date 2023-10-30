@@ -68,22 +68,22 @@ class _$TotempoleListCopyWithImpl<$Res, $Val extends TotempoleList>
 }
 
 /// @nodoc
-abstract class _$$_TotempoleListCopyWith<$Res>
+abstract class _$$TotempoleListImplCopyWith<$Res>
     implements $TotempoleListCopyWith<$Res> {
-  factory _$$_TotempoleListCopyWith(
-          _$_TotempoleList value, $Res Function(_$_TotempoleList) then) =
-      __$$_TotempoleListCopyWithImpl<$Res>;
+  factory _$$TotempoleListImplCopyWith(
+          _$TotempoleListImpl value, $Res Function(_$TotempoleListImpl) then) =
+      __$$TotempoleListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Totempole> totempoles, int total});
 }
 
 /// @nodoc
-class __$$_TotempoleListCopyWithImpl<$Res>
-    extends _$TotempoleListCopyWithImpl<$Res, _$_TotempoleList>
-    implements _$$_TotempoleListCopyWith<$Res> {
-  __$$_TotempoleListCopyWithImpl(
-      _$_TotempoleList _value, $Res Function(_$_TotempoleList) _then)
+class __$$TotempoleListImplCopyWithImpl<$Res>
+    extends _$TotempoleListCopyWithImpl<$Res, _$TotempoleListImpl>
+    implements _$$TotempoleListImplCopyWith<$Res> {
+  __$$TotempoleListImplCopyWithImpl(
+      _$TotempoleListImpl _value, $Res Function(_$TotempoleListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_TotempoleListCopyWithImpl<$Res>
     Object? totempoles = null,
     Object? total = null,
   }) {
-    return _then(_$_TotempoleList(
+    return _then(_$TotempoleListImpl(
       totempoles: null == totempoles
           ? _value._totempoles
           : totempoles // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_TotempoleListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TotempoleList implements _TotempoleList {
-  const _$_TotempoleList(
+class _$TotempoleListImpl implements _TotempoleList {
+  const _$TotempoleListImpl(
       {final List<Totempole> totempoles = const [], this.total = 0})
       : _totempoles = totempoles;
 
-  factory _$_TotempoleList.fromJson(Map<String, dynamic> json) =>
-      _$$_TotempoleListFromJson(json);
+  factory _$TotempoleListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TotempoleListImplFromJson(json);
 
   final List<Totempole> _totempoles;
   @override
@@ -137,7 +137,7 @@ class _$_TotempoleList implements _TotempoleList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TotempoleList &&
+            other is _$TotempoleListImpl &&
             const DeepCollectionEquality()
                 .equals(other._totempoles, _totempoles) &&
             (identical(other.total, total) || other.total == total));
@@ -151,12 +151,12 @@ class _$_TotempoleList implements _TotempoleList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TotempoleListCopyWith<_$_TotempoleList> get copyWith =>
-      __$$_TotempoleListCopyWithImpl<_$_TotempoleList>(this, _$identity);
+  _$$TotempoleListImplCopyWith<_$TotempoleListImpl> get copyWith =>
+      __$$TotempoleListImplCopyWithImpl<_$TotempoleListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TotempoleListToJson(
+    return _$$TotempoleListImplToJson(
       this,
     );
   }
@@ -164,10 +164,11 @@ class _$_TotempoleList implements _TotempoleList {
 
 abstract class _TotempoleList implements TotempoleList {
   const factory _TotempoleList(
-      {final List<Totempole> totempoles, final int total}) = _$_TotempoleList;
+      {final List<Totempole> totempoles,
+      final int total}) = _$TotempoleListImpl;
 
   factory _TotempoleList.fromJson(Map<String, dynamic> json) =
-      _$_TotempoleList.fromJson;
+      _$TotempoleListImpl.fromJson;
 
   @override
   List<Totempole> get totempoles;
@@ -175,6 +176,6 @@ abstract class _TotempoleList implements TotempoleList {
   int get total;
   @override
   @JsonKey(ignore: true)
-  _$$_TotempoleListCopyWith<_$_TotempoleList> get copyWith =>
+  _$$TotempoleListImplCopyWith<_$TotempoleListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

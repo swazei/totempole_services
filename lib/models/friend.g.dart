@@ -6,7 +6,7 @@ part of 'friend.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Friend _$$_FriendFromJson(Map<String, dynamic> json) => _$_Friend(
+_$FriendImpl _$$FriendImplFromJson(Map<String, dynamic> json) => _$FriendImpl(
       id: json[r'$id'] as String?,
       createdAt: json[r'$createdAt'] as String?,
       updatedAt: json[r'$updatedAt'] as String?,
@@ -18,9 +18,13 @@ _$_Friend _$$_FriendFromJson(Map<String, dynamic> json) => _$_Friend(
           ? null
           : UserProfile.fromJson(
               json['requested_to_user_profile'] as Map<String, dynamic>),
+      requestedFromUserProfile: json['requested_from_user_profile'] == null
+          ? null
+          : UserProfile.fromJson(
+              json['requested_from_user_profile'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_FriendToJson(_$_Friend instance) {
+Map<String, dynamic> _$$FriendImplToJson(_$FriendImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -37,5 +41,7 @@ Map<String, dynamic> _$$_FriendToJson(_$_Friend instance) {
   val['requested_from_user_id'] = instance.requestedFromUserId;
   val['retained'] = instance.retained;
   writeNotNull('requested_to_user_profile', instance.requestedToUserProfile);
+  writeNotNull(
+      'requested_from_user_profile', instance.requestedFromUserProfile);
   return val;
 }

@@ -68,22 +68,22 @@ class _$ProfileListCopyWithImpl<$Res, $Val extends ProfileList>
 }
 
 /// @nodoc
-abstract class _$$_ProfileListCopyWith<$Res>
+abstract class _$$ProfileListImplCopyWith<$Res>
     implements $ProfileListCopyWith<$Res> {
-  factory _$$_ProfileListCopyWith(
-          _$_ProfileList value, $Res Function(_$_ProfileList) then) =
-      __$$_ProfileListCopyWithImpl<$Res>;
+  factory _$$ProfileListImplCopyWith(
+          _$ProfileListImpl value, $Res Function(_$ProfileListImpl) then) =
+      __$$ProfileListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int total, List<UserProfile> profiles});
 }
 
 /// @nodoc
-class __$$_ProfileListCopyWithImpl<$Res>
-    extends _$ProfileListCopyWithImpl<$Res, _$_ProfileList>
-    implements _$$_ProfileListCopyWith<$Res> {
-  __$$_ProfileListCopyWithImpl(
-      _$_ProfileList _value, $Res Function(_$_ProfileList) _then)
+class __$$ProfileListImplCopyWithImpl<$Res>
+    extends _$ProfileListCopyWithImpl<$Res, _$ProfileListImpl>
+    implements _$$ProfileListImplCopyWith<$Res> {
+  __$$ProfileListImplCopyWithImpl(
+      _$ProfileListImpl _value, $Res Function(_$ProfileListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_ProfileListCopyWithImpl<$Res>
     Object? total = null,
     Object? profiles = null,
   }) {
-    return _then(_$_ProfileList(
+    return _then(_$ProfileListImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_ProfileListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProfileList implements _ProfileList {
-  const _$_ProfileList(
+class _$ProfileListImpl implements _ProfileList {
+  const _$ProfileListImpl(
       {this.total = 0, final List<UserProfile> profiles = const []})
       : _profiles = profiles;
 
-  factory _$_ProfileList.fromJson(Map<String, dynamic> json) =>
-      _$$_ProfileListFromJson(json);
+  factory _$ProfileListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProfileListImplFromJson(json);
 
   @override
   @JsonKey()
@@ -136,7 +136,7 @@ class _$_ProfileList implements _ProfileList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProfileList &&
+            other is _$ProfileListImpl &&
             (identical(other.total, total) || other.total == total) &&
             const DeepCollectionEquality().equals(other._profiles, _profiles));
   }
@@ -149,12 +149,12 @@ class _$_ProfileList implements _ProfileList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProfileListCopyWith<_$_ProfileList> get copyWith =>
-      __$$_ProfileListCopyWithImpl<_$_ProfileList>(this, _$identity);
+  _$$ProfileListImplCopyWith<_$ProfileListImpl> get copyWith =>
+      __$$ProfileListImplCopyWithImpl<_$ProfileListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileListToJson(
+    return _$$ProfileListImplToJson(
       this,
     );
   }
@@ -162,10 +162,10 @@ class _$_ProfileList implements _ProfileList {
 
 abstract class _ProfileList implements ProfileList {
   const factory _ProfileList(
-      {final int total, final List<UserProfile> profiles}) = _$_ProfileList;
+      {final int total, final List<UserProfile> profiles}) = _$ProfileListImpl;
 
   factory _ProfileList.fromJson(Map<String, dynamic> json) =
-      _$_ProfileList.fromJson;
+      _$ProfileListImpl.fromJson;
 
   @override
   int get total;
@@ -173,6 +173,6 @@ abstract class _ProfileList implements ProfileList {
   List<UserProfile> get profiles;
   @override
   @JsonKey(ignore: true)
-  _$$_ProfileListCopyWith<_$_ProfileList> get copyWith =>
+  _$$ProfileListImplCopyWith<_$ProfileListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

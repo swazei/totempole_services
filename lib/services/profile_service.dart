@@ -57,4 +57,13 @@ class ProfileService {
       documentId: userId,
     );
   }
+
+  Future<UserProfile> getProfileByUserId(String userId) async {
+    var res = await database.getDocument(
+      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
+      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      documentId: userId,
+    );
+    return UserProfile.fromJson(res.data);
+  }
 }

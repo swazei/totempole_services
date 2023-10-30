@@ -21,7 +21,7 @@ class NotificationService {
 
   Future<List<AppNotification>> paginatedNotificationList(
       [int offset = 0, String? totempoleID]) async {
-    final List<String>? queries = totempoleID != null
+    final List<String> queries = totempoleID != null
         ? [Query.equal('totempole_id', totempoleID), Query.offset(offset)]
         : [Query.offset(offset)];
     final notification = await database.listDocuments(

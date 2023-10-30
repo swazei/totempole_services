@@ -68,22 +68,22 @@ class _$NotificationListCopyWithImpl<$Res, $Val extends NotificationList>
 }
 
 /// @nodoc
-abstract class _$$_NotificationListCopyWith<$Res>
+abstract class _$$NotificationListImplCopyWith<$Res>
     implements $NotificationListCopyWith<$Res> {
-  factory _$$_NotificationListCopyWith(
-          _$_NotificationList value, $Res Function(_$_NotificationList) then) =
-      __$$_NotificationListCopyWithImpl<$Res>;
+  factory _$$NotificationListImplCopyWith(_$NotificationListImpl value,
+          $Res Function(_$NotificationListImpl) then) =
+      __$$NotificationListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<AppNotification> notifications, int total});
 }
 
 /// @nodoc
-class __$$_NotificationListCopyWithImpl<$Res>
-    extends _$NotificationListCopyWithImpl<$Res, _$_NotificationList>
-    implements _$$_NotificationListCopyWith<$Res> {
-  __$$_NotificationListCopyWithImpl(
-      _$_NotificationList _value, $Res Function(_$_NotificationList) _then)
+class __$$NotificationListImplCopyWithImpl<$Res>
+    extends _$NotificationListCopyWithImpl<$Res, _$NotificationListImpl>
+    implements _$$NotificationListImplCopyWith<$Res> {
+  __$$NotificationListImplCopyWithImpl(_$NotificationListImpl _value,
+      $Res Function(_$NotificationListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_NotificationListCopyWithImpl<$Res>
     Object? notifications = null,
     Object? total = null,
   }) {
-    return _then(_$_NotificationList(
+    return _then(_$NotificationListImpl(
       notifications: null == notifications
           ? _value._notifications
           : notifications // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_NotificationListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotificationList implements _NotificationList {
-  const _$_NotificationList(
+class _$NotificationListImpl implements _NotificationList {
+  const _$NotificationListImpl(
       {final List<AppNotification> notifications = const [], this.total = 0})
       : _notifications = notifications;
 
-  factory _$_NotificationList.fromJson(Map<String, dynamic> json) =>
-      _$$_NotificationListFromJson(json);
+  factory _$NotificationListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationListImplFromJson(json);
 
   final List<AppNotification> _notifications;
   @override
@@ -137,7 +137,7 @@ class _$_NotificationList implements _NotificationList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotificationList &&
+            other is _$NotificationListImpl &&
             const DeepCollectionEquality()
                 .equals(other._notifications, _notifications) &&
             (identical(other.total, total) || other.total == total));
@@ -151,12 +151,13 @@ class _$_NotificationList implements _NotificationList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotificationListCopyWith<_$_NotificationList> get copyWith =>
-      __$$_NotificationListCopyWithImpl<_$_NotificationList>(this, _$identity);
+  _$$NotificationListImplCopyWith<_$NotificationListImpl> get copyWith =>
+      __$$NotificationListImplCopyWithImpl<_$NotificationListImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationListToJson(
+    return _$$NotificationListImplToJson(
       this,
     );
   }
@@ -165,10 +166,10 @@ class _$_NotificationList implements _NotificationList {
 abstract class _NotificationList implements NotificationList {
   const factory _NotificationList(
       {final List<AppNotification> notifications,
-      final int total}) = _$_NotificationList;
+      final int total}) = _$NotificationListImpl;
 
   factory _NotificationList.fromJson(Map<String, dynamic> json) =
-      _$_NotificationList.fromJson;
+      _$NotificationListImpl.fromJson;
 
   @override
   List<AppNotification> get notifications;
@@ -176,6 +177,6 @@ abstract class _NotificationList implements NotificationList {
   int get total;
   @override
   @JsonKey(ignore: true)
-  _$$_NotificationListCopyWith<_$_NotificationList> get copyWith =>
+  _$$NotificationListImplCopyWith<_$NotificationListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

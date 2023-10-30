@@ -6,8 +6,9 @@ part of 'app_notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AppNotification _$$_AppNotificationFromJson(Map<String, dynamic> json) =>
-    _$_AppNotification(
+_$AppNotificationImpl _$$AppNotificationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AppNotificationImpl(
       id: json[r'$id'] as String?,
       title: json['title'] as String,
       to: json['to'] as String,
@@ -22,7 +23,8 @@ _$_AppNotification _$$_AppNotificationFromJson(Map<String, dynamic> json) =>
       updatedAt: json[r'$updatedAt'] as String?,
     );
 
-Map<String, dynamic> _$$_AppNotificationToJson(_$_AppNotification instance) {
+Map<String, dynamic> _$$AppNotificationImplToJson(
+    _$AppNotificationImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -1,5 +1,6 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dart_appwrite/models.dart';
+import 'package:faker/faker.dart';
 
 class UsersService {
   final Users users;
@@ -31,5 +32,19 @@ class UsersService {
 
   Future deleteUserById(String userId) async {
     await users.delete(userId: userId);
+  }
+
+  Future createFakeUsers(int no) async {
+    late Faker fake;
+
+    for (var i = 0; i < no; i++) {
+      fake = Faker();
+      await users.createArgon2User(
+        userId: ID.unique(),
+        name: fake.person.name(),
+        email: fake.internet.email(),
+        password: fake.address.city(),
+      );
+    }
   }
 }

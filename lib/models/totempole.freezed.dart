@@ -68,41 +68,28 @@ abstract class $TotempoleCopyWith<$Res> {
       _$TotempoleCopyWithImpl<$Res, Totempole>;
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
-          String? displayImage,
+      String? displayImage,
       List<String> admins,
-      @JsonKey(name: "open_to_join", includeIfNull: false)
-          bool openToJoin,
+      @JsonKey(name: "open_to_join", includeIfNull: false) bool openToJoin,
       bool hidden,
-      @JsonKey(name: "is_active", includeIfNull: false)
-          bool isActive,
+      @JsonKey(name: "is_active", includeIfNull: false) bool isActive,
       String name,
-      @JsonKey(includeIfNull: false)
-          String? description,
+      @JsonKey(includeIfNull: false) String? description,
       String phone,
-      @JsonKey(includeIfNull: false)
-          double? latitude,
-      @JsonKey(includeIfNull: false)
-          List<String>? resources,
-      @JsonKey(includeIfNull: false)
-          double? longitude,
-      @JsonKey(includeIfNull: false)
-          List<Member>? members,
+      @JsonKey(includeIfNull: false) double? latitude,
+      @JsonKey(includeIfNull: false) List<String>? resources,
+      @JsonKey(includeIfNull: false) double? longitude,
+      @JsonKey(includeIfNull: false) List<Member>? members,
       TotemType type,
-      @JsonKey(name: "is_underworld")
-          bool isUnderworld,
-      @JsonKey(name: "created_by")
-          String createdBy,
+      @JsonKey(name: "is_underworld") bool isUnderworld,
+      @JsonKey(name: "created_by") String createdBy,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          String collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-          String databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-          String createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          String updatedAt});
+      String collectionId,
+      @JsonKey(name: "\$databaseId", includeIfNull: false) String databaseId,
+      @JsonKey(name: "\$createdAt", includeIfNull: false) String createdAt,
+      @JsonKey(name: "\$updatedAt", includeIfNull: false) String updatedAt});
 }
 
 /// @nodoc
@@ -225,56 +212,44 @@ class _$TotempoleCopyWithImpl<$Res, $Val extends Totempole>
 }
 
 /// @nodoc
-abstract class _$$_TotempoleCopyWith<$Res> implements $TotempoleCopyWith<$Res> {
-  factory _$$_TotempoleCopyWith(
-          _$_Totempole value, $Res Function(_$_Totempole) then) =
-      __$$_TotempoleCopyWithImpl<$Res>;
+abstract class _$$TotempoleImplCopyWith<$Res>
+    implements $TotempoleCopyWith<$Res> {
+  factory _$$TotempoleImplCopyWith(
+          _$TotempoleImpl value, $Res Function(_$TotempoleImpl) then) =
+      __$$TotempoleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
-          String? displayImage,
+      String? displayImage,
       List<String> admins,
-      @JsonKey(name: "open_to_join", includeIfNull: false)
-          bool openToJoin,
+      @JsonKey(name: "open_to_join", includeIfNull: false) bool openToJoin,
       bool hidden,
-      @JsonKey(name: "is_active", includeIfNull: false)
-          bool isActive,
+      @JsonKey(name: "is_active", includeIfNull: false) bool isActive,
       String name,
-      @JsonKey(includeIfNull: false)
-          String? description,
+      @JsonKey(includeIfNull: false) String? description,
       String phone,
-      @JsonKey(includeIfNull: false)
-          double? latitude,
-      @JsonKey(includeIfNull: false)
-          List<String>? resources,
-      @JsonKey(includeIfNull: false)
-          double? longitude,
-      @JsonKey(includeIfNull: false)
-          List<Member>? members,
+      @JsonKey(includeIfNull: false) double? latitude,
+      @JsonKey(includeIfNull: false) List<String>? resources,
+      @JsonKey(includeIfNull: false) double? longitude,
+      @JsonKey(includeIfNull: false) List<Member>? members,
       TotemType type,
-      @JsonKey(name: "is_underworld")
-          bool isUnderworld,
-      @JsonKey(name: "created_by")
-          String createdBy,
+      @JsonKey(name: "is_underworld") bool isUnderworld,
+      @JsonKey(name: "created_by") String createdBy,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          String collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-          String databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-          String createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          String updatedAt});
+      String collectionId,
+      @JsonKey(name: "\$databaseId", includeIfNull: false) String databaseId,
+      @JsonKey(name: "\$createdAt", includeIfNull: false) String createdAt,
+      @JsonKey(name: "\$updatedAt", includeIfNull: false) String updatedAt});
 }
 
 /// @nodoc
-class __$$_TotempoleCopyWithImpl<$Res>
-    extends _$TotempoleCopyWithImpl<$Res, _$_Totempole>
-    implements _$$_TotempoleCopyWith<$Res> {
-  __$$_TotempoleCopyWithImpl(
-      _$_Totempole _value, $Res Function(_$_Totempole) _then)
+class __$$TotempoleImplCopyWithImpl<$Res>
+    extends _$TotempoleCopyWithImpl<$Res, _$TotempoleImpl>
+    implements _$$TotempoleImplCopyWith<$Res> {
+  __$$TotempoleImplCopyWithImpl(
+      _$TotempoleImpl _value, $Res Function(_$TotempoleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -301,7 +276,7 @@ class __$$_TotempoleCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
-    return _then(_$_Totempole(
+    return _then(_$TotempoleImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -388,49 +363,36 @@ class __$$_TotempoleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Totempole implements _Totempole {
-  const _$_Totempole(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          this.id,
-      @JsonKey(name: "display_image", includeIfNull: false)
-          this.displayImage,
+class _$TotempoleImpl implements _Totempole {
+  const _$TotempoleImpl(
+      {@JsonKey(name: "\$id", includeIfNull: false) this.id,
+      @JsonKey(name: "display_image", includeIfNull: false) this.displayImage,
       final List<String> admins = const [],
       @JsonKey(name: "open_to_join", includeIfNull: false)
-          this.openToJoin = true,
+      this.openToJoin = true,
       this.hidden = false,
-      @JsonKey(name: "is_active", includeIfNull: false)
-          this.isActive = true,
+      @JsonKey(name: "is_active", includeIfNull: false) this.isActive = true,
       required this.name,
-      @JsonKey(includeIfNull: false)
-          this.description,
+      @JsonKey(includeIfNull: false) this.description,
       this.phone = "",
-      @JsonKey(includeIfNull: false)
-          this.latitude,
-      @JsonKey(includeIfNull: false)
-          final List<String>? resources,
-      @JsonKey(includeIfNull: false)
-          this.longitude,
-      @JsonKey(includeIfNull: false)
-          final List<Member>? members,
+      @JsonKey(includeIfNull: false) this.latitude,
+      @JsonKey(includeIfNull: false) final List<String>? resources,
+      @JsonKey(includeIfNull: false) this.longitude,
+      @JsonKey(includeIfNull: false) final List<Member>? members,
       this.type = TotemType.user,
-      @JsonKey(name: "is_underworld")
-          this.isUnderworld = false,
-      @JsonKey(name: "created_by")
-          required this.createdBy,
+      @JsonKey(name: "is_underworld") this.isUnderworld = false,
+      @JsonKey(name: "created_by") required this.createdBy,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          this.collectionId = "",
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-          this.databaseId = "",
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-          this.createdAt = "",
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          this.updatedAt = ""})
+      this.collectionId = "",
+      @JsonKey(name: "\$databaseId", includeIfNull: false) this.databaseId = "",
+      @JsonKey(name: "\$createdAt", includeIfNull: false) this.createdAt = "",
+      @JsonKey(name: "\$updatedAt", includeIfNull: false) this.updatedAt = ""})
       : _admins = admins,
         _resources = resources,
         _members = members;
 
-  factory _$_Totempole.fromJson(Map<String, dynamic> json) =>
-      _$$_TotempoleFromJson(json);
+  factory _$TotempoleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TotempoleImplFromJson(json);
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
@@ -523,7 +485,7 @@ class _$_Totempole implements _Totempole {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Totempole &&
+            other is _$TotempoleImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.displayImage, displayImage) ||
                 other.displayImage == displayImage) &&
@@ -588,12 +550,12 @@ class _$_Totempole implements _Totempole {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TotempoleCopyWith<_$_Totempole> get copyWith =>
-      __$$_TotempoleCopyWithImpl<_$_Totempole>(this, _$identity);
+  _$$TotempoleImplCopyWith<_$TotempoleImpl> get copyWith =>
+      __$$TotempoleImplCopyWithImpl<_$TotempoleImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TotempoleToJson(
+    return _$$TotempoleImplToJson(
       this,
     );
   }
@@ -601,44 +563,35 @@ class _$_Totempole implements _Totempole {
 
 abstract class _Totempole implements Totempole {
   const factory _Totempole(
-      {@JsonKey(name: "\$id", includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: "\$id", includeIfNull: false) final String? id,
       @JsonKey(name: "display_image", includeIfNull: false)
-          final String? displayImage,
+      final String? displayImage,
       final List<String> admins,
       @JsonKey(name: "open_to_join", includeIfNull: false)
-          final bool openToJoin,
+      final bool openToJoin,
       final bool hidden,
-      @JsonKey(name: "is_active", includeIfNull: false)
-          final bool isActive,
+      @JsonKey(name: "is_active", includeIfNull: false) final bool isActive,
       required final String name,
-      @JsonKey(includeIfNull: false)
-          final String? description,
+      @JsonKey(includeIfNull: false) final String? description,
       final String phone,
-      @JsonKey(includeIfNull: false)
-          final double? latitude,
-      @JsonKey(includeIfNull: false)
-          final List<String>? resources,
-      @JsonKey(includeIfNull: false)
-          final double? longitude,
-      @JsonKey(includeIfNull: false)
-          final List<Member>? members,
+      @JsonKey(includeIfNull: false) final double? latitude,
+      @JsonKey(includeIfNull: false) final List<String>? resources,
+      @JsonKey(includeIfNull: false) final double? longitude,
+      @JsonKey(includeIfNull: false) final List<Member>? members,
       final TotemType type,
-      @JsonKey(name: "is_underworld")
-          final bool isUnderworld,
-      @JsonKey(name: "created_by")
-          required final String createdBy,
+      @JsonKey(name: "is_underworld") final bool isUnderworld,
+      @JsonKey(name: "created_by") required final String createdBy,
       @JsonKey(name: "\$collectionId", includeIfNull: false)
-          final String collectionId,
+      final String collectionId,
       @JsonKey(name: "\$databaseId", includeIfNull: false)
-          final String databaseId,
+      final String databaseId,
       @JsonKey(name: "\$createdAt", includeIfNull: false)
-          final String createdAt,
+      final String createdAt,
       @JsonKey(name: "\$updatedAt", includeIfNull: false)
-          final String updatedAt}) = _$_Totempole;
+      final String updatedAt}) = _$TotempoleImpl;
 
   factory _Totempole.fromJson(Map<String, dynamic> json) =
-      _$_Totempole.fromJson;
+      _$TotempoleImpl.fromJson;
 
   @override
   @JsonKey(name: "\$id", includeIfNull: false)
@@ -697,6 +650,6 @@ abstract class _Totempole implements Totempole {
   String get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_TotempoleCopyWith<_$_Totempole> get copyWith =>
+  _$$TotempoleImplCopyWith<_$TotempoleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

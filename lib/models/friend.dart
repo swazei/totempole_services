@@ -12,10 +12,12 @@ abstract class Friend with _$Friend {
     @Default(false) bool accepted,
     @JsonKey(name: 'requested_to_user_id') required String requestedToUserId,
     @JsonKey(name: 'requested_from_user_id')
-        required String requestedFromUserId,
+    required String requestedFromUserId,
     @Default(false) bool retained,
     @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-        UserProfile? requestedToUserProfile,
+    UserProfile? requestedToUserProfile,
+    @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+    UserProfile? requestedFromUserProfile,
   }) = _Friend;
   factory Friend.fromJson(Map<String, dynamic> json) => _$FriendFromJson(json);
 }

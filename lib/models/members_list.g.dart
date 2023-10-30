@@ -6,8 +6,8 @@ part of 'members_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MembersList _$$_MembersListFromJson(Map<String, dynamic> json) =>
-    _$_MembersList(
+_$MembersListImpl _$$MembersListImplFromJson(Map<String, dynamic> json) =>
+    _$MembersListImpl(
       total: json['total'] as int? ?? 0,
       members: (json['members'] as List<dynamic>?)
               ?.map((e) => Member.fromJson(e as Map<String, dynamic>))
@@ -15,7 +15,7 @@ _$_MembersList _$$_MembersListFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_MembersListToJson(_$_MembersList instance) =>
+Map<String, dynamic> _$$MembersListImplToJson(_$MembersListImpl instance) =>
     <String, dynamic>{
       'total': instance.total,
       'members': instance.members,

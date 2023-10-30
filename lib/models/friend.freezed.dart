@@ -34,6 +34,9 @@ mixin _$Friend {
   bool get retained => throw _privateConstructorUsedError;
   @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
   UserProfile? get requestedToUserProfile => throw _privateConstructorUsedError;
+  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  UserProfile? get requestedFromUserProfile =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,22 +49,20 @@ abstract class $FriendCopyWith<$Res> {
       _$FriendCopyWithImpl<$Res, Friend>;
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-          String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          String? updatedAt,
+      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
+      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
+      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
       bool accepted,
-      @JsonKey(name: 'requested_to_user_id')
-          String requestedToUserId,
-      @JsonKey(name: 'requested_from_user_id')
-          String requestedFromUserId,
+      @JsonKey(name: 'requested_to_user_id') String requestedToUserId,
+      @JsonKey(name: 'requested_from_user_id') String requestedFromUserId,
       bool retained,
       @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-          UserProfile? requestedToUserProfile});
+      UserProfile? requestedToUserProfile,
+      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      UserProfile? requestedFromUserProfile});
 
   $UserProfileCopyWith<$Res>? get requestedToUserProfile;
+  $UserProfileCopyWith<$Res>? get requestedFromUserProfile;
 }
 
 /// @nodoc
@@ -85,6 +86,7 @@ class _$FriendCopyWithImpl<$Res, $Val extends Friend>
     Object? requestedFromUserId = null,
     Object? retained = null,
     Object? requestedToUserProfile = freezed,
+    Object? requestedFromUserProfile = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -119,6 +121,10 @@ class _$FriendCopyWithImpl<$Res, $Val extends Friend>
           ? _value.requestedToUserProfile
           : requestedToUserProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile?,
+      requestedFromUserProfile: freezed == requestedFromUserProfile
+          ? _value.requestedFromUserProfile
+          : requestedFromUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile?,
     ) as $Val);
   }
 
@@ -133,39 +139,53 @@ class _$FriendCopyWithImpl<$Res, $Val extends Friend>
       return _then(_value.copyWith(requestedToUserProfile: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserProfileCopyWith<$Res>? get requestedFromUserProfile {
+    if (_value.requestedFromUserProfile == null) {
+      return null;
+    }
+
+    return $UserProfileCopyWith<$Res>(_value.requestedFromUserProfile!,
+        (value) {
+      return _then(_value.copyWith(requestedFromUserProfile: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_FriendCopyWith<$Res> implements $FriendCopyWith<$Res> {
-  factory _$$_FriendCopyWith(_$_Friend value, $Res Function(_$_Friend) then) =
-      __$$_FriendCopyWithImpl<$Res>;
+abstract class _$$FriendImplCopyWith<$Res> implements $FriendCopyWith<$Res> {
+  factory _$$FriendImplCopyWith(
+          _$FriendImpl value, $Res Function(_$FriendImpl) then) =
+      __$$FriendImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-          String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          String? updatedAt,
+      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
+      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
+      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
       bool accepted,
-      @JsonKey(name: 'requested_to_user_id')
-          String requestedToUserId,
-      @JsonKey(name: 'requested_from_user_id')
-          String requestedFromUserId,
+      @JsonKey(name: 'requested_to_user_id') String requestedToUserId,
+      @JsonKey(name: 'requested_from_user_id') String requestedFromUserId,
       bool retained,
       @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-          UserProfile? requestedToUserProfile});
+      UserProfile? requestedToUserProfile,
+      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      UserProfile? requestedFromUserProfile});
 
   @override
   $UserProfileCopyWith<$Res>? get requestedToUserProfile;
+  @override
+  $UserProfileCopyWith<$Res>? get requestedFromUserProfile;
 }
 
 /// @nodoc
-class __$$_FriendCopyWithImpl<$Res>
-    extends _$FriendCopyWithImpl<$Res, _$_Friend>
-    implements _$$_FriendCopyWith<$Res> {
-  __$$_FriendCopyWithImpl(_$_Friend _value, $Res Function(_$_Friend) _then)
+class __$$FriendImplCopyWithImpl<$Res>
+    extends _$FriendCopyWithImpl<$Res, _$FriendImpl>
+    implements _$$FriendImplCopyWith<$Res> {
+  __$$FriendImplCopyWithImpl(
+      _$FriendImpl _value, $Res Function(_$FriendImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -179,8 +199,9 @@ class __$$_FriendCopyWithImpl<$Res>
     Object? requestedFromUserId = null,
     Object? retained = null,
     Object? requestedToUserProfile = freezed,
+    Object? requestedFromUserProfile = freezed,
   }) {
-    return _then(_$_Friend(
+    return _then(_$FriendImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -213,31 +234,33 @@ class __$$_FriendCopyWithImpl<$Res>
           ? _value.requestedToUserProfile
           : requestedToUserProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile?,
+      requestedFromUserProfile: freezed == requestedFromUserProfile
+          ? _value.requestedFromUserProfile
+          : requestedFromUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Friend implements _Friend {
-  const _$_Friend(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          this.id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-          this.createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          this.updatedAt,
+class _$FriendImpl implements _Friend {
+  const _$FriendImpl(
+      {@JsonKey(name: '\$id', includeIfNull: false) this.id,
+      @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
+      @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
       this.accepted = false,
-      @JsonKey(name: 'requested_to_user_id')
-          required this.requestedToUserId,
+      @JsonKey(name: 'requested_to_user_id') required this.requestedToUserId,
       @JsonKey(name: 'requested_from_user_id')
-          required this.requestedFromUserId,
+      required this.requestedFromUserId,
       this.retained = false,
       @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-          this.requestedToUserProfile});
+      this.requestedToUserProfile,
+      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      this.requestedFromUserProfile});
 
-  factory _$_Friend.fromJson(Map<String, dynamic> json) =>
-      _$$_FriendFromJson(json);
+  factory _$FriendImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FriendImplFromJson(json);
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -263,17 +286,20 @@ class _$_Friend implements _Friend {
   @override
   @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
   final UserProfile? requestedToUserProfile;
+  @override
+  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  final UserProfile? requestedFromUserProfile;
 
   @override
   String toString() {
-    return 'Friend(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, accepted: $accepted, requestedToUserId: $requestedToUserId, requestedFromUserId: $requestedFromUserId, retained: $retained, requestedToUserProfile: $requestedToUserProfile)';
+    return 'Friend(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, accepted: $accepted, requestedToUserId: $requestedToUserId, requestedFromUserId: $requestedFromUserId, retained: $retained, requestedToUserProfile: $requestedToUserProfile, requestedFromUserProfile: $requestedFromUserProfile)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Friend &&
+            other is _$FriendImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -288,7 +314,10 @@ class _$_Friend implements _Friend {
             (identical(other.retained, retained) ||
                 other.retained == retained) &&
             (identical(other.requestedToUserProfile, requestedToUserProfile) ||
-                other.requestedToUserProfile == requestedToUserProfile));
+                other.requestedToUserProfile == requestedToUserProfile) &&
+            (identical(
+                    other.requestedFromUserProfile, requestedFromUserProfile) ||
+                other.requestedFromUserProfile == requestedFromUserProfile));
   }
 
   @JsonKey(ignore: true)
@@ -302,17 +331,18 @@ class _$_Friend implements _Friend {
       requestedToUserId,
       requestedFromUserId,
       retained,
-      requestedToUserProfile);
+      requestedToUserProfile,
+      requestedFromUserProfile);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FriendCopyWith<_$_Friend> get copyWith =>
-      __$$_FriendCopyWithImpl<_$_Friend>(this, _$identity);
+  _$$FriendImplCopyWith<_$FriendImpl> get copyWith =>
+      __$$FriendImplCopyWithImpl<_$FriendImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FriendToJson(
+    return _$$FriendImplToJson(
       this,
     );
   }
@@ -320,22 +350,23 @@ class _$_Friend implements _Friend {
 
 abstract class _Friend implements Friend {
   const factory _Friend(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
       @JsonKey(name: '\$createdAt', includeIfNull: false)
-          final String? createdAt,
+      final String? createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          final String? updatedAt,
+      final String? updatedAt,
       final bool accepted,
       @JsonKey(name: 'requested_to_user_id')
-          required final String requestedToUserId,
+      required final String requestedToUserId,
       @JsonKey(name: 'requested_from_user_id')
-          required final String requestedFromUserId,
+      required final String requestedFromUserId,
       final bool retained,
       @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-          final UserProfile? requestedToUserProfile}) = _$_Friend;
+      final UserProfile? requestedToUserProfile,
+      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      final UserProfile? requestedFromUserProfile}) = _$FriendImpl;
 
-  factory _Friend.fromJson(Map<String, dynamic> json) = _$_Friend.fromJson;
+  factory _Friend.fromJson(Map<String, dynamic> json) = _$FriendImpl.fromJson;
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -360,7 +391,10 @@ abstract class _Friend implements Friend {
   @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
   UserProfile? get requestedToUserProfile;
   @override
+  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  UserProfile? get requestedFromUserProfile;
+  @override
   @JsonKey(ignore: true)
-  _$$_FriendCopyWith<_$_Friend> get copyWith =>
+  _$$FriendImplCopyWith<_$FriendImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

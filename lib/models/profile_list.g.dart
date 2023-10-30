@@ -6,8 +6,8 @@ part of 'profile_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProfileList _$$_ProfileListFromJson(Map<String, dynamic> json) =>
-    _$_ProfileList(
+_$ProfileListImpl _$$ProfileListImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileListImpl(
       total: json['total'] as int? ?? 0,
       profiles: (json['profiles'] as List<dynamic>?)
               ?.map((e) => UserProfile.fromJson(e as Map<String, dynamic>))
@@ -15,7 +15,7 @@ _$_ProfileList _$$_ProfileListFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_ProfileListToJson(_$_ProfileList instance) =>
+Map<String, dynamic> _$$ProfileListImplToJson(_$ProfileListImpl instance) =>
     <String, dynamic>{
       'total': instance.total,
       'profiles': instance.profiles,

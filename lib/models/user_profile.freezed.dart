@@ -147,11 +147,11 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
 }
 
 /// @nodoc
-abstract class _$$_UserProfileCopyWith<$Res>
+abstract class _$$UserProfileImplCopyWith<$Res>
     implements $UserProfileCopyWith<$Res> {
-  factory _$$_UserProfileCopyWith(
-          _$_UserProfile value, $Res Function(_$_UserProfile) then) =
-      __$$_UserProfileCopyWithImpl<$Res>;
+  factory _$$UserProfileImplCopyWith(
+          _$UserProfileImpl value, $Res Function(_$UserProfileImpl) then) =
+      __$$UserProfileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -170,11 +170,11 @@ abstract class _$$_UserProfileCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserProfileCopyWithImpl<$Res>
-    extends _$UserProfileCopyWithImpl<$Res, _$_UserProfile>
-    implements _$$_UserProfileCopyWith<$Res> {
-  __$$_UserProfileCopyWithImpl(
-      _$_UserProfile _value, $Res Function(_$_UserProfile) _then)
+class __$$UserProfileImplCopyWithImpl<$Res>
+    extends _$UserProfileCopyWithImpl<$Res, _$UserProfileImpl>
+    implements _$$UserProfileImplCopyWith<$Res> {
+  __$$UserProfileImplCopyWithImpl(
+      _$UserProfileImpl _value, $Res Function(_$UserProfileImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -193,7 +193,7 @@ class __$$_UserProfileCopyWithImpl<$Res>
     Object? userType = null,
     Object? dob = null,
   }) {
-    return _then(_$_UserProfile(
+    return _then(_$UserProfileImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -245,8 +245,8 @@ class __$$_UserProfileCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserProfile implements _UserProfile {
-  const _$_UserProfile(
+class _$UserProfileImpl implements _UserProfile {
+  const _$UserProfileImpl(
       {@JsonKey(name: '\$id', includeIfNull: false) this.id,
       @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
@@ -260,8 +260,8 @@ class _$_UserProfile implements _UserProfile {
       @JsonKey(name: "user_type") this.userType = UserType.user,
       this.dob = ""});
 
-  factory _$_UserProfile.fromJson(Map<String, dynamic> json) =>
-      _$$_UserProfileFromJson(json);
+  factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserProfileImplFromJson(json);
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -309,7 +309,7 @@ class _$_UserProfile implements _UserProfile {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserProfile &&
+            other is _$UserProfileImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -349,12 +349,12 @@ class _$_UserProfile implements _UserProfile {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserProfileCopyWith<_$_UserProfile> get copyWith =>
-      __$$_UserProfileCopyWithImpl<_$_UserProfile>(this, _$identity);
+  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
+      __$$UserProfileImplCopyWithImpl<_$UserProfileImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserProfileToJson(
+    return _$$UserProfileImplToJson(
       this,
     );
   }
@@ -362,28 +362,23 @@ class _$_UserProfile implements _UserProfile {
 
 abstract class _UserProfile implements UserProfile {
   const factory _UserProfile(
-      {@JsonKey(name: '\$id', includeIfNull: false)
-          final String? id,
+      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
       @JsonKey(name: '\$createdAt', includeIfNull: false)
-          final String? createdAt,
+      final String? createdAt,
       @JsonKey(name: '\$updatedAt', includeIfNull: false)
-          final String? updatedAt,
-      @JsonKey(name: "first_name")
-          final String firstName,
-      @JsonKey(name: "last_name")
-          final dynamic lastName,
+      final String? updatedAt,
+      @JsonKey(name: "first_name") final String firstName,
+      @JsonKey(name: "last_name") final dynamic lastName,
       final String username,
       final String address,
       final String pincode,
       final String city,
-      @JsonKey(includeIfNull: false)
-          final String? avatar,
-      @JsonKey(name: "user_type")
-          final UserType userType,
-      final String dob}) = _$_UserProfile;
+      @JsonKey(includeIfNull: false) final String? avatar,
+      @JsonKey(name: "user_type") final UserType userType,
+      final String dob}) = _$UserProfileImpl;
 
   factory _UserProfile.fromJson(Map<String, dynamic> json) =
-      _$_UserProfile.fromJson;
+      _$UserProfileImpl.fromJson;
 
   @override
   @JsonKey(name: '\$id', includeIfNull: false)
@@ -418,6 +413,6 @@ abstract class _UserProfile implements UserProfile {
   String get dob;
   @override
   @JsonKey(ignore: true)
-  _$$_UserProfileCopyWith<_$_UserProfile> get copyWith =>
+  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

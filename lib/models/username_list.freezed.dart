@@ -68,22 +68,22 @@ class _$UsernameListCopyWithImpl<$Res, $Val extends UsernameList>
 }
 
 /// @nodoc
-abstract class _$$_UsernameListCopyWith<$Res>
+abstract class _$$UsernameListImplCopyWith<$Res>
     implements $UsernameListCopyWith<$Res> {
-  factory _$$_UsernameListCopyWith(
-          _$_UsernameList value, $Res Function(_$_UsernameList) then) =
-      __$$_UsernameListCopyWithImpl<$Res>;
+  factory _$$UsernameListImplCopyWith(
+          _$UsernameListImpl value, $Res Function(_$UsernameListImpl) then) =
+      __$$UsernameListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int total, List<Username> usernames});
 }
 
 /// @nodoc
-class __$$_UsernameListCopyWithImpl<$Res>
-    extends _$UsernameListCopyWithImpl<$Res, _$_UsernameList>
-    implements _$$_UsernameListCopyWith<$Res> {
-  __$$_UsernameListCopyWithImpl(
-      _$_UsernameList _value, $Res Function(_$_UsernameList) _then)
+class __$$UsernameListImplCopyWithImpl<$Res>
+    extends _$UsernameListCopyWithImpl<$Res, _$UsernameListImpl>
+    implements _$$UsernameListImplCopyWith<$Res> {
+  __$$UsernameListImplCopyWithImpl(
+      _$UsernameListImpl _value, $Res Function(_$UsernameListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_UsernameListCopyWithImpl<$Res>
     Object? total = null,
     Object? usernames = null,
   }) {
-    return _then(_$_UsernameList(
+    return _then(_$UsernameListImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_UsernameListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsernameList implements _UsernameList {
-  const _$_UsernameList(
+class _$UsernameListImpl implements _UsernameList {
+  const _$UsernameListImpl(
       {this.total = 0, final List<Username> usernames = const []})
       : _usernames = usernames;
 
-  factory _$_UsernameList.fromJson(Map<String, dynamic> json) =>
-      _$$_UsernameListFromJson(json);
+  factory _$UsernameListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsernameListImplFromJson(json);
 
   @override
   @JsonKey()
@@ -136,7 +136,7 @@ class _$_UsernameList implements _UsernameList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsernameList &&
+            other is _$UsernameListImpl &&
             (identical(other.total, total) || other.total == total) &&
             const DeepCollectionEquality()
                 .equals(other._usernames, _usernames));
@@ -150,12 +150,12 @@ class _$_UsernameList implements _UsernameList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsernameListCopyWith<_$_UsernameList> get copyWith =>
-      __$$_UsernameListCopyWithImpl<_$_UsernameList>(this, _$identity);
+  _$$UsernameListImplCopyWith<_$UsernameListImpl> get copyWith =>
+      __$$UsernameListImplCopyWithImpl<_$UsernameListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsernameListToJson(
+    return _$$UsernameListImplToJson(
       this,
     );
   }
@@ -163,10 +163,10 @@ class _$_UsernameList implements _UsernameList {
 
 abstract class _UsernameList implements UsernameList {
   const factory _UsernameList(
-      {final int total, final List<Username> usernames}) = _$_UsernameList;
+      {final int total, final List<Username> usernames}) = _$UsernameListImpl;
 
   factory _UsernameList.fromJson(Map<String, dynamic> json) =
-      _$_UsernameList.fromJson;
+      _$UsernameListImpl.fromJson;
 
   @override
   int get total;
@@ -174,6 +174,6 @@ abstract class _UsernameList implements UsernameList {
   List<Username> get usernames;
   @override
   @JsonKey(ignore: true)
-  _$$_UsernameListCopyWith<_$_UsernameList> get copyWith =>
+  _$$UsernameListImplCopyWith<_$UsernameListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

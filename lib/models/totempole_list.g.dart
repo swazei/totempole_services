@@ -6,8 +6,8 @@ part of 'totempole_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TotempoleList _$$_TotempoleListFromJson(Map<String, dynamic> json) =>
-    _$_TotempoleList(
+_$TotempoleListImpl _$$TotempoleListImplFromJson(Map<String, dynamic> json) =>
+    _$TotempoleListImpl(
       totempoles: (json['totempoles'] as List<dynamic>?)
               ?.map((e) => Totempole.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -15,7 +15,7 @@ _$_TotempoleList _$$_TotempoleListFromJson(Map<String, dynamic> json) =>
       total: json['total'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_TotempoleListToJson(_$_TotempoleList instance) =>
+Map<String, dynamic> _$$TotempoleListImplToJson(_$TotempoleListImpl instance) =>
     <String, dynamic>{
       'totempoles': instance.totempoles,
       'total': instance.total,

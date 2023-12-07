@@ -16,7 +16,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       userType: (json['labels'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
               .toList() ??
-          const [UserType.user],
+          const [],
       passwordUpdate: json['passwordUpdate'] as String? ?? "0",
       email: json['email'] as String? ?? "",
       phone: json['phone'] as String? ?? "",
@@ -49,9 +49,9 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     };
 
 const _$UserTypeEnumMap = {
-  UserType.user: 'USER',
-  UserType.vendor: 'VENDOR',
-  UserType.event: 'EVENT',
+  UserType.USER: 'USER',
+  UserType.VENDOR: 'VENDOR',
+  UserType.EVENT: 'EVENT',
 };
 
 _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>

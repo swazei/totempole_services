@@ -35,7 +35,7 @@ mixin _$UserProfile {
   String get pincode => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
-  @JsonKey(name: "user_type")
+  @JsonKey(name: "")
   UserType get userType => throw _privateConstructorUsedError;
   String get dob => throw _privateConstructorUsedError;
 
@@ -62,7 +62,7 @@ abstract class $UserProfileCopyWith<$Res> {
       String pincode,
       String city,
       String? avatar,
-      @JsonKey(name: "user_type") UserType userType,
+      @JsonKey(name: "") UserType userType,
       String dob});
 }
 
@@ -164,7 +164,7 @@ abstract class _$$UserProfileImplCopyWith<$Res>
       String pincode,
       String city,
       String? avatar,
-      @JsonKey(name: "user_type") UserType userType,
+      @JsonKey(name: "") UserType userType,
       String dob});
 }
 
@@ -256,7 +256,7 @@ class _$UserProfileImpl implements _UserProfile {
       this.pincode = "",
       this.city = "",
       this.avatar,
-      @JsonKey(name: "user_type") this.userType = UserType.user,
+      @JsonKey(name: "") this.userType = UserType.USER,
       this.dob = ""});
 
   factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
@@ -292,7 +292,7 @@ class _$UserProfileImpl implements _UserProfile {
   @override
   final String? avatar;
   @override
-  @JsonKey(name: "user_type")
+  @JsonKey(name: "")
   final UserType userType;
   @override
   @JsonKey()
@@ -370,7 +370,7 @@ abstract class _UserProfile implements UserProfile {
       final String pincode,
       final String city,
       final String? avatar,
-      @JsonKey(name: "user_type") final UserType userType,
+      @JsonKey(name: "") final UserType userType,
       final String dob}) = _$UserProfileImpl;
 
   factory _UserProfile.fromJson(Map<String, dynamic> json) =
@@ -402,7 +402,7 @@ abstract class _UserProfile implements UserProfile {
   @override
   String? get avatar;
   @override
-  @JsonKey(name: "user_type")
+  @JsonKey(name: "")
   UserType get userType;
   @override
   String get dob;

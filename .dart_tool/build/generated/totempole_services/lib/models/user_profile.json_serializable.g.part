@@ -14,8 +14,8 @@ _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
       pincode: json['pincode'] as String? ?? "",
       city: json['city'] as String? ?? "",
       avatar: json['avatar'] as String?,
-      userType: $enumDecodeNullable(_$UserTypeEnumMap, json['user_type']) ??
-          UserType.user,
+      userType:
+          $enumDecodeNullable(_$UserTypeEnumMap, json['']) ?? UserType.USER,
       dob: json['dob'] as String? ?? "",
     );
 
@@ -31,12 +31,12 @@ Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
       'pincode': instance.pincode,
       'city': instance.city,
       'avatar': instance.avatar,
-      'user_type': _$UserTypeEnumMap[instance.userType]!,
+      '': _$UserTypeEnumMap[instance.userType]!,
       'dob': instance.dob,
     };
 
 const _$UserTypeEnumMap = {
-  UserType.user: 'USER',
-  UserType.vendor: 'VENDOR',
-  UserType.event: 'EVENT',
+  UserType.USER: 'USER',
+  UserType.VENDOR: 'VENDOR',
+  UserType.EVENT: 'EVENT',
 };

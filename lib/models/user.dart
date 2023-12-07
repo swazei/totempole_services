@@ -15,7 +15,7 @@ class User with _$User {
     @Default("") String name,
     @Default("0") String registration,
     @Default(false) bool status,
-    @Default([UserType.USER]) @JsonKey(name: 'labels') List<UserType> userType,
+    @JsonKey(name: 'labels') @Default([]) List<UserType> userType,
     @Default("0") String passwordUpdate,
     @Default("") String email,
     @Default("") String phone,

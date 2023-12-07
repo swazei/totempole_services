@@ -303,8 +303,7 @@ class _$UserImpl implements _User {
       this.name = "",
       this.registration = "0",
       this.status = false,
-      @JsonKey(name: 'labels')
-      final List<UserType> userType = const [UserType.user],
+      @JsonKey(name: 'labels') final List<UserType> userType = const [],
       this.passwordUpdate = "0",
       this.email = "",
       this.phone = "",

@@ -19,10 +19,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       emailVerification: json['emailVerification'] as bool? ?? false,
       phoneVerification: json['phoneVerification'] as bool? ?? false,
       pref: json['pref'] == null
-          ? const UserPref()
+          ? null
           : UserPref.fromJson(json['pref'] as Map<String, dynamic>),
       userProfile: json['userProfile'] == null
-          ? const UserProfile()
+          ? null
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 

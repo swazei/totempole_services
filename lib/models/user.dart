@@ -21,8 +21,8 @@ class User with _$User {
     @Default("") String phone,
     @Default(false) bool emailVerification,
     @Default(false) bool phoneVerification,
-    @Default(UserPref()) UserPref pref,
-    @Default(UserProfile()) UserProfile? userProfile,
+    UserPref? pref,
+    UserProfile? userProfile,
   }) = _User;
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

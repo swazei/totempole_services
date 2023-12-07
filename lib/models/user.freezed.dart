@@ -36,7 +36,7 @@ mixin _$User {
   String get phone => throw _privateConstructorUsedError;
   bool get emailVerification => throw _privateConstructorUsedError;
   bool get phoneVerification => throw _privateConstructorUsedError;
-  UserPref get pref => throw _privateConstructorUsedError;
+  UserPref? get pref => throw _privateConstructorUsedError;
   UserProfile? get userProfile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -62,10 +62,10 @@ abstract class $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref pref,
+      UserPref? pref,
       UserProfile? userProfile});
 
-  $UserPrefCopyWith<$Res> get pref;
+  $UserPrefCopyWith<$Res>? get pref;
   $UserProfileCopyWith<$Res>? get userProfile;
 }
 
@@ -94,7 +94,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? pref = null,
+    Object? pref = freezed,
     Object? userProfile = freezed,
   }) {
     return _then(_value.copyWith(
@@ -146,10 +146,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      pref: null == pref
+      pref: freezed == pref
           ? _value.pref
           : pref // ignore: cast_nullable_to_non_nullable
-              as UserPref,
+              as UserPref?,
       userProfile: freezed == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
@@ -159,8 +159,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserPrefCopyWith<$Res> get pref {
-    return $UserPrefCopyWith<$Res>(_value.pref, (value) {
+  $UserPrefCopyWith<$Res>? get pref {
+    if (_value.pref == null) {
+      return null;
+    }
+
+    return $UserPrefCopyWith<$Res>(_value.pref!, (value) {
       return _then(_value.copyWith(pref: value) as $Val);
     });
   }
@@ -198,11 +202,11 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref pref,
+      UserPref? pref,
       UserProfile? userProfile});
 
   @override
-  $UserPrefCopyWith<$Res> get pref;
+  $UserPrefCopyWith<$Res>? get pref;
   @override
   $UserProfileCopyWith<$Res>? get userProfile;
 }
@@ -229,7 +233,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? pref = null,
+    Object? pref = freezed,
     Object? userProfile = freezed,
   }) {
     return _then(_$UserImpl(
@@ -281,10 +285,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      pref: null == pref
+      pref: freezed == pref
           ? _value.pref
           : pref // ignore: cast_nullable_to_non_nullable
-              as UserPref,
+              as UserPref?,
       userProfile: freezed == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
@@ -309,8 +313,8 @@ class _$UserImpl implements _User {
       this.phone = "",
       this.emailVerification = false,
       this.phoneVerification = false,
-      this.pref = const UserPref(),
-      this.userProfile = const UserProfile()})
+      this.pref,
+      this.userProfile})
       : _userType = userType;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -359,10 +363,8 @@ class _$UserImpl implements _User {
   @JsonKey()
   final bool phoneVerification;
   @override
-  @JsonKey()
-  final UserPref pref;
+  final UserPref? pref;
   @override
-  @JsonKey()
   final UserProfile? userProfile;
 
   @override
@@ -445,7 +447,7 @@ abstract class _User implements User {
       final String phone,
       final bool emailVerification,
       final bool phoneVerification,
-      final UserPref pref,
+      final UserPref? pref,
       final UserProfile? userProfile}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -479,7 +481,7 @@ abstract class _User implements User {
   @override
   bool get phoneVerification;
   @override
-  UserPref get pref;
+  UserPref? get pref;
   @override
   UserProfile? get userProfile;
   @override

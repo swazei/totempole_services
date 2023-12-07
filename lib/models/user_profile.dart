@@ -9,15 +9,15 @@ class UserProfile with _$UserProfile {
     @JsonKey(name: '\$id') String? id,
     @JsonKey(name: '\$createdAt') String? createdAt,
     @JsonKey(name: '\$updatedAt') String? updatedAt,
-    @Default("") @JsonKey(name: "first_name") String firstName,
-    @Default("") @JsonKey(name: "last_name") lastName,
-    @Default("Anonymous") String username,
+    @JsonKey(name: "first_name") String? firstName,
+    @JsonKey(name: "last_name") String? lastName,
+    required String username,
     @Default("") String address,
-    @Default("") String pincode,
-    @Default("") String city,
+    String? pincode,
+    String? city,
     String? avatar,
-    @Default(UserType.USER) @JsonKey(name: "") UserType userType,
-    @Default("") String dob,
+    @Default([]) @JsonKey(name: "user_type") List<UserType> userType,
+    DateTime? dob,
   }) = _UserProfile;
   factory UserProfile.fromJson(Map<String, dynamic> json) =>
       _$UserProfileFromJson(json);

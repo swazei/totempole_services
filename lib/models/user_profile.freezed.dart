@@ -27,17 +27,17 @@ mixin _$UserProfile {
   @JsonKey(name: '\$updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: "first_name")
-  String get firstName => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: "last_name")
-  dynamic get lastName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  String get pincode => throw _privateConstructorUsedError;
-  String get city => throw _privateConstructorUsedError;
+  String? get pincode => throw _privateConstructorUsedError;
+  String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
-  @JsonKey(name: "")
-  UserType get userType => throw _privateConstructorUsedError;
-  String get dob => throw _privateConstructorUsedError;
+  @JsonKey(name: "user_type")
+  List<UserType> get userType => throw _privateConstructorUsedError;
+  DateTime? get dob => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,15 +55,15 @@ abstract class $UserProfileCopyWith<$Res> {
       {@JsonKey(name: '\$id') String? id,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
-      @JsonKey(name: "first_name") String firstName,
-      @JsonKey(name: "last_name") dynamic lastName,
+      @JsonKey(name: "first_name") String? firstName,
+      @JsonKey(name: "last_name") String? lastName,
       String username,
       String address,
-      String pincode,
-      String city,
+      String? pincode,
+      String? city,
       String? avatar,
-      @JsonKey(name: "") UserType userType,
-      String dob});
+      @JsonKey(name: "user_type") List<UserType> userType,
+      DateTime? dob});
 }
 
 /// @nodoc
@@ -82,15 +82,15 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
     Object? id = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? firstName = null,
+    Object? firstName = freezed,
     Object? lastName = freezed,
     Object? username = null,
     Object? address = null,
-    Object? pincode = null,
-    Object? city = null,
+    Object? pincode = freezed,
+    Object? city = freezed,
     Object? avatar = freezed,
     Object? userType = null,
-    Object? dob = null,
+    Object? dob = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -105,14 +105,14 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: null == firstName
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lastName: freezed == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -121,14 +121,14 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      pincode: null == pincode
+      pincode: freezed == pincode
           ? _value.pincode
           : pincode // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
+              as String?,
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -136,11 +136,11 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
-      dob: null == dob
+              as List<UserType>,
+      dob: freezed == dob
           ? _value.dob
           : dob // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -157,15 +157,15 @@ abstract class _$$UserProfileImplCopyWith<$Res>
       {@JsonKey(name: '\$id') String? id,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
-      @JsonKey(name: "first_name") String firstName,
-      @JsonKey(name: "last_name") dynamic lastName,
+      @JsonKey(name: "first_name") String? firstName,
+      @JsonKey(name: "last_name") String? lastName,
       String username,
       String address,
-      String pincode,
-      String city,
+      String? pincode,
+      String? city,
       String? avatar,
-      @JsonKey(name: "") UserType userType,
-      String dob});
+      @JsonKey(name: "user_type") List<UserType> userType,
+      DateTime? dob});
 }
 
 /// @nodoc
@@ -182,15 +182,15 @@ class __$$UserProfileImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? firstName = null,
+    Object? firstName = freezed,
     Object? lastName = freezed,
     Object? username = null,
     Object? address = null,
-    Object? pincode = null,
-    Object? city = null,
+    Object? pincode = freezed,
+    Object? city = freezed,
     Object? avatar = freezed,
     Object? userType = null,
-    Object? dob = null,
+    Object? dob = freezed,
   }) {
     return _then(_$UserProfileImpl(
       id: freezed == id
@@ -205,11 +205,14 @@ class __$$UserProfileImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: null == firstName
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: freezed == lastName ? _value.lastName! : lastName,
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -218,26 +221,26 @@ class __$$UserProfileImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      pincode: null == pincode
+      pincode: freezed == pincode
           ? _value.pincode
           : pincode // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
+              as String?,
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       userType: null == userType
-          ? _value.userType
+          ? _value._userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
-      dob: null == dob
+              as List<UserType>,
+      dob: freezed == dob
           ? _value.dob
           : dob // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime?,
     ));
   }
 }
@@ -249,15 +252,16 @@ class _$UserProfileImpl implements _UserProfile {
       {@JsonKey(name: '\$id') this.id,
       @JsonKey(name: '\$createdAt') this.createdAt,
       @JsonKey(name: '\$updatedAt') this.updatedAt,
-      @JsonKey(name: "first_name") this.firstName = "",
-      @JsonKey(name: "last_name") this.lastName = "",
-      this.username = "Anonymous",
+      @JsonKey(name: "first_name") this.firstName,
+      @JsonKey(name: "last_name") this.lastName,
+      required this.username,
       this.address = "",
-      this.pincode = "",
-      this.city = "",
+      this.pincode,
+      this.city,
       this.avatar,
-      @JsonKey(name: "") this.userType = UserType.USER,
-      this.dob = ""});
+      @JsonKey(name: "user_type") final List<UserType> userType = const [],
+      this.dob})
+      : _userType = userType;
 
   factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserProfileImplFromJson(json);
@@ -273,30 +277,32 @@ class _$UserProfileImpl implements _UserProfile {
   final String? updatedAt;
   @override
   @JsonKey(name: "first_name")
-  final String firstName;
+  final String? firstName;
   @override
   @JsonKey(name: "last_name")
-  final dynamic lastName;
+  final String? lastName;
   @override
-  @JsonKey()
   final String username;
   @override
   @JsonKey()
   final String address;
   @override
-  @JsonKey()
-  final String pincode;
+  final String? pincode;
   @override
-  @JsonKey()
-  final String city;
+  final String? city;
   @override
   final String? avatar;
+  final List<UserType> _userType;
   @override
-  @JsonKey(name: "")
-  final UserType userType;
+  @JsonKey(name: "user_type")
+  List<UserType> get userType {
+    if (_userType is EqualUnmodifiableListView) return _userType;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userType);
+  }
+
   @override
-  @JsonKey()
-  final String dob;
+  final DateTime? dob;
 
   @override
   String toString() {
@@ -315,15 +321,15 @@ class _$UserProfileImpl implements _UserProfile {
                 other.updatedAt == updatedAt) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.pincode, pincode) || other.pincode == pincode) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
-            (identical(other.userType, userType) ||
-                other.userType == userType) &&
+            const DeepCollectionEquality().equals(other._userType, _userType) &&
             (identical(other.dob, dob) || other.dob == dob));
   }
 
@@ -335,13 +341,13 @@ class _$UserProfileImpl implements _UserProfile {
       createdAt,
       updatedAt,
       firstName,
-      const DeepCollectionEquality().hash(lastName),
+      lastName,
       username,
       address,
       pincode,
       city,
       avatar,
-      userType,
+      const DeepCollectionEquality().hash(_userType),
       dob);
 
   @JsonKey(ignore: true)
@@ -363,15 +369,15 @@ abstract class _UserProfile implements UserProfile {
       {@JsonKey(name: '\$id') final String? id,
       @JsonKey(name: '\$createdAt') final String? createdAt,
       @JsonKey(name: '\$updatedAt') final String? updatedAt,
-      @JsonKey(name: "first_name") final String firstName,
-      @JsonKey(name: "last_name") final dynamic lastName,
-      final String username,
+      @JsonKey(name: "first_name") final String? firstName,
+      @JsonKey(name: "last_name") final String? lastName,
+      required final String username,
       final String address,
-      final String pincode,
-      final String city,
+      final String? pincode,
+      final String? city,
       final String? avatar,
-      @JsonKey(name: "") final UserType userType,
-      final String dob}) = _$UserProfileImpl;
+      @JsonKey(name: "user_type") final List<UserType> userType,
+      final DateTime? dob}) = _$UserProfileImpl;
 
   factory _UserProfile.fromJson(Map<String, dynamic> json) =
       _$UserProfileImpl.fromJson;
@@ -387,25 +393,25 @@ abstract class _UserProfile implements UserProfile {
   String? get updatedAt;
   @override
   @JsonKey(name: "first_name")
-  String get firstName;
+  String? get firstName;
   @override
   @JsonKey(name: "last_name")
-  dynamic get lastName;
+  String? get lastName;
   @override
   String get username;
   @override
   String get address;
   @override
-  String get pincode;
+  String? get pincode;
   @override
-  String get city;
+  String? get city;
   @override
   String? get avatar;
   @override
-  @JsonKey(name: "")
-  UserType get userType;
+  @JsonKey(name: "user_type")
+  List<UserType> get userType;
   @override
-  String get dob;
+  DateTime? get dob;
   @override
   @JsonKey(ignore: true)
   _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>

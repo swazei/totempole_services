@@ -20,8 +20,8 @@ Future<void> start() async {
   // final usersService = UsersService(users: users);
   // final totempoleService = TotempoleService(database: database);
   // await totempoleService.createFakeTotempoles();
-  //final profileService = ProfileService(database: database);
-  //final usernameService = UsernameService(database: database);
+  final profileService = ProfileService(database: database);
+  final usernameService = UsernameService(database: database);
   /*  final notificationService = NotificationService(database: database);
   for (var i = 0; i < 5; i++) {
     final no = AppNotification(
@@ -47,9 +47,23 @@ Future<void> start() async {
       await UserAvatarStorageService(storage: storage).listAllUserAvatarFiles();
 
   print(x.files.length); */
-  final u = await users.list();
-  final uu = u.users.map((e) => User.fromJson(e.toMap())).toList();
-  print(uu[3].userType.first.name);
+  // final u = await users.list();
+  // final uu = u.users.map((e) => User.fromJson(e.toMap())).toList();
+  // print(uu[3].userType.first.name);
+
+  final u = await users.create(
+    userId: ID.unique(),
+    name: "test",
+    email: "test@gmail.com",
+    password: "testest123",
+  );
+
+  await users.updateLabels(userId: u.$id, labels: [UserType.USER.name]);
+
+  final x = await profileService.getAllProfiles();
+  final y = await usernameService.getAllUsernames();
+  print(x.length);
+  print(y.length);
 }
 
 void main(List<String> args) async {

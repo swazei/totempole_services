@@ -20,25 +20,23 @@ AppNotification _$AppNotificationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppNotification {
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get to => throw _privateConstructorUsedError;
   String get from => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
   String? get subtitle => throw _privateConstructorUsedError;
-  @JsonKey(name: "totempole_id", includeIfNull: false)
+  @JsonKey(name: "totempole_id")
   String? get totempoleId => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
   String? get image => throw _privateConstructorUsedError;
   Type get type => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   String? get collectionId => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   String? get databaseId => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,19 +52,18 @@ abstract class $AppNotificationCopyWith<$Res> {
       _$AppNotificationCopyWithImpl<$Res, AppNotification>;
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
+      {@JsonKey(name: "\$id") String? id,
       String title,
       String to,
       String from,
-      @JsonKey(includeIfNull: false) String? subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
-      @JsonKey(includeIfNull: false) String? image,
+      String? subtitle,
+      @JsonKey(name: "totempole_id") String? totempoleId,
+      String? image,
       Type type,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
+      @JsonKey(name: "\$collectionId") String? collectionId,
+      @JsonKey(name: "\$databaseId") String? databaseId,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt});
 }
 
 /// @nodoc
@@ -157,19 +154,18 @@ abstract class _$$AppNotificationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
+      {@JsonKey(name: "\$id") String? id,
       String title,
       String to,
       String from,
-      @JsonKey(includeIfNull: false) String? subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
-      @JsonKey(includeIfNull: false) String? image,
+      String? subtitle,
+      @JsonKey(name: "totempole_id") String? totempoleId,
+      String? image,
       Type type,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
+      @JsonKey(name: "\$collectionId") String? collectionId,
+      @JsonKey(name: "\$databaseId") String? databaseId,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt});
 }
 
 /// @nodoc
@@ -253,24 +249,24 @@ class __$$AppNotificationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppNotificationImpl implements _AppNotification {
   const _$AppNotificationImpl(
-      {@JsonKey(name: "\$id", includeIfNull: false) this.id,
+      {@JsonKey(name: "\$id") this.id,
       required this.title,
       required this.to,
       required this.from,
-      @JsonKey(includeIfNull: false) this.subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false) this.totempoleId,
-      @JsonKey(includeIfNull: false) this.image,
+      this.subtitle,
+      @JsonKey(name: "totempole_id") this.totempoleId,
+      this.image,
       this.type = Type.general,
-      @JsonKey(name: "\$collectionId", includeIfNull: false) this.collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) this.databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) this.createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) this.updatedAt});
+      @JsonKey(name: "\$collectionId") this.collectionId,
+      @JsonKey(name: "\$databaseId") this.databaseId,
+      @JsonKey(name: "\$createdAt") this.createdAt,
+      @JsonKey(name: "\$updatedAt") this.updatedAt});
 
   factory _$AppNotificationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppNotificationImplFromJson(json);
 
   @override
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   final String? id;
   @override
   final String title;
@@ -279,28 +275,26 @@ class _$AppNotificationImpl implements _AppNotification {
   @override
   final String from;
   @override
-  @JsonKey(includeIfNull: false)
   final String? subtitle;
   @override
-  @JsonKey(name: "totempole_id", includeIfNull: false)
+  @JsonKey(name: "totempole_id")
   final String? totempoleId;
   @override
-  @JsonKey(includeIfNull: false)
   final String? image;
   @override
   @JsonKey()
   final Type type;
   @override
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   final String? collectionId;
   @override
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   final String? databaseId;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   final String? createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   final String? updatedAt;
 
   @override
@@ -355,29 +349,25 @@ class _$AppNotificationImpl implements _AppNotification {
 
 abstract class _AppNotification implements AppNotification {
   const factory _AppNotification(
-      {@JsonKey(name: "\$id", includeIfNull: false) final String? id,
-      required final String title,
-      required final String to,
-      required final String from,
-      @JsonKey(includeIfNull: false) final String? subtitle,
-      @JsonKey(name: "totempole_id", includeIfNull: false)
-      final String? totempoleId,
-      @JsonKey(includeIfNull: false) final String? image,
-      final Type type,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      final String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-      final String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-      final String? updatedAt}) = _$AppNotificationImpl;
+          {@JsonKey(name: "\$id") final String? id,
+          required final String title,
+          required final String to,
+          required final String from,
+          final String? subtitle,
+          @JsonKey(name: "totempole_id") final String? totempoleId,
+          final String? image,
+          final Type type,
+          @JsonKey(name: "\$collectionId") final String? collectionId,
+          @JsonKey(name: "\$databaseId") final String? databaseId,
+          @JsonKey(name: "\$createdAt") final String? createdAt,
+          @JsonKey(name: "\$updatedAt") final String? updatedAt}) =
+      _$AppNotificationImpl;
 
   factory _AppNotification.fromJson(Map<String, dynamic> json) =
       _$AppNotificationImpl.fromJson;
 
   @override
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   String? get id;
   @override
   String get title;
@@ -386,27 +376,25 @@ abstract class _AppNotification implements AppNotification {
   @override
   String get from;
   @override
-  @JsonKey(includeIfNull: false)
   String? get subtitle;
   @override
-  @JsonKey(name: "totempole_id", includeIfNull: false)
+  @JsonKey(name: "totempole_id")
   String? get totempoleId;
   @override
-  @JsonKey(includeIfNull: false)
   String? get image;
   @override
   Type get type;
   @override
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   String? get collectionId;
   @override
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   String? get databaseId;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt;
   @override
   @JsonKey(ignore: true)

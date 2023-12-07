@@ -14,18 +14,10 @@ _$UsernameImpl _$$UsernameImplFromJson(Map<String, dynamic> json) =>
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$UsernameImplToJson(_$UsernameImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(r'$id', instance.id);
-  writeNotNull(r'$createdAt', instance.createdAt);
-  writeNotNull(r'$updatedAt', instance.updatedAt);
-  val['username'] = instance.username;
-  return val;
-}
+Map<String, dynamic> _$$UsernameImplToJson(_$UsernameImpl instance) =>
+    <String, dynamic>{
+      r'$id': instance.id,
+      r'$createdAt': instance.createdAt,
+      r'$updatedAt': instance.updatedAt,
+      'username': instance.username,
+    };

@@ -20,11 +20,11 @@ Username _$UsernameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Username {
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
 
@@ -40,9 +40,9 @@ abstract class $UsernameCopyWith<$Res> {
       _$UsernameCopyWithImpl<$Res, Username>;
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       String username});
 }
 
@@ -94,9 +94,9 @@ abstract class _$$UsernameImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       String username});
 }
 
@@ -141,22 +141,22 @@ class __$$UsernameImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UsernameImpl implements _Username {
   const _$UsernameImpl(
-      {@JsonKey(name: '\$id', includeIfNull: false) this.id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
+      {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: '\$createdAt') this.createdAt,
+      @JsonKey(name: '\$updatedAt') this.updatedAt,
       required this.username});
 
   factory _$UsernameImpl.fromJson(Map<String, dynamic> json) =>
       _$$UsernameImplFromJson(json);
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   final String? id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   final String? createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   final String? updatedAt;
   @override
   final String username;
@@ -201,24 +201,22 @@ class _$UsernameImpl implements _Username {
 
 abstract class _Username implements Username {
   const factory _Username(
-      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-      final String? updatedAt,
+      {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: '\$createdAt') final String? createdAt,
+      @JsonKey(name: '\$updatedAt') final String? updatedAt,
       required final String username}) = _$UsernameImpl;
 
   factory _Username.fromJson(Map<String, dynamic> json) =
       _$UsernameImpl.fromJson;
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt;
   @override
   String get username;

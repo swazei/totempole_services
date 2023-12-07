@@ -20,29 +20,21 @@ _$AppNotificationImpl _$$AppNotificationImplFromJson(
     );
 
 Map<String, dynamic> _$$AppNotificationImplToJson(
-    _$AppNotificationImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(r'$id', instance.id);
-  val['title'] = instance.title;
-  val['to'] = instance.to;
-  val['from'] = instance.from;
-  writeNotNull('subtitle', instance.subtitle);
-  writeNotNull('totempole_id', instance.totempoleId);
-  writeNotNull('image', instance.image);
-  val['type'] = _$TypeEnumMap[instance.type]!;
-  writeNotNull(r'$collectionId', instance.collectionId);
-  writeNotNull(r'$databaseId', instance.databaseId);
-  writeNotNull(r'$createdAt', instance.createdAt);
-  writeNotNull(r'$updatedAt', instance.updatedAt);
-  return val;
-}
+        _$AppNotificationImpl instance) =>
+    <String, dynamic>{
+      r'$id': instance.id,
+      'title': instance.title,
+      'to': instance.to,
+      'from': instance.from,
+      'subtitle': instance.subtitle,
+      'totempole_id': instance.totempoleId,
+      'image': instance.image,
+      'type': _$TypeEnumMap[instance.type]!,
+      r'$collectionId': instance.collectionId,
+      r'$databaseId': instance.databaseId,
+      r'$createdAt': instance.createdAt,
+      r'$updatedAt': instance.updatedAt,
+    };
 
 const _$TypeEnumMap = {
   Type.newtotempole: 'NEW_TOTEMPOLE',

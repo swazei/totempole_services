@@ -1,16 +1,25 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dart_appwrite/models.dart';
+import 'package:totempole_services/const.dart';
 
 class TotempoleStorageService {
   final Storage storage;
   const TotempoleStorageService({required this.storage});
 
   Future deleteTotempoleAvatarFile(String fileId) async {
-    await storage.deleteFile(bucketId: '6358cb9f9856542086c9', fileId: fileId);
+    await storage.deleteFile(
+      bucketId: developmentStorage,
+      fileId: fileId,
+    );
   }
 
   Future<FileList> listAllTotempoleFiles() async {
-    return await storage.listFiles(bucketId: '6358cb9f9856542086c9');
+    return await storage.listFiles(
+      bucketId: developmentStorage,
+      queries: [
+        Query.startsWith('name', 'totempole_avatar')
+      ], //TODO  file naming  [database or resource]_[resourceID
+    );
   }
 
   Future deleteAllTotemPoleAvtars() async {
@@ -21,6 +30,9 @@ class TotempoleStorageService {
   }
 
   Future deleteResourceFile(String fileId) async {
-    await storage.deleteFile(bucketId: '635187011992b2b43d94', fileId: fileId);
+    await storage.deleteFile(
+      bucketId: developmentStorage,
+      fileId: fileId,
+    );
   }
 }

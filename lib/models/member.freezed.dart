@@ -20,11 +20,11 @@ Member _$MemberFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Member {
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: "totempole_id")
   String get totempoleID => throw _privateConstructorUsedError;
@@ -43,9 +43,9 @@ abstract class $MemberCopyWith<$Res> {
       _$MemberCopyWithImpl<$Res, Member>;
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: "\$id") String? id,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt,
       @JsonKey(name: "totempole_id") String totempoleID,
       @JsonKey(name: "user_id") String userID,
       Status status});
@@ -108,9 +108,9 @@ abstract class _$$MemberImplCopyWith<$Res> implements $MemberCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "\$id", includeIfNull: false) String? id,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: "\$id") String? id,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt,
       @JsonKey(name: "totempole_id") String totempoleID,
       @JsonKey(name: "user_id") String userID,
       Status status});
@@ -167,9 +167,9 @@ class __$$MemberImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MemberImpl implements _Member {
   const _$MemberImpl(
-      {@JsonKey(name: "\$id", includeIfNull: false) this.id,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) this.createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) this.updatedAt,
+      {@JsonKey(name: "\$id") this.id,
+      @JsonKey(name: "\$createdAt") this.createdAt,
+      @JsonKey(name: "\$updatedAt") this.updatedAt,
       @JsonKey(name: "totempole_id") required this.totempoleID,
       @JsonKey(name: "user_id") required this.userID,
       this.status = Status.underProcess});
@@ -178,13 +178,13 @@ class _$MemberImpl implements _Member {
       _$$MemberImplFromJson(json);
 
   @override
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   final String? id;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   final String? createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   final String? updatedAt;
   @override
   @JsonKey(name: "totempole_id")
@@ -238,11 +238,9 @@ class _$MemberImpl implements _Member {
 
 abstract class _Member implements Member {
   const factory _Member(
-      {@JsonKey(name: "\$id", includeIfNull: false) final String? id,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-      final String? updatedAt,
+      {@JsonKey(name: "\$id") final String? id,
+      @JsonKey(name: "\$createdAt") final String? createdAt,
+      @JsonKey(name: "\$updatedAt") final String? updatedAt,
       @JsonKey(name: "totempole_id") required final String totempoleID,
       @JsonKey(name: "user_id") required final String userID,
       final Status status}) = _$MemberImpl;
@@ -250,13 +248,13 @@ abstract class _Member implements Member {
   factory _Member.fromJson(Map<String, dynamic> json) = _$MemberImpl.fromJson;
 
   @override
-  @JsonKey(name: "\$id", includeIfNull: false)
+  @JsonKey(name: "\$id")
   String? get id;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt;
   @override
   @JsonKey(name: "totempole_id")

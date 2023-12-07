@@ -20,11 +20,11 @@ UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserProfile {
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: "first_name")
   String get firstName => throw _privateConstructorUsedError;
@@ -34,7 +34,6 @@ mixin _$UserProfile {
   String get address => throw _privateConstructorUsedError;
   String get pincode => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
   String? get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: "user_type")
   UserType get userType => throw _privateConstructorUsedError;
@@ -53,16 +52,16 @@ abstract class $UserProfileCopyWith<$Res> {
       _$UserProfileCopyWithImpl<$Res, UserProfile>;
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       @JsonKey(name: "first_name") String firstName,
       @JsonKey(name: "last_name") dynamic lastName,
       String username,
       String address,
       String pincode,
       String city,
-      @JsonKey(includeIfNull: false) String? avatar,
+      String? avatar,
       @JsonKey(name: "user_type") UserType userType,
       String dob});
 }
@@ -155,16 +154,16 @@ abstract class _$$UserProfileImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       @JsonKey(name: "first_name") String firstName,
       @JsonKey(name: "last_name") dynamic lastName,
       String username,
       String address,
       String pincode,
       String city,
-      @JsonKey(includeIfNull: false) String? avatar,
+      String? avatar,
       @JsonKey(name: "user_type") UserType userType,
       String dob});
 }
@@ -247,16 +246,16 @@ class __$$UserProfileImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserProfileImpl implements _UserProfile {
   const _$UserProfileImpl(
-      {@JsonKey(name: '\$id', includeIfNull: false) this.id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
+      {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: '\$createdAt') this.createdAt,
+      @JsonKey(name: '\$updatedAt') this.updatedAt,
       @JsonKey(name: "first_name") this.firstName = "",
       @JsonKey(name: "last_name") this.lastName = "",
       this.username = "Anonymous",
       this.address = "",
       this.pincode = "",
       this.city = "",
-      @JsonKey(includeIfNull: false) this.avatar,
+      this.avatar,
       @JsonKey(name: "user_type") this.userType = UserType.user,
       this.dob = ""});
 
@@ -264,13 +263,13 @@ class _$UserProfileImpl implements _UserProfile {
       _$$UserProfileImplFromJson(json);
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   final String? id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   final String? createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   final String? updatedAt;
   @override
   @JsonKey(name: "first_name")
@@ -291,7 +290,6 @@ class _$UserProfileImpl implements _UserProfile {
   @JsonKey()
   final String city;
   @override
-  @JsonKey(includeIfNull: false)
   final String? avatar;
   @override
   @JsonKey(name: "user_type")
@@ -362,18 +360,16 @@ class _$UserProfileImpl implements _UserProfile {
 
 abstract class _UserProfile implements UserProfile {
   const factory _UserProfile(
-      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-      final String? updatedAt,
+      {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: '\$createdAt') final String? createdAt,
+      @JsonKey(name: '\$updatedAt') final String? updatedAt,
       @JsonKey(name: "first_name") final String firstName,
       @JsonKey(name: "last_name") final dynamic lastName,
       final String username,
       final String address,
       final String pincode,
       final String city,
-      @JsonKey(includeIfNull: false) final String? avatar,
+      final String? avatar,
       @JsonKey(name: "user_type") final UserType userType,
       final String dob}) = _$UserProfileImpl;
 
@@ -381,13 +377,13 @@ abstract class _UserProfile implements UserProfile {
       _$UserProfileImpl.fromJson;
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt;
   @override
   @JsonKey(name: "first_name")
@@ -404,7 +400,6 @@ abstract class _UserProfile implements UserProfile {
   @override
   String get city;
   @override
-  @JsonKey(includeIfNull: false)
   String? get avatar;
   @override
   @JsonKey(name: "user_type")

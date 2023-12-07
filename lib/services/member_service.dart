@@ -1,4 +1,5 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
+import 'package:totempole_services/const.dart';
 
 import '../models/models.dart';
 
@@ -8,8 +9,8 @@ class MemberService {
   MemberService({required this.totempoleID, required this.database});
   Future<MembersList> getFirstMemberList() async {
     final docs = await database.listDocuments(
-      databaseId: '6351859dee3a309dc94a', //DATABASEID
-      collectionId: '63ac349146e4f9371536', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB,
+      collectionId: memberCOL,
       queries: totempoleID.isNotEmpty
           ? [Query.equal('totempole_id', totempoleID)]
           : null,
@@ -20,8 +21,8 @@ class MemberService {
 
   Future<List<Member>> paginatedMemberList([int offset = 0]) async {
     final members = await database.listDocuments(
-      databaseId: '6351859dee3a309dc94a',
-      collectionId: '63ac349146e4f9371536',
+      databaseId: developmentDB,
+      collectionId: memberCOL,
       queries: totempoleID.isNotEmpty
           ? [Query.equal('totempole_id', totempoleID), Query.offset(offset)]
           : [Query.offset(offset)],
@@ -48,8 +49,8 @@ class MemberService {
     final members = await getAllMembersRelatedToTotempole();
     for (var member in members) {
       final res = await database.deleteDocument(
-        databaseId: '6351859dee3a309dc94a',
-        collectionId: '63ac349146e4f9371536',
+        databaseId: developmentDB,
+        collectionId: memberCOL,
         documentId: member.id!,
       );
     }

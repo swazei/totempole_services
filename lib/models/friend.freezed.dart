@@ -20,11 +20,11 @@ Friend _$FriendFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Friend {
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   bool get accepted => throw _privateConstructorUsedError;
   @JsonKey(name: 'requested_to_user_id')
@@ -32,9 +32,9 @@ mixin _$Friend {
   @JsonKey(name: 'requested_from_user_id')
   String get requestedFromUserId => throw _privateConstructorUsedError;
   bool get retained => throw _privateConstructorUsedError;
-  @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_to_user_profile')
   UserProfile? get requestedToUserProfile => throw _privateConstructorUsedError;
-  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_from_user_profile')
   UserProfile? get requestedFromUserProfile =>
       throw _privateConstructorUsedError;
 
@@ -49,16 +49,16 @@ abstract class $FriendCopyWith<$Res> {
       _$FriendCopyWithImpl<$Res, Friend>;
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       bool accepted,
       @JsonKey(name: 'requested_to_user_id') String requestedToUserId,
       @JsonKey(name: 'requested_from_user_id') String requestedFromUserId,
       bool retained,
-      @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_to_user_profile')
       UserProfile? requestedToUserProfile,
-      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_from_user_profile')
       UserProfile? requestedFromUserProfile});
 
   $UserProfileCopyWith<$Res>? get requestedToUserProfile;
@@ -162,16 +162,16 @@ abstract class _$$FriendImplCopyWith<$Res> implements $FriendCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       bool accepted,
       @JsonKey(name: 'requested_to_user_id') String requestedToUserId,
       @JsonKey(name: 'requested_from_user_id') String requestedFromUserId,
       bool retained,
-      @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_to_user_profile')
       UserProfile? requestedToUserProfile,
-      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_from_user_profile')
       UserProfile? requestedFromUserProfile});
 
   @override
@@ -246,30 +246,29 @@ class __$$FriendImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FriendImpl implements _Friend {
   const _$FriendImpl(
-      {@JsonKey(name: '\$id', includeIfNull: false) this.id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
+      {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: '\$createdAt') this.createdAt,
+      @JsonKey(name: '\$updatedAt') this.updatedAt,
       this.accepted = false,
       @JsonKey(name: 'requested_to_user_id') required this.requestedToUserId,
       @JsonKey(name: 'requested_from_user_id')
       required this.requestedFromUserId,
       this.retained = false,
-      @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
-      this.requestedToUserProfile,
-      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_to_user_profile') this.requestedToUserProfile,
+      @JsonKey(name: 'requested_from_user_profile')
       this.requestedFromUserProfile});
 
   factory _$FriendImpl.fromJson(Map<String, dynamic> json) =>
       _$$FriendImplFromJson(json);
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   final String? id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   final String? createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   final String? updatedAt;
   @override
   @JsonKey()
@@ -284,10 +283,10 @@ class _$FriendImpl implements _Friend {
   @JsonKey()
   final bool retained;
   @override
-  @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_to_user_profile')
   final UserProfile? requestedToUserProfile;
   @override
-  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_from_user_profile')
   final UserProfile? requestedFromUserProfile;
 
   @override
@@ -350,32 +349,30 @@ class _$FriendImpl implements _Friend {
 
 abstract class _Friend implements Friend {
   const factory _Friend(
-      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-      final String? updatedAt,
+      {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: '\$createdAt') final String? createdAt,
+      @JsonKey(name: '\$updatedAt') final String? updatedAt,
       final bool accepted,
       @JsonKey(name: 'requested_to_user_id')
       required final String requestedToUserId,
       @JsonKey(name: 'requested_from_user_id')
       required final String requestedFromUserId,
       final bool retained,
-      @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_to_user_profile')
       final UserProfile? requestedToUserProfile,
-      @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+      @JsonKey(name: 'requested_from_user_profile')
       final UserProfile? requestedFromUserProfile}) = _$FriendImpl;
 
   factory _Friend.fromJson(Map<String, dynamic> json) = _$FriendImpl.fromJson;
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt;
   @override
   bool get accepted;
@@ -388,10 +385,10 @@ abstract class _Friend implements Friend {
   @override
   bool get retained;
   @override
-  @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_to_user_profile')
   UserProfile? get requestedToUserProfile;
   @override
-  @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+  @JsonKey(name: 'requested_from_user_profile')
   UserProfile? get requestedFromUserProfile;
   @override
   @JsonKey(ignore: true)

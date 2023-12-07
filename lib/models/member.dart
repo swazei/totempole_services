@@ -5,9 +5,9 @@ part 'member.g.dart';
 @freezed
 class Member with _$Member {
   const factory Member({
-    @JsonKey(name: "\$id", includeIfNull: false) String? id,
-    @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-    @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt,
+    @JsonKey(name: "\$id") String? id,
+    @JsonKey(name: "\$createdAt") String? createdAt,
+    @JsonKey(name: "\$updatedAt") String? updatedAt,
     @JsonKey(name: "totempole_id") required String totempoleID,
     @JsonKey(name: "user_id") required String userID,
     @Default(Status.underProcess) Status status,

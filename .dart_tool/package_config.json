@@ -45,9 +45,9 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_daemon-4.0.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_daemon-4.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.0"
     },
     {
       "name": "build_resolvers",
@@ -57,7 +57,7 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_runner-2.4.6",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_runner-2.4.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -75,7 +75,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/built_value-8.6.3",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/built_value-8.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -87,9 +87,9 @@
     },
     {
       "name": "code_builder",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/code_builder-4.7.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/code_builder-4.8.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "collection",
@@ -111,13 +111,13 @@
     },
     {
       "name": "dart_appwrite",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_appwrite-10.0.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_appwrite-10.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_style-2.3.3",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_style-2.3.4",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -249,9 +249,9 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/path-1.8.3",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "pool",
@@ -374,7 +374,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-30T09:38:28.142013Z",
+  "generated": "2023-12-07T04:06:43.105719Z",
   "generator": "pub",
-  "generatorVersion": "3.1.4"
+  "generatorVersion": "3.2.1"
 }

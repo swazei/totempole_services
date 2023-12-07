@@ -2,6 +2,7 @@ import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dart_appwrite/models.dart';
 import 'dart:math';
 import 'package:faker/faker.dart';
+import 'package:totempole_services/const.dart';
 
 import '../models/models.dart';
 
@@ -10,9 +11,7 @@ class FriendService {
   FriendService({required this.database});
   Future<FriendList> getFirstFriendList([List<String>? queries]) async {
     final friends = await database.listDocuments(
-        databaseId: '634d7cac5a7a4ada2259',
-        collectionId: '638edb445afbc67c4e1f',
-        queries: queries);
+        databaseId: developmentDB, collectionId: friendsCOL, queries: queries);
     var f = friends.documents.map((e) => Friend.fromJson(e.data)).toList();
     return FriendList(friends: f, total: friends.total);
   }
@@ -20,8 +19,8 @@ class FriendService {
   Future<List<Friend>> paginatedFriendsList(
       [int offset = 0, List<String>? queries]) async {
     final friends = await database.listDocuments(
-      databaseId: '634d7cac5a7a4ada2259',
-      collectionId: '638edb445afbc67c4e1f',
+      databaseId: developmentDB,
+      collectionId: friendsCOL,
       queries: [...queries ?? [], Query.offset(offset)],
     );
     return friends.documents.map((e) => Friend.fromJson(e.data)).toList();
@@ -50,8 +49,8 @@ class FriendService {
 
   Future<dynamic> deleteFriend(String friendId) async {
     return await database.deleteDocument(
-      databaseId: '634d7cac5a7a4ada2259',
-      collectionId: '638edb445afbc67c4e1f',
+      databaseId: developmentDB,
+      collectionId: friendsCOL,
       documentId: friendId,
     );
   }
@@ -77,8 +76,8 @@ class FriendService {
         requestedFromUserId: userss[random.nextInt(userss.length)].$id,
       );
       await database.createDocument(
-        databaseId: '634d7cac5a7a4ada2259',
-        collectionId: '638edb445afbc67c4e1f',
+        databaseId: developmentDB,
+        collectionId: friendsCOL,
         documentId: ID.unique(),
         data: friend.toJson(),
       );

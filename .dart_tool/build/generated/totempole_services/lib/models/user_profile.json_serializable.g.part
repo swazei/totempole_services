@@ -19,29 +19,21 @@ _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
       dob: json['dob'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(r'$id', instance.id);
-  writeNotNull(r'$createdAt', instance.createdAt);
-  writeNotNull(r'$updatedAt', instance.updatedAt);
-  val['first_name'] = instance.firstName;
-  val['last_name'] = instance.lastName;
-  val['username'] = instance.username;
-  val['address'] = instance.address;
-  val['pincode'] = instance.pincode;
-  val['city'] = instance.city;
-  writeNotNull('avatar', instance.avatar);
-  val['user_type'] = _$UserTypeEnumMap[instance.userType]!;
-  val['dob'] = instance.dob;
-  return val;
-}
+Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
+    <String, dynamic>{
+      r'$id': instance.id,
+      r'$createdAt': instance.createdAt,
+      r'$updatedAt': instance.updatedAt,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
+      'username': instance.username,
+      'address': instance.address,
+      'pincode': instance.pincode,
+      'city': instance.city,
+      'avatar': instance.avatar,
+      'user_type': _$UserTypeEnumMap[instance.userType]!,
+      'dob': instance.dob,
+    };
 
 const _$UserTypeEnumMap = {
   UserType.user: 'USER',

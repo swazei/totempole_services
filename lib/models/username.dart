@@ -5,9 +5,9 @@ part 'username.g.dart';
 @freezed
 abstract class Username with _$Username {
   const factory Username({
-    @JsonKey(name: '\$id', includeIfNull: false) String? id,
-    @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-    @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+    @JsonKey(name: '\$id') String? id,
+    @JsonKey(name: '\$createdAt') String? createdAt,
+    @JsonKey(name: '\$updatedAt') String? updatedAt,
     required String username,
   }) = _Username;
   factory Username.fromJson(Map<String, dynamic> json) =>

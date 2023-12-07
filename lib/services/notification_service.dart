@@ -1,4 +1,5 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
+import 'package:totempole_services/const.dart';
 import 'package:totempole_services/models/notification_list.dart';
 import '../models/models.dart';
 
@@ -10,8 +11,8 @@ class NotificationService {
     final List<String>? queries =
         totempoleID != null ? [Query.equal('totempole_id', totempoleID)] : null;
     final docs = await database.listDocuments(
-      databaseId: '6392b787aa1122e2afc3', //DATABASEID
-      collectionId: '6392b7946a1f21ab3dc1', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB,
+      collectionId: notificationsCOL,
       queries: queries,
     );
     final notifications =
@@ -25,9 +26,8 @@ class NotificationService {
         ? [Query.equal('totempole_id', totempoleID), Query.offset(offset)]
         : [Query.offset(offset)];
     final notification = await database.listDocuments(
-      databaseId: '6392b787aa1122e2afc3', //DATABASEID
-      collectionId:
-          '6392b7946a1f21ab3dc1', //COLLECTIONID USERTOTEMPOELS/COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB,
+      collectionId: notificationsCOL,
       queries: queries,
     );
     return notification.documents
@@ -59,8 +59,8 @@ class NotificationService {
 
     for (var notification in notifications) {
       await database.deleteDocument(
-        databaseId: '6392b787aa1122e2afc3', //DATABASEID
-        collectionId: '6392b7946a1f21ab3dc1', //COLLECTIONID USERTOTEMPOELS
+        databaseId: developmentDB,
+        collectionId: notificationsCOL,
         documentId: notification.id!,
       );
     }
@@ -68,16 +68,10 @@ class NotificationService {
 
   Future<void> createNotification(AppNotification notification) async {
     await database.createDocument(
-      databaseId: '6392b787aa1122e2afc3', //DATABASEID
-      collectionId: '6392b7946a1f21ab3dc1', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB,
+      collectionId: notificationsCOL,
       documentId: ID.unique(),
       data: notification.toJson(),
-      /*  permissions: [ //TODO VERY IMP NNED TO SET THE PERMITIONS CORRECTLY
-            Permission.read(Role.user(user.$id)),
-            Permission.read(Role.user(fromUser.$id)),
-            Permission.delete(Role.user(user.$id)),
-            Permission.delete(Role.user(fromUser.$id)),
-          ], */
     );
   }
 }

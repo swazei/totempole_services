@@ -1,17 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:totempole_services/models/user_profile.dart';
+
+import 'models.dart';
+
 part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
 class User with _$User {
   const factory User({
-    @JsonKey(name: '\$id', includeIfNull: false) String? id,
-    @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-    @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+    @JsonKey(name: '\$id') String? id,
+    @JsonKey(name: '\$createdAt') String? createdAt,
+    @JsonKey(name: '\$updatedAt') String? updatedAt,
     @Default("") String name,
     @Default("0") String registration,
     @Default(false) bool status,
+    @Default([UserType.USER]) @JsonKey(name: 'labels') List<UserType> userType,
     @Default("0") String passwordUpdate,
     @Default("") String email,
     @Default("") String phone,

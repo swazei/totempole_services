@@ -24,24 +24,15 @@ _$FriendImpl _$$FriendImplFromJson(Map<String, dynamic> json) => _$FriendImpl(
               json['requested_from_user_profile'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$FriendImplToJson(_$FriendImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(r'$id', instance.id);
-  writeNotNull(r'$createdAt', instance.createdAt);
-  writeNotNull(r'$updatedAt', instance.updatedAt);
-  val['accepted'] = instance.accepted;
-  val['requested_to_user_id'] = instance.requestedToUserId;
-  val['requested_from_user_id'] = instance.requestedFromUserId;
-  val['retained'] = instance.retained;
-  writeNotNull('requested_to_user_profile', instance.requestedToUserProfile);
-  writeNotNull(
-      'requested_from_user_profile', instance.requestedFromUserProfile);
-  return val;
-}
+Map<String, dynamic> _$$FriendImplToJson(_$FriendImpl instance) =>
+    <String, dynamic>{
+      r'$id': instance.id,
+      r'$createdAt': instance.createdAt,
+      r'$updatedAt': instance.updatedAt,
+      'accepted': instance.accepted,
+      'requested_to_user_id': instance.requestedToUserId,
+      'requested_from_user_id': instance.requestedFromUserId,
+      'retained': instance.retained,
+      'requested_to_user_profile': instance.requestedToUserProfile,
+      'requested_from_user_profile': instance.requestedFromUserProfile,
+    };

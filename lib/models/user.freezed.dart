@@ -20,15 +20,17 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get registration => throw _privateConstructorUsedError;
   bool get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'labels')
+  List<UserType> get userType => throw _privateConstructorUsedError;
   String get passwordUpdate => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
@@ -48,12 +50,13 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       String name,
       String registration,
       bool status,
+      @JsonKey(name: 'labels') List<UserType> userType,
       String passwordUpdate,
       String email,
       String phone,
@@ -85,6 +88,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? registration = null,
     Object? status = null,
+    Object? userType = null,
     Object? passwordUpdate = null,
     Object? email = null,
     Object? phone = null,
@@ -118,6 +122,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as List<UserType>,
       passwordUpdate: null == passwordUpdate
           ? _value.passwordUpdate
           : passwordUpdate // ignore: cast_nullable_to_non_nullable
@@ -178,12 +186,13 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: '\$id', includeIfNull: false) String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
       String name,
       String registration,
       bool status,
+      @JsonKey(name: 'labels') List<UserType> userType,
       String passwordUpdate,
       String email,
       String phone,
@@ -214,6 +223,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? registration = null,
     Object? status = null,
+    Object? userType = null,
     Object? passwordUpdate = null,
     Object? email = null,
     Object? phone = null,
@@ -247,6 +257,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      userType: null == userType
+          ? _value._userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as List<UserType>,
       passwordUpdate: null == passwordUpdate
           ? _value.passwordUpdate
           : passwordUpdate // ignore: cast_nullable_to_non_nullable
@@ -283,31 +297,34 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl implements _User {
   const _$UserImpl(
-      {@JsonKey(name: '\$id', includeIfNull: false) this.id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false) this.createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false) this.updatedAt,
+      {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: '\$createdAt') this.createdAt,
+      @JsonKey(name: '\$updatedAt') this.updatedAt,
       this.name = "",
       this.registration = "0",
       this.status = false,
+      @JsonKey(name: 'labels')
+      final List<UserType> userType = const [UserType.user],
       this.passwordUpdate = "0",
       this.email = "",
       this.phone = "",
       this.emailVerification = false,
       this.phoneVerification = false,
       this.pref = const UserPref(),
-      this.userProfile = const UserProfile()});
+      this.userProfile = const UserProfile()})
+      : _userType = userType;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   final String? id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   final String? createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   final String? updatedAt;
   @override
   @JsonKey()
@@ -318,6 +335,15 @@ class _$UserImpl implements _User {
   @override
   @JsonKey()
   final bool status;
+  final List<UserType> _userType;
+  @override
+  @JsonKey(name: 'labels')
+  List<UserType> get userType {
+    if (_userType is EqualUnmodifiableListView) return _userType;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userType);
+  }
+
   @override
   @JsonKey()
   final String passwordUpdate;
@@ -342,7 +368,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, pref: $pref, userProfile: $userProfile)';
+    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, userType: $userType, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, pref: $pref, userProfile: $userProfile)';
   }
 
   @override
@@ -359,6 +385,7 @@ class _$UserImpl implements _User {
             (identical(other.registration, registration) ||
                 other.registration == registration) &&
             (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._userType, _userType) &&
             (identical(other.passwordUpdate, passwordUpdate) ||
                 other.passwordUpdate == passwordUpdate) &&
             (identical(other.email, email) || other.email == email) &&
@@ -382,6 +409,7 @@ class _$UserImpl implements _User {
       name,
       registration,
       status,
+      const DeepCollectionEquality().hash(_userType),
       passwordUpdate,
       email,
       phone,
@@ -406,14 +434,13 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@JsonKey(name: '\$id', includeIfNull: false) final String? id,
-      @JsonKey(name: '\$createdAt', includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: '\$updatedAt', includeIfNull: false)
-      final String? updatedAt,
+      {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: '\$createdAt') final String? createdAt,
+      @JsonKey(name: '\$updatedAt') final String? updatedAt,
       final String name,
       final String registration,
       final bool status,
+      @JsonKey(name: 'labels') final List<UserType> userType,
       final String passwordUpdate,
       final String email,
       final String phone,
@@ -425,13 +452,13 @@ abstract class _User implements User {
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  @JsonKey(name: '\$id', includeIfNull: false)
+  @JsonKey(name: '\$id')
   String? get id;
   @override
-  @JsonKey(name: '\$createdAt', includeIfNull: false)
+  @JsonKey(name: '\$createdAt')
   String? get createdAt;
   @override
-  @JsonKey(name: '\$updatedAt', includeIfNull: false)
+  @JsonKey(name: '\$updatedAt')
   String? get updatedAt;
   @override
   String get name;
@@ -439,6 +466,9 @@ abstract class _User implements User {
   String get registration;
   @override
   bool get status;
+  @override
+  @JsonKey(name: 'labels')
+  List<UserType> get userType;
   @override
   String get passwordUpdate;
   @override

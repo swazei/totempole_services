@@ -6,17 +6,17 @@ part 'friend.g.dart';
 @freezed
 abstract class Friend with _$Friend {
   const factory Friend({
-    @JsonKey(name: '\$id', includeIfNull: false) String? id,
-    @JsonKey(name: '\$createdAt', includeIfNull: false) String? createdAt,
-    @JsonKey(name: '\$updatedAt', includeIfNull: false) String? updatedAt,
+    @JsonKey(name: '\$id') String? id,
+    @JsonKey(name: '\$createdAt') String? createdAt,
+    @JsonKey(name: '\$updatedAt') String? updatedAt,
     @Default(false) bool accepted,
     @JsonKey(name: 'requested_to_user_id') required String requestedToUserId,
     @JsonKey(name: 'requested_from_user_id')
     required String requestedFromUserId,
     @Default(false) bool retained,
-    @JsonKey(name: 'requested_to_user_profile', includeIfNull: false)
+    @JsonKey(name: 'requested_to_user_profile')
     UserProfile? requestedToUserProfile,
-    @JsonKey(name: 'requested_from_user_profile', includeIfNull: false)
+    @JsonKey(name: 'requested_from_user_profile')
     UserProfile? requestedFromUserProfile,
   }) = _Friend;
   factory Friend.fromJson(Map<String, dynamic> json) => _$FriendFromJson(json);

@@ -1,13 +1,14 @@
+import 'dart:io';
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dotenv/dotenv.dart';
-import 'package:totempole_services/models/app_notification.dart';
+import 'package:totempole_services/models/models.dart';
 import 'package:totempole_services/services/services.dart';
 
 Future<void> start() async {
   final client = Client();
-  // final users = Users(client);
+  final users = Users(client);
   final database = Databases(client);
-  // final storage = Storage(client);
+  final storage = Storage(client);
   var env = DotEnv(includePlatformEnvironment: true)..load();
   client
       .setEndpoint(env['URL'] ?? "")
@@ -18,9 +19,10 @@ Future<void> start() async {
   //final friendsService = FriendService(database: database);
   // final usersService = UsersService(users: users);
   // final totempoleService = TotempoleService(database: database);
+  // await totempoleService.createFakeTotempoles();
   //final profileService = ProfileService(database: database);
   //final usernameService = UsernameService(database: database);
-  final notificationService = NotificationService(database: database);
+  /*  final notificationService = NotificationService(database: database);
   for (var i = 0; i < 5; i++) {
     final no = AppNotification(
       title: "This is a test",
@@ -29,7 +31,7 @@ Future<void> start() async {
       type: Type.friendRequest,
     );
     notificationService.createNotification(no);
-  }
+  } */
   //final totempoleStorage = TotempoleStorageService(storage: storage);
 //  await friendsService.createFakeFriendList(alltheUsers, 65);
   // final member = MemberService(totempoleID: '', database: database);
@@ -40,9 +42,17 @@ Future<void> start() async {
   // await totempoleService.deleteAllTotempoles();
   //totempoleStorage.deleteAllTotemPoleAvtars();
   // await friendsService.deleteAllFriends();
+
+/*   final x =
+      await UserAvatarStorageService(storage: storage).listAllUserAvatarFiles();
+
+  print(x.files.length); */
+  final u = await users.list();
+  final uu = u.users.map((e) => User.fromJson(e.toMap())).toList();
+  print(uu[3].userType.first.name);
 }
 
 void main(List<String> args) async {
   await start();
-  // exit(0);
+  exit(0);
 }

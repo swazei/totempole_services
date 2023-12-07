@@ -1,0 +1,6 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          include_if_null : false

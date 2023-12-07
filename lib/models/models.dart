@@ -10,3 +10,4 @@ export 'username_list.dart';
 export 'user.dart';
 export 'app_notification.dart';
 export 'user_profile.dart';
+export 'user_type.dart';

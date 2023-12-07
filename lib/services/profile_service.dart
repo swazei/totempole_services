@@ -1,14 +1,14 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
+import 'package:totempole_services/const.dart';
 import '../models/models.dart';
-import '../models/user_profile.dart';
 
 class ProfileService {
   final Databases database;
   ProfileService({required this.database});
   Future<ProfileList> getFirstProfileList() async {
     final docs = await database.listDocuments(
-      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
-      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
     );
     final profiles =
         docs.documents.map((e) => UserProfile.fromJson(e.data)).toList();
@@ -17,8 +17,8 @@ class ProfileService {
 
   Future<List<UserProfile>> paginatedProfileList([int offset = 0]) async {
     final totempoles = await database.listDocuments(
-      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
-      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
       queries: [Query.offset(offset)],
     );
     return totempoles.documents
@@ -52,16 +52,16 @@ class ProfileService {
 
   Future deleteProfileByUserId(String userId) async {
     await database.deleteDocument(
-      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
-      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
       documentId: userId,
     );
   }
 
   Future<UserProfile> getProfileByUserId(String userId) async {
     var res = await database.getDocument(
-      databaseId: '634d7cac5a7a4ada2259', //DATABASEID
-      collectionId: '634d81bbeed401dc2859', //COLLECTIONID USERTOTEMPOELS
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
       documentId: userId,
     );
     return UserProfile.fromJson(res.data);

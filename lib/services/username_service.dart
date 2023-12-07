@@ -1,4 +1,5 @@
 import 'package:dart_appwrite/dart_appwrite.dart';
+import '../const.dart';
 import '../models/models.dart';
 
 class UsernameService {
@@ -6,8 +7,8 @@ class UsernameService {
   UsernameService({required this.database});
   Future<UsernameList> getFirstUsernameList() async {
     final usernames = await database.listDocuments(
-      databaseId: '634d7cac5a7a4ada2259',
-      collectionId: '634d7d09e65bbc4b37b6',
+      databaseId: developmentDB,
+      collectionId: usernameCOL,
     );
     var f = usernames.documents.map((e) => Username.fromJson(e.data)).toList();
     return UsernameList(usernames: f, total: usernames.total);
@@ -15,8 +16,8 @@ class UsernameService {
 
   Future<List<Username>> paginatedFriendsList([int offset = 0]) async {
     final usernames = await database.listDocuments(
-      databaseId: '634d7cac5a7a4ada2259',
-      collectionId: '634d7d09e65bbc4b37b6',
+      databaseId: developmentDB,
+      collectionId: usernameCOL,
       queries: [Query.offset(offset)],
     );
     return usernames.documents.map((e) => Username.fromJson(e.data)).toList();
@@ -47,8 +48,8 @@ class UsernameService {
 
   Future deleteUsernameByUserId(String userId) async {
     await database.deleteDocument(
-      databaseId: '634d7cac5a7a4ada2259',
-      collectionId: '634d7d09e65bbc4b37b6',
+      databaseId: developmentDB,
+      collectionId: usernameCOL,
       documentId: userId,
     );
   }

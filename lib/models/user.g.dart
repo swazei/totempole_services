@@ -13,6 +13,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       name: json['name'] as String? ?? "",
       registration: json['registration'] as String? ?? "0",
       status: json['status'] as bool? ?? false,
+      userType: (json['labels'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
+              .toList() ??
+          const [UserType.user],
       passwordUpdate: json['passwordUpdate'] as String? ?? "0",
       email: json['email'] as String? ?? "",
       phone: json['phone'] as String? ?? "",
@@ -26,30 +30,29 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
-  final val = <String, dynamic>{};
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      r'$id': instance.id,
+      r'$createdAt': instance.createdAt,
+      r'$updatedAt': instance.updatedAt,
+      'name': instance.name,
+      'registration': instance.registration,
+      'status': instance.status,
+      'labels': instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList(),
+      'passwordUpdate': instance.passwordUpdate,
+      'email': instance.email,
+      'phone': instance.phone,
+      'emailVerification': instance.emailVerification,
+      'phoneVerification': instance.phoneVerification,
+      'pref': instance.pref,
+      'userProfile': instance.userProfile,
+    };
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(r'$id', instance.id);
-  writeNotNull(r'$createdAt', instance.createdAt);
-  writeNotNull(r'$updatedAt', instance.updatedAt);
-  val['name'] = instance.name;
-  val['registration'] = instance.registration;
-  val['status'] = instance.status;
-  val['passwordUpdate'] = instance.passwordUpdate;
-  val['email'] = instance.email;
-  val['phone'] = instance.phone;
-  val['emailVerification'] = instance.emailVerification;
-  val['phoneVerification'] = instance.phoneVerification;
-  val['pref'] = instance.pref;
-  val['userProfile'] = instance.userProfile;
-  return val;
-}
+const _$UserTypeEnumMap = {
+  UserType.user: 'USER',
+  UserType.vendor: 'VENDOR',
+  UserType.event: 'EVENT',
+};
 
 _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
     _$UserPrefImpl(

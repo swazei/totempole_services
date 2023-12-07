@@ -5,18 +5,18 @@ part 'app_notification.g.dart';
 @freezed
 class AppNotification with _$AppNotification {
   const factory AppNotification({
-    @JsonKey(name: "\$id", includeIfNull: false) String? id,
+    @JsonKey(name: "\$id") String? id,
     required String title,
     required String to,
     required String from,
-    @JsonKey(includeIfNull: false) String? subtitle,
-    @JsonKey(name: "totempole_id", includeIfNull: false) String? totempoleId,
-    @JsonKey(includeIfNull: false) String? image,
+    String? subtitle,
+    @JsonKey(name: "totempole_id") String? totempoleId,
+    String? image,
     @Default(Type.general) Type type,
-    @JsonKey(name: "\$collectionId", includeIfNull: false) String? collectionId,
-    @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-    @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-    @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt,
+    @JsonKey(name: "\$collectionId") String? collectionId,
+    @JsonKey(name: "\$databaseId") String? databaseId,
+    @JsonKey(name: "\$createdAt") String? createdAt,
+    @JsonKey(name: "\$updatedAt") String? updatedAt,
   }) = _AppNotification;
   factory AppNotification.fromJson(Map<String, dynamic> json) =>
       _$AppNotificationFromJson(json);

@@ -26,23 +26,31 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
-    <String, dynamic>{
-      r'$id': instance.id,
-      r'$createdAt': instance.createdAt,
-      r'$updatedAt': instance.updatedAt,
-      'name': instance.name,
-      'registration': instance.registration,
-      'status': instance.status,
-      'labels': instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList(),
-      'passwordUpdate': instance.passwordUpdate,
-      'email': instance.email,
-      'phone': instance.phone,
-      'emailVerification': instance.emailVerification,
-      'phoneVerification': instance.phoneVerification,
-      'pref': instance.pref,
-      'userProfile': instance.userProfile,
-    };
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(r'$id', instance.id);
+  writeNotNull(r'$createdAt', instance.createdAt);
+  writeNotNull(r'$updatedAt', instance.updatedAt);
+  val['name'] = instance.name;
+  val['registration'] = instance.registration;
+  val['status'] = instance.status;
+  val['labels'] = instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList();
+  val['passwordUpdate'] = instance.passwordUpdate;
+  val['email'] = instance.email;
+  val['phone'] = instance.phone;
+  val['emailVerification'] = instance.emailVerification;
+  val['phoneVerification'] = instance.phoneVerification;
+  writeNotNull('pref', instance.pref);
+  writeNotNull('userProfile', instance.userProfile);
+  return val;
+}
 
 const _$UserTypeEnumMap = {
   UserType.USER: 'USER',

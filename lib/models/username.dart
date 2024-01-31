@@ -6,6 +6,7 @@ part 'username.g.dart';
 abstract class Username with _$Username {
   const factory Username({
     @JsonKey(name: '\$id') String? id,
+    @JsonKey(name: 'user_id') required String userId,
     @JsonKey(name: '\$createdAt') String? createdAt,
     @JsonKey(name: '\$updatedAt') String? updatedAt,
     required String username,

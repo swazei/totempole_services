@@ -26,22 +26,31 @@ _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
       dob: json['dob'] == null ? null : DateTime.parse(json['dob'] as String),
     );
 
-Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
-    <String, dynamic>{
-      r'$id': instance.id,
-      'user_id': instance.userId,
-      r'$createdAt': instance.createdAt,
-      r'$updatedAt': instance.updatedAt,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'username': instance.username,
-      'address': instance.address,
-      'pincode': instance.pincode,
-      'city': instance.city,
-      'avatar': instance.avatar,
-      'user_type': instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList(),
-      'dob': instance.dob?.toIso8601String(),
-    };
+Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(r'$id', instance.id);
+  val['user_id'] = instance.userId;
+  writeNotNull(r'$createdAt', instance.createdAt);
+  writeNotNull(r'$updatedAt', instance.updatedAt);
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  val['username'] = instance.username;
+  writeNotNull('address', instance.address);
+  writeNotNull('pincode', instance.pincode);
+  writeNotNull('city', instance.city);
+  writeNotNull('avatar', instance.avatar);
+  val['user_type'] =
+      instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList();
+  writeNotNull('dob', instance.dob?.toIso8601String());
+  return val;
+}
 
 const _$UserTypeEnumMap = {
   UserType.USER: 'USER',

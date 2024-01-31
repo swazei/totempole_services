@@ -50,20 +50,23 @@ class ProfileService {
     }
   }
 
+  Future<UserProfile?> getProfileByUserId(String userId) async {
+    var res = await database.listDocuments(
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
+      queries: [Query.equal('user_id', userId)],
+    );
+    if (res.documents.isEmpty) return null;
+    return UserProfile.fromJson(res.documents.first.data);
+  }
+
   Future deleteProfileByUserId(String userId) async {
+    final pro = await getProfileByUserId(userId);
+    if (pro == null) return;
     await database.deleteDocument(
       databaseId: developmentDB, //DATABASEID
       collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
-      documentId: userId,
+      documentId: pro.id!,
     );
-  }
-
-  Future<UserProfile> getProfileByUserId(String userId) async {
-    var res = await database.getDocument(
-      databaseId: developmentDB, //DATABASEID
-      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
-      documentId: userId,
-    );
-    return UserProfile.fromJson(res.data);
   }
 }

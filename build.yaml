@@ -1,6 +1,6 @@
 targets:
   $default:
     builders:
-      freezed:
+      json_serializable:
         options:
-          include_if_null : false
+          include_if_null: false

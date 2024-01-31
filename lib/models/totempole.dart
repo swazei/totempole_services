@@ -25,10 +25,10 @@ abstract class Totempole with _$Totempole {
     @Default(VendorType.public) VendorType vendor_type,
     @Default(false) @JsonKey(name: "is_underworld") bool isUnderworld,
     @JsonKey(name: "created_by") required String createdBy,
-    @JsonKey(name: "\$collectionId", includeIfNull: false) String? collectionId,
-    @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-    @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-    @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt,
+    @JsonKey(name: "\$collectionId") String? collectionId,
+    @JsonKey(name: "\$databaseId") String? databaseId,
+    @JsonKey(name: "\$createdAt") String? createdAt,
+    @JsonKey(name: "\$updatedAt") String? updatedAt,
   }) = _Totempole;
   factory Totempole.fromJson(Map<String, dynamic> json) =>
       _$TotempoleFromJson(json);

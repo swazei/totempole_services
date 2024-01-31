@@ -43,13 +43,13 @@ mixin _$Totempole {
   bool get isUnderworld => throw _privateConstructorUsedError;
   @JsonKey(name: "created_by")
   String get createdBy => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   String? get collectionId => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   String? get databaseId => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -81,11 +81,10 @@ abstract class $TotempoleCopyWith<$Res> {
       VendorType vendor_type,
       @JsonKey(name: "is_underworld") bool isUnderworld,
       @JsonKey(name: "created_by") String createdBy,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
+      @JsonKey(name: "\$collectionId") String? collectionId,
+      @JsonKey(name: "\$databaseId") String? databaseId,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt});
 }
 
 /// @nodoc
@@ -238,11 +237,10 @@ abstract class _$$TotempoleImplCopyWith<$Res>
       VendorType vendor_type,
       @JsonKey(name: "is_underworld") bool isUnderworld,
       @JsonKey(name: "created_by") String createdBy,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) String? updatedAt});
+      @JsonKey(name: "\$collectionId") String? collectionId,
+      @JsonKey(name: "\$databaseId") String? databaseId,
+      @JsonKey(name: "\$createdAt") String? createdAt,
+      @JsonKey(name: "\$updatedAt") String? updatedAt});
 }
 
 /// @nodoc
@@ -388,10 +386,10 @@ class _$TotempoleImpl implements _Totempole {
       this.vendor_type = VendorType.public,
       @JsonKey(name: "is_underworld") this.isUnderworld = false,
       @JsonKey(name: "created_by") required this.createdBy,
-      @JsonKey(name: "\$collectionId", includeIfNull: false) this.collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false) this.databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false) this.createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false) this.updatedAt})
+      @JsonKey(name: "\$collectionId") this.collectionId,
+      @JsonKey(name: "\$databaseId") this.databaseId,
+      @JsonKey(name: "\$createdAt") this.createdAt,
+      @JsonKey(name: "\$updatedAt") this.updatedAt})
       : _admins = admins,
         _resources = resources,
         _members = members;
@@ -467,16 +465,16 @@ class _$TotempoleImpl implements _Totempole {
   @JsonKey(name: "created_by")
   final String createdBy;
   @override
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   final String? collectionId;
   @override
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   final String? databaseId;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   final String? createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   final String? updatedAt;
 
   @override
@@ -586,14 +584,10 @@ abstract class _Totempole implements Totempole {
       final VendorType vendor_type,
       @JsonKey(name: "is_underworld") final bool isUnderworld,
       @JsonKey(name: "created_by") required final String createdBy,
-      @JsonKey(name: "\$collectionId", includeIfNull: false)
-      final String? collectionId,
-      @JsonKey(name: "\$databaseId", includeIfNull: false)
-      final String? databaseId,
-      @JsonKey(name: "\$createdAt", includeIfNull: false)
-      final String? createdAt,
-      @JsonKey(name: "\$updatedAt", includeIfNull: false)
-      final String? updatedAt}) = _$TotempoleImpl;
+      @JsonKey(name: "\$collectionId") final String? collectionId,
+      @JsonKey(name: "\$databaseId") final String? databaseId,
+      @JsonKey(name: "\$createdAt") final String? createdAt,
+      @JsonKey(name: "\$updatedAt") final String? updatedAt}) = _$TotempoleImpl;
 
   factory _Totempole.fromJson(Map<String, dynamic> json) =
       _$TotempoleImpl.fromJson;
@@ -639,16 +633,16 @@ abstract class _Totempole implements Totempole {
   @JsonKey(name: "created_by")
   String get createdBy;
   @override
-  @JsonKey(name: "\$collectionId", includeIfNull: false)
+  @JsonKey(name: "\$collectionId")
   String? get collectionId;
   @override
-  @JsonKey(name: "\$databaseId", includeIfNull: false)
+  @JsonKey(name: "\$databaseId")
   String? get databaseId;
   @override
-  @JsonKey(name: "\$createdAt", includeIfNull: false)
+  @JsonKey(name: "\$createdAt")
   String? get createdAt;
   @override
-  @JsonKey(name: "\$updatedAt", includeIfNull: false)
+  @JsonKey(name: "\$updatedAt")
   String? get updatedAt;
   @override
   @JsonKey(ignore: true)

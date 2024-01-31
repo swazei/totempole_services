@@ -22,6 +22,8 @@ Username _$UsernameFromJson(Map<String, dynamic> json) {
 mixin _$Username {
   @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  String get userId => throw _privateConstructorUsedError;
   @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: '\$updatedAt')
@@ -41,6 +43,7 @@ abstract class $UsernameCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: 'user_id') String userId,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
       String username});
@@ -60,6 +63,7 @@ class _$UsernameCopyWithImpl<$Res, $Val extends Username>
   @override
   $Res call({
     Object? id = freezed,
+    Object? userId = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? username = null,
@@ -69,6 +73,10 @@ class _$UsernameCopyWithImpl<$Res, $Val extends Username>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -95,6 +103,7 @@ abstract class _$$UsernameImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: 'user_id') String userId,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
       String username});
@@ -112,6 +121,7 @@ class __$$UsernameImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? userId = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? username = null,
@@ -121,6 +131,10 @@ class __$$UsernameImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -142,6 +156,7 @@ class __$$UsernameImplCopyWithImpl<$Res>
 class _$UsernameImpl implements _Username {
   const _$UsernameImpl(
       {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: 'user_id') required this.userId,
       @JsonKey(name: '\$createdAt') this.createdAt,
       @JsonKey(name: '\$updatedAt') this.updatedAt,
       required this.username});
@@ -153,6 +168,9 @@ class _$UsernameImpl implements _Username {
   @JsonKey(name: '\$id')
   final String? id;
   @override
+  @JsonKey(name: 'user_id')
+  final String userId;
+  @override
   @JsonKey(name: '\$createdAt')
   final String? createdAt;
   @override
@@ -163,7 +181,7 @@ class _$UsernameImpl implements _Username {
 
   @override
   String toString() {
-    return 'Username(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, username: $username)';
+    return 'Username(id: $id, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt, username: $username)';
   }
 
   @override
@@ -172,6 +190,7 @@ class _$UsernameImpl implements _Username {
         (other.runtimeType == runtimeType &&
             other is _$UsernameImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -183,7 +202,7 @@ class _$UsernameImpl implements _Username {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, createdAt, updatedAt, username);
+      Object.hash(runtimeType, id, userId, createdAt, updatedAt, username);
 
   @JsonKey(ignore: true)
   @override
@@ -202,6 +221,7 @@ class _$UsernameImpl implements _Username {
 abstract class _Username implements Username {
   const factory _Username(
       {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: 'user_id') required final String userId,
       @JsonKey(name: '\$createdAt') final String? createdAt,
       @JsonKey(name: '\$updatedAt') final String? updatedAt,
       required final String username}) = _$UsernameImpl;
@@ -212,6 +232,9 @@ abstract class _Username implements Username {
   @override
   @JsonKey(name: '\$id')
   String? get id;
+  @override
+  @JsonKey(name: 'user_id')
+  String get userId;
   @override
   @JsonKey(name: '\$createdAt')
   String? get createdAt;

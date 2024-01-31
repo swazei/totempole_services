@@ -46,11 +46,23 @@ class UsernameService {
     }
   }
 
+  Future<Username?> getUsernameByUserId(String userId) async {
+    var res = await database.listDocuments(
+      databaseId: developmentDB, //DATABASEID
+      collectionId: usernameCOL, //COLLECTIONID USERTOTEMPOELS
+      queries: [Query.equal('user_id', userId)],
+    );
+    if (res.documents.isEmpty) return null;
+    return Username.fromJson(res.documents.first.data);
+  }
+
   Future deleteUsernameByUserId(String userId) async {
+    final user = await getUsernameByUserId(userId);
+    if (user == null) return;
     await database.deleteDocument(
       databaseId: developmentDB,
       collectionId: usernameCOL,
-      documentId: userId,
+      documentId: user.id!,
     );
   }
 }

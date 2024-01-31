@@ -36,25 +36,7 @@ _$TotempoleImpl _$$TotempoleImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$TotempoleImplToJson(_$TotempoleImpl instance) {
-  final val = <String, dynamic>{
-    r'$id': instance.id,
-    'display_image': instance.displayImage,
-    'admins': instance.admins,
-    'open_to_join': instance.openToJoin,
-    'hidden': instance.hidden,
-    'is_active': instance.isActive,
-    'name': instance.name,
-    'description': instance.description,
-    'phone': instance.phone,
-    'latitude': instance.latitude,
-    'resources': instance.resources,
-    'longitude': instance.longitude,
-    'members': instance.members,
-    'type': _$TotemTypeEnumMap[instance.type]!,
-    'vendor_type': _$VendorTypeEnumMap[instance.vendor_type]!,
-    'is_underworld': instance.isUnderworld,
-    'created_by': instance.createdBy,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -62,6 +44,23 @@ Map<String, dynamic> _$$TotempoleImplToJson(_$TotempoleImpl instance) {
     }
   }
 
+  writeNotNull(r'$id', instance.id);
+  writeNotNull('display_image', instance.displayImage);
+  writeNotNull('admins', instance.admins);
+  val['open_to_join'] = instance.openToJoin;
+  val['hidden'] = instance.hidden;
+  val['is_active'] = instance.isActive;
+  val['name'] = instance.name;
+  writeNotNull('description', instance.description);
+  writeNotNull('phone', instance.phone);
+  writeNotNull('latitude', instance.latitude);
+  writeNotNull('resources', instance.resources);
+  writeNotNull('longitude', instance.longitude);
+  writeNotNull('members', instance.members);
+  val['type'] = _$TotemTypeEnumMap[instance.type]!;
+  val['vendor_type'] = _$VendorTypeEnumMap[instance.vendor_type]!;
+  val['is_underworld'] = instance.isUnderworld;
+  val['created_by'] = instance.createdBy;
   writeNotNull(r'$collectionId', instance.collectionId);
   writeNotNull(r'$databaseId', instance.databaseId);
   writeNotNull(r'$createdAt', instance.createdAt);

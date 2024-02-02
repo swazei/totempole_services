@@ -14,7 +14,7 @@ class UsernameService {
     return UsernameList(usernames: f, total: usernames.total);
   }
 
-  Future<List<Username>> paginatedFriendsList([int offset = 0]) async {
+  Future<List<Username>> paginatedUsernameList([int offset = 0]) async {
     final usernames = await database.listDocuments(
       databaseId: developmentDB,
       collectionId: usernameCOL,
@@ -32,7 +32,7 @@ class UsernameService {
     int pages = totealUsernames.total ~/ limit;
     for (var i = 0; i < pages; i++) {
       offset = offset + limit;
-      final data = await paginatedFriendsList(offset);
+      final data = await paginatedUsernameList(offset);
       tempFriends.addAll(data);
       print(i);
     }
@@ -41,9 +41,7 @@ class UsernameService {
 
   Future<void> deleteAllUsernames() async {
     final usernames = await getAllUsernames();
-    for (var username in usernames) {
-      await deleteUsernameByUserId(username.id!);
-    }
+    for (var username in usernames) await deleteUsername(username);
   }
 
   Future<Username?> getUsernameByUserId(String userId) async {
@@ -53,16 +51,42 @@ class UsernameService {
       queries: [Query.equal('user_id', userId)],
     );
     if (res.documents.isEmpty) return null;
+
     return Username.fromJson(res.documents.first.data);
   }
 
-  Future deleteUsernameByUserId(String userId) async {
-    final user = await getUsernameByUserId(userId);
-    if (user == null) return;
+  Future updateUsername(Username username) async {
+    await database.updateDocument(
+      databaseId: developmentDB,
+      collectionId: usernameCOL,
+      data: username.toJson(),
+      documentId: username.id!,
+    );
+  }
+
+  Future createUsername(Username username) async {
+    await database.createDocument(
+      databaseId: developmentDB,
+      collectionId: usernameCOL,
+      data: username.toJson(),
+      documentId: ID.unique(),
+    );
+  }
+
+  Future createOrUpdateUsername(Username username) async {
+    final user = await getUsernameByUserId(username.userId);
+    if (user != null) {
+      await updateUsername(user);
+    } else {
+      await createUsername(username);
+    }
+  }
+
+  deleteUsername(Username username) async {
     await database.deleteDocument(
       databaseId: developmentDB,
       collectionId: usernameCOL,
-      documentId: user.id!,
+      documentId: username.id!,
     );
   }
 }

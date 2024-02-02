@@ -31,6 +31,7 @@ class User with _$User {
 class UserPref with _$UserPref {
   const factory UserPref({
     @JsonKey(name: 'device_tokens') @Default("") String deviceTokens,
+    @JsonKey(name: 'user_type') @Default([]) List<UserType> userType,
     @JsonKey(name: 'is_underworld') @Default(false) bool isUnderworld,
     @JsonKey(name: 'under_world_pin') @Default("") String underWorldPin,
     @Default("") String username,

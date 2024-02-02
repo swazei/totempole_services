@@ -65,6 +65,10 @@ const _$UserTypeEnumMap = {
 _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
     _$UserPrefImpl(
       deviceTokens: json['device_tokens'] as String? ?? "",
+      userType: (json['user_type'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
+              .toList() ??
+          const [UserType.user],
       isUnderworld: json['is_underworld'] as bool? ?? false,
       underWorldPin: json['under_world_pin'] as String? ?? "",
       username: json['username'] as String? ?? "",
@@ -73,6 +77,7 @@ _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserPrefImplToJson(_$UserPrefImpl instance) =>
     <String, dynamic>{
       'device_tokens': instance.deviceTokens,
+      'user_type': instance.userType.map((e) => _$UserTypeEnumMap[e]!).toList(),
       'is_underworld': instance.isUnderworld,
       'under_world_pin': instance.underWorldPin,
       'username': instance.username,

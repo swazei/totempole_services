@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:totempole_services/const.dart';
 import '../models/models.dart';
@@ -45,9 +47,7 @@ class ProfileService {
   Future<void> deleteAllProfiles() async {
     final profiles = await getAllProfiles();
 
-    for (var profile in profiles) {
-      await deleteProfileByUserId(profile.id!);
-    }
+    for (var profile in profiles) await deleteProfile(profile);
   }
 
   Future<UserProfile?> getProfileByUserId(String userId) async {
@@ -58,6 +58,41 @@ class ProfileService {
     );
     if (res.documents.isEmpty) return null;
     return UserProfile.fromJson(res.documents.first.data);
+  }
+
+  Future createProfile(UserProfile profile) async {
+    await database.createDocument(
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
+      documentId: ID.unique(),
+      data: profile.toJson(),
+    );
+  }
+
+  updateProfile(UserProfile profile) async {
+    await database.updateDocument(
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
+      documentId: profile.id!,
+      data: profile.toJson(),
+    );
+  }
+
+  Future createOrUpdateProfile(UserProfile userprofile) async {
+    final pro = await getProfileByUserId(userprofile.userId);
+    if (pro != null) {
+      await updateProfile(userprofile);
+    } else {
+      await createProfile(userprofile);
+    }
+  }
+
+  Future deleteProfile(UserProfile profile) async {
+    await database.deleteDocument(
+      databaseId: developmentDB, //DATABASEID
+      collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
+      documentId: profile.id!,
+    );
   }
 
   Future deleteProfileByUserId(String userId) async {

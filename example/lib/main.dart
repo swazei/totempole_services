@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dotenv/dotenv.dart';
-import 'package:totempole_services/models/models.dart';
+import 'package:faker/faker.dart';
 import 'package:totempole_services/services/services.dart';
 
 Future<void> start() async {
@@ -10,6 +10,7 @@ Future<void> start() async {
   final database = Databases(client);
   final storage = Storage(client);
   var env = DotEnv(includePlatformEnvironment: true)..load();
+  final fake = Faker();
   client
       .setEndpoint(env['URL'] ?? "")
       .setProject(env['projectID'])
@@ -53,12 +54,14 @@ Future<void> start() async {
 
   final u = await users.create(
     userId: ID.unique(),
-    name: "test",
-    email: "test@gmail.com",
+    name: fake.person.name(),
+    email: fake.internet.email(),
     password: "testest123",
   );
 
-  await users.updateLabels(userId: u.$id, labels: [UserType.USER.name]);
+  await Future.delayed(Duration(seconds: 1));
+
+  //await users.updateLabels(userId: u.$id, labels: [UserType.USER.name]);
 
   final x = await profileService.getAllProfiles();
   final y = await usernameService.getAllUsernames();

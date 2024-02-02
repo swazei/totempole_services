@@ -10,6 +10,7 @@ environment:
 dependencies: 
   dart_appwrite: ^10.0.0
   dotenv: ^4.1.0
+  faker: ^2.1.0
   totempole_services:
     path: "../"
   

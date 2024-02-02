@@ -68,7 +68,7 @@ _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
       userType: (json['user_type'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
               .toList() ??
-          const [UserType.user],
+          const [],
       isUnderworld: json['is_underworld'] as bool? ?? false,
       underWorldPin: json['under_world_pin'] as String? ?? "",
       username: json['username'] as String? ?? "",

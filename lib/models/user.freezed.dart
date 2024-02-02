@@ -632,8 +632,7 @@ class __$$UserPrefImplCopyWithImpl<$Res>
 class _$UserPrefImpl implements _UserPref {
   const _$UserPrefImpl(
       {@JsonKey(name: 'device_tokens') this.deviceTokens = "",
-      @JsonKey(name: 'user_type')
-      final List<UserType> userType = const [UserType.user],
+      @JsonKey(name: 'user_type') final List<UserType> userType = const [],
       @JsonKey(name: 'is_underworld') this.isUnderworld = false,
       @JsonKey(name: 'under_world_pin') this.underWorldPin = "",
       this.username = ""})

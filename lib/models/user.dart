@@ -21,7 +21,7 @@ class User with _$User {
     @Default("") String phone,
     @Default(false) bool emailVerification,
     @Default(false) bool phoneVerification,
-    UserPref? pref,
+    UserPref? prefs,
     UserProfile? userProfile,
   }) = _User;
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -31,7 +31,9 @@ class User with _$User {
 class UserPref with _$UserPref {
   const factory UserPref({
     @JsonKey(name: 'device_tokens') @Default("") String deviceTokens,
-    @JsonKey(name: 'user_type') @Default([]) List<UserType> userType,
+    @JsonKey(name: 'user_type')
+    @Default([UserType.USER])
+    List<UserType> userType,
     @JsonKey(name: 'is_underworld') @Default(false) bool isUnderworld,
     @JsonKey(name: 'under_world_pin') @Default("") String underWorldPin,
     @Default("") String username,

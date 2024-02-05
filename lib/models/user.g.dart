@@ -22,9 +22,9 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       phone: json['phone'] as String? ?? "",
       emailVerification: json['emailVerification'] as bool? ?? false,
       phoneVerification: json['phoneVerification'] as bool? ?? false,
-      pref: json['pref'] == null
+      prefs: json['prefs'] == null
           ? null
-          : UserPref.fromJson(json['pref'] as Map<String, dynamic>),
+          : UserPref.fromJson(json['prefs'] as Map<String, dynamic>),
       userProfile: json['userProfile'] == null
           ? null
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
@@ -51,7 +51,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
   val['phone'] = instance.phone;
   val['emailVerification'] = instance.emailVerification;
   val['phoneVerification'] = instance.phoneVerification;
-  writeNotNull('pref', instance.pref);
+  writeNotNull('prefs', instance.prefs);
   writeNotNull('userProfile', instance.userProfile);
   return val;
 }
@@ -68,7 +68,7 @@ _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
       userType: (json['user_type'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
               .toList() ??
-          const [],
+          const [UserType.USER],
       isUnderworld: json['is_underworld'] as bool? ?? false,
       underWorldPin: json['under_world_pin'] as String? ?? "",
       username: json['username'] as String? ?? "",

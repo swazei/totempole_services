@@ -36,7 +36,7 @@ mixin _$User {
   String get phone => throw _privateConstructorUsedError;
   bool get emailVerification => throw _privateConstructorUsedError;
   bool get phoneVerification => throw _privateConstructorUsedError;
-  UserPref? get pref => throw _privateConstructorUsedError;
+  UserPref? get prefs => throw _privateConstructorUsedError;
   UserProfile? get userProfile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -62,10 +62,10 @@ abstract class $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref? pref,
+      UserPref? prefs,
       UserProfile? userProfile});
 
-  $UserPrefCopyWith<$Res>? get pref;
+  $UserPrefCopyWith<$Res>? get prefs;
   $UserProfileCopyWith<$Res>? get userProfile;
 }
 
@@ -94,7 +94,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? pref = freezed,
+    Object? prefs = freezed,
     Object? userProfile = freezed,
   }) {
     return _then(_value.copyWith(
@@ -146,9 +146,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      pref: freezed == pref
-          ? _value.pref
-          : pref // ignore: cast_nullable_to_non_nullable
+      prefs: freezed == prefs
+          ? _value.prefs
+          : prefs // ignore: cast_nullable_to_non_nullable
               as UserPref?,
       userProfile: freezed == userProfile
           ? _value.userProfile
@@ -159,13 +159,13 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserPrefCopyWith<$Res>? get pref {
-    if (_value.pref == null) {
+  $UserPrefCopyWith<$Res>? get prefs {
+    if (_value.prefs == null) {
       return null;
     }
 
-    return $UserPrefCopyWith<$Res>(_value.pref!, (value) {
-      return _then(_value.copyWith(pref: value) as $Val);
+    return $UserPrefCopyWith<$Res>(_value.prefs!, (value) {
+      return _then(_value.copyWith(prefs: value) as $Val);
     });
   }
 
@@ -202,11 +202,11 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref? pref,
+      UserPref? prefs,
       UserProfile? userProfile});
 
   @override
-  $UserPrefCopyWith<$Res>? get pref;
+  $UserPrefCopyWith<$Res>? get prefs;
   @override
   $UserProfileCopyWith<$Res>? get userProfile;
 }
@@ -233,7 +233,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? pref = freezed,
+    Object? prefs = freezed,
     Object? userProfile = freezed,
   }) {
     return _then(_$UserImpl(
@@ -285,9 +285,9 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      pref: freezed == pref
-          ? _value.pref
-          : pref // ignore: cast_nullable_to_non_nullable
+      prefs: freezed == prefs
+          ? _value.prefs
+          : prefs // ignore: cast_nullable_to_non_nullable
               as UserPref?,
       userProfile: freezed == userProfile
           ? _value.userProfile
@@ -313,7 +313,7 @@ class _$UserImpl implements _User {
       this.phone = "",
       this.emailVerification = false,
       this.phoneVerification = false,
-      this.pref,
+      this.prefs,
       this.userProfile})
       : _userType = userType;
 
@@ -363,13 +363,13 @@ class _$UserImpl implements _User {
   @JsonKey()
   final bool phoneVerification;
   @override
-  final UserPref? pref;
+  final UserPref? prefs;
   @override
   final UserProfile? userProfile;
 
   @override
   String toString() {
-    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, userType: $userType, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, pref: $pref, userProfile: $userProfile)';
+    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, userType: $userType, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, prefs: $prefs, userProfile: $userProfile)';
   }
 
   @override
@@ -395,7 +395,7 @@ class _$UserImpl implements _User {
                 other.emailVerification == emailVerification) &&
             (identical(other.phoneVerification, phoneVerification) ||
                 other.phoneVerification == phoneVerification) &&
-            (identical(other.pref, pref) || other.pref == pref) &&
+            (identical(other.prefs, prefs) || other.prefs == prefs) &&
             (identical(other.userProfile, userProfile) ||
                 other.userProfile == userProfile));
   }
@@ -416,7 +416,7 @@ class _$UserImpl implements _User {
       phone,
       emailVerification,
       phoneVerification,
-      pref,
+      prefs,
       userProfile);
 
   @JsonKey(ignore: true)
@@ -447,7 +447,7 @@ abstract class _User implements User {
       final String phone,
       final bool emailVerification,
       final bool phoneVerification,
-      final UserPref? pref,
+      final UserPref? prefs,
       final UserProfile? userProfile}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -481,7 +481,7 @@ abstract class _User implements User {
   @override
   bool get phoneVerification;
   @override
-  UserPref? get pref;
+  UserPref? get prefs;
   @override
   UserProfile? get userProfile;
   @override
@@ -632,7 +632,8 @@ class __$$UserPrefImplCopyWithImpl<$Res>
 class _$UserPrefImpl implements _UserPref {
   const _$UserPrefImpl(
       {@JsonKey(name: 'device_tokens') this.deviceTokens = "",
-      @JsonKey(name: 'user_type') final List<UserType> userType = const [],
+      @JsonKey(name: 'user_type')
+      final List<UserType> userType = const [UserType.USER],
       @JsonKey(name: 'is_underworld') this.isUnderworld = false,
       @JsonKey(name: 'under_world_pin') this.underWorldPin = "",
       this.username = ""})

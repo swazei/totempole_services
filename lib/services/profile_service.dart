@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dart_appwrite/dart_appwrite.dart';
+import 'dart:developer';
 import 'package:totempole_services/const.dart';
 import '../models/models.dart';
 
@@ -81,7 +82,7 @@ class ProfileService {
   Future createOrUpdateProfile(UserProfile userprofile) async {
     final pro = await getProfileByUserId(userprofile.userId);
     if (pro != null) {
-      await updateProfile(pro);
+      await updateProfile(userprofile.copyWith(id: pro.id));
     } else {
       await createProfile(userprofile);
     }

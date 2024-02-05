@@ -1,7 +1,9 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:dotenv/dotenv.dart';
 import 'package:faker/faker.dart';
+import 'package:totempole_services/models/models.dart';
 import 'package:totempole_services/services/services.dart';
 
 Future<void> start() async {
@@ -52,21 +54,26 @@ Future<void> start() async {
   // final uu = u.users.map((e) => User.fromJson(e.toMap())).toList();
   // print(uu[3].userType.first.name);
 
-  final u = await users.create(
+/*   final u = await users.create(
     userId: ID.unique(),
     name: fake.person.name(),
     email: fake.internet.email(),
     password: "testest123",
-  );
+  ); */
 
-  await Future.delayed(Duration(seconds: 1));
+  //await Future.delayed(Duration(seconds: 1));
 
   //await users.updateLabels(userId: u.$id, labels: [UserType.USER.name]);
-
-  final x = await profileService.getAllProfiles();
-  final y = await usernameService.getAllUsernames();
-  print(x.length);
-  print(y.length);
+  final userPro = UserProfile(
+    userId: '65c0b33008ac11704962',
+    username: 'Shiva Kar',
+    userType: [UserType.VENDOR],
+  );
+  log(userPro.toJson().toString());
+  final x = await profileService.createOrUpdateProfile(userPro);
+  //final y = await usernameService.getAllUsernames();
+  // print(x.length);
+  //print(y.length);
 }
 
 void main(List<String> args) async {

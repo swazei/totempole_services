@@ -76,7 +76,7 @@ class UsernameService {
   Future createOrUpdateUsername(Username username) async {
     final user = await getUsernameByUserId(username.userId);
     if (user != null) {
-      await updateUsername(user);
+      await updateUsername(user.copyWith(id: user.id));
     } else {
       await createUsername(username);
     }

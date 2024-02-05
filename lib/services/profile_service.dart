@@ -81,7 +81,7 @@ class ProfileService {
   Future createOrUpdateProfile(UserProfile userprofile) async {
     final pro = await getProfileByUserId(userprofile.userId);
     if (pro != null) {
-      await updateProfile(userprofile);
+      await updateProfile(pro);
     } else {
       await createProfile(userprofile);
     }

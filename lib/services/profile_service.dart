@@ -62,11 +62,18 @@ class ProfileService {
   }
 
   Future createProfile(UserProfile profile) async {
+    if (profile.userId == null) throw Exception("User ID is required");
     await database.createDocument(
       databaseId: developmentDB, //DATABASEID
       collectionId: profileCOL, //COLLECTIONID USERTOTEMPOELS
       documentId: ID.unique(),
       data: profile.toJson(),
+      permissions: [
+        Permission.write(Role.user(profile.userId!)),
+        Permission.update(Role.user(profile.userId!)),
+        Permission.delete(Role.user(profile.userId!)),
+        Permission.read(Role.users())
+      ],
     );
   }
 
@@ -80,7 +87,8 @@ class ProfileService {
   }
 
   Future createOrUpdateProfile(UserProfile userprofile) async {
-    final pro = await getProfileByUserId(userprofile.userId);
+    if (userprofile.userId == null) throw Exception("User ID is required");
+    final pro = await getProfileByUserId(userprofile.userId!);
     if (pro != null) {
       await updateProfile(userprofile.copyWith(id: pro.id));
     } else {

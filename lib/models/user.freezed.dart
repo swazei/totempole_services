@@ -36,8 +36,8 @@ mixin _$User {
   String get phone => throw _privateConstructorUsedError;
   bool get emailVerification => throw _privateConstructorUsedError;
   bool get phoneVerification => throw _privateConstructorUsedError;
-  UserPref? get prefs => throw _privateConstructorUsedError;
-  UserProfile? get userProfile => throw _privateConstructorUsedError;
+  UserPref get prefs => throw _privateConstructorUsedError;
+  UserProfile get userProfile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -62,11 +62,11 @@ abstract class $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref? prefs,
-      UserProfile? userProfile});
+      UserPref prefs,
+      UserProfile userProfile});
 
-  $UserPrefCopyWith<$Res>? get prefs;
-  $UserProfileCopyWith<$Res>? get userProfile;
+  $UserPrefCopyWith<$Res> get prefs;
+  $UserProfileCopyWith<$Res> get userProfile;
 }
 
 /// @nodoc
@@ -94,8 +94,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? prefs = freezed,
-    Object? userProfile = freezed,
+    Object? prefs = null,
+    Object? userProfile = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -146,37 +146,29 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      prefs: freezed == prefs
+      prefs: null == prefs
           ? _value.prefs
           : prefs // ignore: cast_nullable_to_non_nullable
-              as UserPref?,
-      userProfile: freezed == userProfile
+              as UserPref,
+      userProfile: null == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
-              as UserProfile?,
+              as UserProfile,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserPrefCopyWith<$Res>? get prefs {
-    if (_value.prefs == null) {
-      return null;
-    }
-
-    return $UserPrefCopyWith<$Res>(_value.prefs!, (value) {
+  $UserPrefCopyWith<$Res> get prefs {
+    return $UserPrefCopyWith<$Res>(_value.prefs, (value) {
       return _then(_value.copyWith(prefs: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserProfileCopyWith<$Res>? get userProfile {
-    if (_value.userProfile == null) {
-      return null;
-    }
-
-    return $UserProfileCopyWith<$Res>(_value.userProfile!, (value) {
+  $UserProfileCopyWith<$Res> get userProfile {
+    return $UserProfileCopyWith<$Res>(_value.userProfile, (value) {
       return _then(_value.copyWith(userProfile: value) as $Val);
     });
   }
@@ -202,13 +194,13 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String phone,
       bool emailVerification,
       bool phoneVerification,
-      UserPref? prefs,
-      UserProfile? userProfile});
+      UserPref prefs,
+      UserProfile userProfile});
 
   @override
-  $UserPrefCopyWith<$Res>? get prefs;
+  $UserPrefCopyWith<$Res> get prefs;
   @override
-  $UserProfileCopyWith<$Res>? get userProfile;
+  $UserProfileCopyWith<$Res> get userProfile;
 }
 
 /// @nodoc
@@ -233,8 +225,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
-    Object? prefs = freezed,
-    Object? userProfile = freezed,
+    Object? prefs = null,
+    Object? userProfile = null,
   }) {
     return _then(_$UserImpl(
       id: freezed == id
@@ -285,14 +277,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
-      prefs: freezed == prefs
+      prefs: null == prefs
           ? _value.prefs
           : prefs // ignore: cast_nullable_to_non_nullable
-              as UserPref?,
-      userProfile: freezed == userProfile
+              as UserPref,
+      userProfile: null == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
-              as UserProfile?,
+              as UserProfile,
     ));
   }
 }
@@ -313,8 +305,8 @@ class _$UserImpl implements _User {
       this.phone = "",
       this.emailVerification = false,
       this.phoneVerification = false,
-      this.prefs,
-      this.userProfile})
+      this.prefs = const UserPref(),
+      this.userProfile = const UserProfile()})
       : _userType = userType;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -363,9 +355,11 @@ class _$UserImpl implements _User {
   @JsonKey()
   final bool phoneVerification;
   @override
-  final UserPref? prefs;
+  @JsonKey()
+  final UserPref prefs;
   @override
-  final UserProfile? userProfile;
+  @JsonKey()
+  final UserProfile userProfile;
 
   @override
   String toString() {
@@ -447,8 +441,8 @@ abstract class _User implements User {
       final String phone,
       final bool emailVerification,
       final bool phoneVerification,
-      final UserPref? prefs,
-      final UserProfile? userProfile}) = _$UserImpl;
+      final UserPref prefs,
+      final UserProfile userProfile}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -481,9 +475,9 @@ abstract class _User implements User {
   @override
   bool get phoneVerification;
   @override
-  UserPref? get prefs;
+  UserPref get prefs;
   @override
-  UserProfile? get userProfile;
+  UserProfile get userProfile;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -497,7 +491,7 @@ UserPref _$UserPrefFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserPref {
   @JsonKey(name: 'device_tokens')
-  String get deviceTokens => throw _privateConstructorUsedError;
+  List<String> get deviceTokens => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_type')
   List<UserType> get userType => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_underworld')
@@ -518,7 +512,7 @@ abstract class $UserPrefCopyWith<$Res> {
       _$UserPrefCopyWithImpl<$Res, UserPref>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'device_tokens') String deviceTokens,
+      {@JsonKey(name: 'device_tokens') List<String> deviceTokens,
       @JsonKey(name: 'user_type') List<UserType> userType,
       @JsonKey(name: 'is_underworld') bool isUnderworld,
       @JsonKey(name: 'under_world_pin') String underWorldPin,
@@ -548,7 +542,7 @@ class _$UserPrefCopyWithImpl<$Res, $Val extends UserPref>
       deviceTokens: null == deviceTokens
           ? _value.deviceTokens
           : deviceTokens // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -578,7 +572,7 @@ abstract class _$$UserPrefImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'device_tokens') String deviceTokens,
+      {@JsonKey(name: 'device_tokens') List<String> deviceTokens,
       @JsonKey(name: 'user_type') List<UserType> userType,
       @JsonKey(name: 'is_underworld') bool isUnderworld,
       @JsonKey(name: 'under_world_pin') String underWorldPin,
@@ -604,9 +598,9 @@ class __$$UserPrefImplCopyWithImpl<$Res>
   }) {
     return _then(_$UserPrefImpl(
       deviceTokens: null == deviceTokens
-          ? _value.deviceTokens
+          ? _value._deviceTokens
           : deviceTokens // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
       userType: null == userType
           ? _value._userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -631,20 +625,28 @@ class __$$UserPrefImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserPrefImpl implements _UserPref {
   const _$UserPrefImpl(
-      {@JsonKey(name: 'device_tokens') this.deviceTokens = "",
+      {@JsonKey(name: 'device_tokens')
+      final List<String> deviceTokens = const [],
       @JsonKey(name: 'user_type')
       final List<UserType> userType = const [UserType.USER],
       @JsonKey(name: 'is_underworld') this.isUnderworld = false,
       @JsonKey(name: 'under_world_pin') this.underWorldPin = "",
       this.username = ""})
-      : _userType = userType;
+      : _deviceTokens = deviceTokens,
+        _userType = userType;
 
   factory _$UserPrefImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserPrefImplFromJson(json);
 
+  final List<String> _deviceTokens;
   @override
   @JsonKey(name: 'device_tokens')
-  final String deviceTokens;
+  List<String> get deviceTokens {
+    if (_deviceTokens is EqualUnmodifiableListView) return _deviceTokens;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_deviceTokens);
+  }
+
   final List<UserType> _userType;
   @override
   @JsonKey(name: 'user_type')
@@ -674,8 +676,8 @@ class _$UserPrefImpl implements _UserPref {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserPrefImpl &&
-            (identical(other.deviceTokens, deviceTokens) ||
-                other.deviceTokens == deviceTokens) &&
+            const DeepCollectionEquality()
+                .equals(other._deviceTokens, _deviceTokens) &&
             const DeepCollectionEquality().equals(other._userType, _userType) &&
             (identical(other.isUnderworld, isUnderworld) ||
                 other.isUnderworld == isUnderworld) &&
@@ -689,7 +691,7 @@ class _$UserPrefImpl implements _UserPref {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      deviceTokens,
+      const DeepCollectionEquality().hash(_deviceTokens),
       const DeepCollectionEquality().hash(_userType),
       isUnderworld,
       underWorldPin,
@@ -711,7 +713,7 @@ class _$UserPrefImpl implements _UserPref {
 
 abstract class _UserPref implements UserPref {
   const factory _UserPref(
-      {@JsonKey(name: 'device_tokens') final String deviceTokens,
+      {@JsonKey(name: 'device_tokens') final List<String> deviceTokens,
       @JsonKey(name: 'user_type') final List<UserType> userType,
       @JsonKey(name: 'is_underworld') final bool isUnderworld,
       @JsonKey(name: 'under_world_pin') final String underWorldPin,
@@ -722,7 +724,7 @@ abstract class _UserPref implements UserPref {
 
   @override
   @JsonKey(name: 'device_tokens')
-  String get deviceTokens;
+  List<String> get deviceTokens;
   @override
   @JsonKey(name: 'user_type')
   List<UserType> get userType;

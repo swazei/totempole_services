@@ -70,6 +70,12 @@ class UsernameService {
       collectionId: usernameCOL,
       data: username.toJson(),
       documentId: ID.unique(),
+      permissions: [
+        Permission.write(Role.user(username.userId)),
+        Permission.update(Role.user(username.userId)),
+        Permission.delete(Role.user(username.userId)),
+        Permission.read(Role.any())
+      ],
     );
   }
 

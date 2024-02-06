@@ -9,12 +9,12 @@ part of 'user_profile.dart';
 _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
     _$UserProfileImpl(
       id: json[r'$id'] as String?,
-      userId: json['user_id'] as String,
+      userId: json['user_id'] as String?,
       createdAt: json[r'$createdAt'] as String?,
       updatedAt: json[r'$updatedAt'] as String?,
       firstName: json['first_name'] as String?,
       lastName: json['last_name'] as String?,
-      username: json['username'] as String,
+      username: json['username'] as String?,
       address: json['address'] as String?,
       pincode: json['pincode'] as String?,
       city: json['city'] as String?,
@@ -36,12 +36,12 @@ Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) {
   }
 
   writeNotNull(r'$id', instance.id);
-  val['user_id'] = instance.userId;
+  writeNotNull('user_id', instance.userId);
   writeNotNull(r'$createdAt', instance.createdAt);
   writeNotNull(r'$updatedAt', instance.updatedAt);
   writeNotNull('first_name', instance.firstName);
   writeNotNull('last_name', instance.lastName);
-  val['username'] = instance.username;
+  writeNotNull('username', instance.username);
   writeNotNull('address', instance.address);
   writeNotNull('pincode', instance.pincode);
   writeNotNull('city', instance.city);

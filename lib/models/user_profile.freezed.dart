@@ -23,7 +23,7 @@ mixin _$UserProfile {
   @JsonKey(name: '\$id')
   String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_id')
-  String get userId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
   @JsonKey(name: '\$createdAt')
   String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: '\$updatedAt')
@@ -32,7 +32,7 @@ mixin _$UserProfile {
   String? get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: "last_name")
   String? get lastName => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   String? get pincode => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
@@ -55,12 +55,12 @@ abstract class $UserProfileCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: '\$id') String? id,
-      @JsonKey(name: 'user_id') String userId,
+      @JsonKey(name: 'user_id') String? userId,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
       @JsonKey(name: "first_name") String? firstName,
       @JsonKey(name: "last_name") String? lastName,
-      String username,
+      String? username,
       String? address,
       String? pincode,
       String? city,
@@ -83,12 +83,12 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? username = null,
+    Object? username = freezed,
     Object? address = freezed,
     Object? pincode = freezed,
     Object? city = freezed,
@@ -101,10 +101,10 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -121,10 +121,10 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -163,12 +163,12 @@ abstract class _$$UserProfileImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: '\$id') String? id,
-      @JsonKey(name: 'user_id') String userId,
+      @JsonKey(name: 'user_id') String? userId,
       @JsonKey(name: '\$createdAt') String? createdAt,
       @JsonKey(name: '\$updatedAt') String? updatedAt,
       @JsonKey(name: "first_name") String? firstName,
       @JsonKey(name: "last_name") String? lastName,
-      String username,
+      String? username,
       String? address,
       String? pincode,
       String? city,
@@ -189,12 +189,12 @@ class __$$UserProfileImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? firstName = freezed,
     Object? lastName = freezed,
-    Object? username = null,
+    Object? username = freezed,
     Object? address = freezed,
     Object? pincode = freezed,
     Object? city = freezed,
@@ -207,10 +207,10 @@ class __$$UserProfileImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -227,10 +227,10 @@ class __$$UserProfileImplCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -264,12 +264,12 @@ class __$$UserProfileImplCopyWithImpl<$Res>
 class _$UserProfileImpl implements _UserProfile {
   const _$UserProfileImpl(
       {@JsonKey(name: '\$id') this.id,
-      @JsonKey(name: 'user_id') required this.userId,
+      @JsonKey(name: 'user_id') this.userId,
       @JsonKey(name: '\$createdAt') this.createdAt,
       @JsonKey(name: '\$updatedAt') this.updatedAt,
       @JsonKey(name: "first_name") this.firstName,
       @JsonKey(name: "last_name") this.lastName,
-      required this.username,
+      this.username,
       this.address,
       this.pincode,
       this.city,
@@ -287,7 +287,7 @@ class _$UserProfileImpl implements _UserProfile {
   final String? id;
   @override
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
   @override
   @JsonKey(name: '\$createdAt')
   final String? createdAt;
@@ -301,7 +301,7 @@ class _$UserProfileImpl implements _UserProfile {
   @JsonKey(name: "last_name")
   final String? lastName;
   @override
-  final String username;
+  final String? username;
   @override
   final String? address;
   @override
@@ -387,12 +387,12 @@ class _$UserProfileImpl implements _UserProfile {
 abstract class _UserProfile implements UserProfile {
   const factory _UserProfile(
       {@JsonKey(name: '\$id') final String? id,
-      @JsonKey(name: 'user_id') required final String userId,
+      @JsonKey(name: 'user_id') final String? userId,
       @JsonKey(name: '\$createdAt') final String? createdAt,
       @JsonKey(name: '\$updatedAt') final String? updatedAt,
       @JsonKey(name: "first_name") final String? firstName,
       @JsonKey(name: "last_name") final String? lastName,
-      required final String username,
+      final String? username,
       final String? address,
       final String? pincode,
       final String? city,
@@ -408,7 +408,7 @@ abstract class _UserProfile implements UserProfile {
   String? get id;
   @override
   @JsonKey(name: 'user_id')
-  String get userId;
+  String? get userId;
   @override
   @JsonKey(name: '\$createdAt')
   String? get createdAt;
@@ -422,7 +422,7 @@ abstract class _UserProfile implements UserProfile {
   @JsonKey(name: "last_name")
   String? get lastName;
   @override
-  String get username;
+  String? get username;
   @override
   String? get address;
   @override

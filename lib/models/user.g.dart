@@ -23,10 +23,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       emailVerification: json['emailVerification'] as bool? ?? false,
       phoneVerification: json['phoneVerification'] as bool? ?? false,
       prefs: json['prefs'] == null
-          ? null
+          ? const UserPref()
           : UserPref.fromJson(json['prefs'] as Map<String, dynamic>),
       userProfile: json['userProfile'] == null
-          ? null
+          ? const UserProfile()
           : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
     );
 
@@ -51,8 +51,8 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
   val['phone'] = instance.phone;
   val['emailVerification'] = instance.emailVerification;
   val['phoneVerification'] = instance.phoneVerification;
-  writeNotNull('prefs', instance.prefs);
-  writeNotNull('userProfile', instance.userProfile);
+  val['prefs'] = instance.prefs;
+  val['userProfile'] = instance.userProfile;
   return val;
 }
 
@@ -64,7 +64,10 @@ const _$UserTypeEnumMap = {
 
 _$UserPrefImpl _$$UserPrefImplFromJson(Map<String, dynamic> json) =>
     _$UserPrefImpl(
-      deviceTokens: json['device_tokens'] as String? ?? "",
+      deviceTokens: (json['device_tokens'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       userType: (json['user_type'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$UserTypeEnumMap, e))
               .toList() ??

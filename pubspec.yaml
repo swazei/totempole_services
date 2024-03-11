@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies: 
-  dart_appwrite: ^10.1.0
+  dart_appwrite: ^11.0.1
   faker: ^2.1.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1

@@ -8,7 +8,7 @@ part of 'profile_list.dart';
 
 _$ProfileListImpl _$$ProfileListImplFromJson(Map<String, dynamic> json) =>
     _$ProfileListImpl(
-      total: json['total'] as int? ?? 0,
+      total: (json['total'] as num?)?.toInt() ?? 0,
       profiles: (json['profiles'] as List<dynamic>?)
               ?.map((e) => UserProfile.fromJson(e as Map<String, dynamic>))
               .toList() ??

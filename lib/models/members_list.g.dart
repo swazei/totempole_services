@@ -8,7 +8,7 @@ part of 'members_list.dart';
 
 _$MembersListImpl _$$MembersListImplFromJson(Map<String, dynamic> json) =>
     _$MembersListImpl(
-      total: json['total'] as int? ?? 0,
+      total: (json['total'] as num?)?.toInt() ?? 0,
       members: (json['members'] as List<dynamic>?)
               ?.map((e) => Member.fromJson(e as Map<String, dynamic>))
               .toList() ??

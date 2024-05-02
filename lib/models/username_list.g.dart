@@ -8,7 +8,7 @@ part of 'username_list.dart';
 
 _$UsernameListImpl _$$UsernameListImplFromJson(Map<String, dynamic> json) =>
     _$UsernameListImpl(
-      total: json['total'] as int? ?? 0,
+      total: (json['total'] as num?)?.toInt() ?? 0,
       usernames: (json['usernames'] as List<dynamic>?)
               ?.map((e) => Username.fromJson(e as Map<String, dynamic>))
               .toList() ??

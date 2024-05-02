@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:dart_appwrite/dart_appwrite.dart';
-import 'dart:developer';
 import 'package:totempole_services/const.dart';
 import '../models/models.dart';
 

@@ -13,7 +13,7 @@ _$NotificationListImpl _$$NotificationListImplFromJson(
               ?.map((e) => AppNotification.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      total: json['total'] as int? ?? 0,
+      total: (json['total'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$NotificationListImplToJson(

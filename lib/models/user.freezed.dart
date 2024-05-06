@@ -29,6 +29,7 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get registration => throw _privateConstructorUsedError;
   bool get status => throw _privateConstructorUsedError;
+  bool get mfa => throw _privateConstructorUsedError;
   @JsonKey(name: 'labels')
   List<UserType> get userType => throw _privateConstructorUsedError;
   String get passwordUpdate => throw _privateConstructorUsedError;
@@ -36,8 +37,10 @@ mixin _$User {
   String get phone => throw _privateConstructorUsedError;
   bool get emailVerification => throw _privateConstructorUsedError;
   bool get phoneVerification => throw _privateConstructorUsedError;
+  List<Target> get targets => throw _privateConstructorUsedError;
   UserPref get prefs => throw _privateConstructorUsedError;
   UserProfile get userProfile => throw _privateConstructorUsedError;
+  String get accessedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,14 +59,17 @@ abstract class $UserCopyWith<$Res> {
       String name,
       String registration,
       bool status,
+      bool mfa,
       @JsonKey(name: 'labels') List<UserType> userType,
       String passwordUpdate,
       String email,
       String phone,
       bool emailVerification,
       bool phoneVerification,
+      List<Target> targets,
       UserPref prefs,
-      UserProfile userProfile});
+      UserProfile userProfile,
+      String accessedAt});
 
   $UserPrefCopyWith<$Res> get prefs;
   $UserProfileCopyWith<$Res> get userProfile;
@@ -88,14 +94,17 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? registration = null,
     Object? status = null,
+    Object? mfa = null,
     Object? userType = null,
     Object? passwordUpdate = null,
     Object? email = null,
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
+    Object? targets = null,
     Object? prefs = null,
     Object? userProfile = null,
+    Object? accessedAt = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -122,6 +131,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      mfa: null == mfa
+          ? _value.mfa
+          : mfa // ignore: cast_nullable_to_non_nullable
+              as bool,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -146,6 +159,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
+      targets: null == targets
+          ? _value.targets
+          : targets // ignore: cast_nullable_to_non_nullable
+              as List<Target>,
       prefs: null == prefs
           ? _value.prefs
           : prefs // ignore: cast_nullable_to_non_nullable
@@ -154,6 +171,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile,
+      accessedAt: null == accessedAt
+          ? _value.accessedAt
+          : accessedAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -188,14 +209,17 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String name,
       String registration,
       bool status,
+      bool mfa,
       @JsonKey(name: 'labels') List<UserType> userType,
       String passwordUpdate,
       String email,
       String phone,
       bool emailVerification,
       bool phoneVerification,
+      List<Target> targets,
       UserPref prefs,
-      UserProfile userProfile});
+      UserProfile userProfile,
+      String accessedAt});
 
   @override
   $UserPrefCopyWith<$Res> get prefs;
@@ -219,14 +243,17 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? registration = null,
     Object? status = null,
+    Object? mfa = null,
     Object? userType = null,
     Object? passwordUpdate = null,
     Object? email = null,
     Object? phone = null,
     Object? emailVerification = null,
     Object? phoneVerification = null,
+    Object? targets = null,
     Object? prefs = null,
     Object? userProfile = null,
+    Object? accessedAt = null,
   }) {
     return _then(_$UserImpl(
       id: freezed == id
@@ -253,6 +280,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      mfa: null == mfa
+          ? _value.mfa
+          : mfa // ignore: cast_nullable_to_non_nullable
+              as bool,
       userType: null == userType
           ? _value._userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -277,6 +308,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.phoneVerification
           : phoneVerification // ignore: cast_nullable_to_non_nullable
               as bool,
+      targets: null == targets
+          ? _value._targets
+          : targets // ignore: cast_nullable_to_non_nullable
+              as List<Target>,
       prefs: null == prefs
           ? _value.prefs
           : prefs // ignore: cast_nullable_to_non_nullable
@@ -285,6 +320,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile,
+      accessedAt: null == accessedAt
+          ? _value.accessedAt
+          : accessedAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -297,17 +336,21 @@ class _$UserImpl implements _User {
       @JsonKey(name: '\$createdAt') this.createdAt,
       @JsonKey(name: '\$updatedAt') this.updatedAt,
       this.name = "",
-      this.registration = "0",
+      this.registration = "",
       this.status = false,
+      this.mfa = false,
       @JsonKey(name: 'labels') final List<UserType> userType = const [],
-      this.passwordUpdate = "0",
+      this.passwordUpdate = "",
       this.email = "",
       this.phone = "",
       this.emailVerification = false,
       this.phoneVerification = false,
+      final List<Target> targets = const [],
       this.prefs = const UserPref(),
-      this.userProfile = const UserProfile()})
-      : _userType = userType;
+      this.userProfile = const UserProfile(),
+      this.accessedAt = ""})
+      : _userType = userType,
+        _targets = targets;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -330,6 +373,9 @@ class _$UserImpl implements _User {
   @override
   @JsonKey()
   final bool status;
+  @override
+  @JsonKey()
+  final bool mfa;
   final List<UserType> _userType;
   @override
   @JsonKey(name: 'labels')
@@ -354,16 +400,28 @@ class _$UserImpl implements _User {
   @override
   @JsonKey()
   final bool phoneVerification;
+  final List<Target> _targets;
+  @override
+  @JsonKey()
+  List<Target> get targets {
+    if (_targets is EqualUnmodifiableListView) return _targets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_targets);
+  }
+
   @override
   @JsonKey()
   final UserPref prefs;
   @override
   @JsonKey()
   final UserProfile userProfile;
+  @override
+  @JsonKey()
+  final String accessedAt;
 
   @override
   String toString() {
-    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, userType: $userType, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, prefs: $prefs, userProfile: $userProfile)';
+    return 'User(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, registration: $registration, status: $status, mfa: $mfa, userType: $userType, passwordUpdate: $passwordUpdate, email: $email, phone: $phone, emailVerification: $emailVerification, phoneVerification: $phoneVerification, targets: $targets, prefs: $prefs, userProfile: $userProfile, accessedAt: $accessedAt)';
   }
 
   @override
@@ -380,6 +438,7 @@ class _$UserImpl implements _User {
             (identical(other.registration, registration) ||
                 other.registration == registration) &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.mfa, mfa) || other.mfa == mfa) &&
             const DeepCollectionEquality().equals(other._userType, _userType) &&
             (identical(other.passwordUpdate, passwordUpdate) ||
                 other.passwordUpdate == passwordUpdate) &&
@@ -389,9 +448,12 @@ class _$UserImpl implements _User {
                 other.emailVerification == emailVerification) &&
             (identical(other.phoneVerification, phoneVerification) ||
                 other.phoneVerification == phoneVerification) &&
+            const DeepCollectionEquality().equals(other._targets, _targets) &&
             (identical(other.prefs, prefs) || other.prefs == prefs) &&
             (identical(other.userProfile, userProfile) ||
-                other.userProfile == userProfile));
+                other.userProfile == userProfile) &&
+            (identical(other.accessedAt, accessedAt) ||
+                other.accessedAt == accessedAt));
   }
 
   @JsonKey(ignore: true)
@@ -404,14 +466,17 @@ class _$UserImpl implements _User {
       name,
       registration,
       status,
+      mfa,
       const DeepCollectionEquality().hash(_userType),
       passwordUpdate,
       email,
       phone,
       emailVerification,
       phoneVerification,
+      const DeepCollectionEquality().hash(_targets),
       prefs,
-      userProfile);
+      userProfile,
+      accessedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -435,14 +500,17 @@ abstract class _User implements User {
       final String name,
       final String registration,
       final bool status,
+      final bool mfa,
       @JsonKey(name: 'labels') final List<UserType> userType,
       final String passwordUpdate,
       final String email,
       final String phone,
       final bool emailVerification,
       final bool phoneVerification,
+      final List<Target> targets,
       final UserPref prefs,
-      final UserProfile userProfile}) = _$UserImpl;
+      final UserProfile userProfile,
+      final String accessedAt}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -462,6 +530,8 @@ abstract class _User implements User {
   @override
   bool get status;
   @override
+  bool get mfa;
+  @override
   @JsonKey(name: 'labels')
   List<UserType> get userType;
   @override
@@ -475,9 +545,13 @@ abstract class _User implements User {
   @override
   bool get phoneVerification;
   @override
+  List<Target> get targets;
+  @override
   UserPref get prefs;
   @override
   UserProfile get userProfile;
+  @override
+  String get accessedAt;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -739,5 +813,312 @@ abstract class _UserPref implements UserPref {
   @override
   @JsonKey(ignore: true)
   _$$UserPrefImplCopyWith<_$UserPrefImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Target _$TargetFromJson(Map<String, dynamic> json) {
+  return _Target.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Target {
+  /// Target ID.
+  @JsonKey(name: '\$id')
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: '\$createdAt')
+  String? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: '\$updatedAt')
+  String? get updatedAt => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
+  String? get providerId => throw _privateConstructorUsedError;
+
+  /// The target provider type. Can be one of the following: `email`, `sms` or `push`.
+  String? get providerType => throw _privateConstructorUsedError;
+
+  /// The target identifier.
+  String? get identifier => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TargetCopyWith<Target> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TargetCopyWith<$Res> {
+  factory $TargetCopyWith(Target value, $Res Function(Target) then) =
+      _$TargetCopyWithImpl<$Res, Target>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
+      String? name,
+      String? userId,
+      String? providerId,
+      String? providerType,
+      String? identifier});
+}
+
+/// @nodoc
+class _$TargetCopyWithImpl<$Res, $Val extends Target>
+    implements $TargetCopyWith<$Res> {
+  _$TargetCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? name = freezed,
+    Object? userId = freezed,
+    Object? providerId = freezed,
+    Object? providerType = freezed,
+    Object? identifier = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      providerId: freezed == providerId
+          ? _value.providerId
+          : providerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      providerType: freezed == providerType
+          ? _value.providerType
+          : providerType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TargetImplCopyWith<$Res> implements $TargetCopyWith<$Res> {
+  factory _$$TargetImplCopyWith(
+          _$TargetImpl value, $Res Function(_$TargetImpl) then) =
+      __$$TargetImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: '\$id') String? id,
+      @JsonKey(name: '\$createdAt') String? createdAt,
+      @JsonKey(name: '\$updatedAt') String? updatedAt,
+      String? name,
+      String? userId,
+      String? providerId,
+      String? providerType,
+      String? identifier});
+}
+
+/// @nodoc
+class __$$TargetImplCopyWithImpl<$Res>
+    extends _$TargetCopyWithImpl<$Res, _$TargetImpl>
+    implements _$$TargetImplCopyWith<$Res> {
+  __$$TargetImplCopyWithImpl(
+      _$TargetImpl _value, $Res Function(_$TargetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? name = freezed,
+    Object? userId = freezed,
+    Object? providerId = freezed,
+    Object? providerType = freezed,
+    Object? identifier = freezed,
+  }) {
+    return _then(_$TargetImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      providerId: freezed == providerId
+          ? _value.providerId
+          : providerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      providerType: freezed == providerType
+          ? _value.providerType
+          : providerType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TargetImpl implements _Target {
+  const _$TargetImpl(
+      {@JsonKey(name: '\$id') this.id,
+      @JsonKey(name: '\$createdAt') this.createdAt,
+      @JsonKey(name: '\$updatedAt') this.updatedAt,
+      this.name,
+      required this.userId,
+      required this.providerId,
+      this.providerType,
+      this.identifier});
+
+  factory _$TargetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TargetImplFromJson(json);
+
+  /// Target ID.
+  @override
+  @JsonKey(name: '\$id')
+  final String? id;
+  @override
+  @JsonKey(name: '\$createdAt')
+  final String? createdAt;
+  @override
+  @JsonKey(name: '\$updatedAt')
+  final String? updatedAt;
+  @override
+  final String? name;
+  @override
+  final String? userId;
+  @override
+  final String? providerId;
+
+  /// The target provider type. Can be one of the following: `email`, `sms` or `push`.
+  @override
+  final String? providerType;
+
+  /// The target identifier.
+  @override
+  final String? identifier;
+
+  @override
+  String toString() {
+    return 'Target(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, userId: $userId, providerId: $providerId, providerType: $providerType, identifier: $identifier)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TargetImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.providerId, providerId) ||
+                other.providerId == providerId) &&
+            (identical(other.providerType, providerType) ||
+                other.providerType == providerType) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, name,
+      userId, providerId, providerType, identifier);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TargetImplCopyWith<_$TargetImpl> get copyWith =>
+      __$$TargetImplCopyWithImpl<_$TargetImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TargetImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Target implements Target {
+  const factory _Target(
+      {@JsonKey(name: '\$id') final String? id,
+      @JsonKey(name: '\$createdAt') final String? createdAt,
+      @JsonKey(name: '\$updatedAt') final String? updatedAt,
+      final String? name,
+      required final String? userId,
+      required final String? providerId,
+      final String? providerType,
+      final String? identifier}) = _$TargetImpl;
+
+  factory _Target.fromJson(Map<String, dynamic> json) = _$TargetImpl.fromJson;
+
+  @override
+
+  /// Target ID.
+  @JsonKey(name: '\$id')
+  String? get id;
+  @override
+  @JsonKey(name: '\$createdAt')
+  String? get createdAt;
+  @override
+  @JsonKey(name: '\$updatedAt')
+  String? get updatedAt;
+  @override
+  String? get name;
+  @override
+  String? get userId;
+  @override
+  String? get providerId;
+  @override
+
+  /// The target provider type. Can be one of the following: `email`, `sms` or `push`.
+  String? get providerType;
+  @override
+
+  /// The target identifier.
+  String? get identifier;
+  @override
+  @JsonKey(ignore: true)
+  _$$TargetImplCopyWith<_$TargetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

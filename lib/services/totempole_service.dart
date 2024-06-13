@@ -75,7 +75,7 @@ class TotempoleService {
     );
   }
 
-  Future createFakeTotempoles([int total = 50]) async {
+  Future createFakeTotempoles(String userId, [int total = 50]) async {
     final fake = Faker();
     final List<Future> futures = [];
 
@@ -83,7 +83,10 @@ class TotempoleService {
       final to = Totempole(
         name: fake.company.name(),
         description: fake.lorem.sentence(),
-        createdBy: '6548aacee88e07625e96',
+        createdBy: userId,
+        latitude: 32.747175259999,
+        longitude: -117.18636766286,
+        displayImage: '65c0e4d92af8fd21f476',
       );
       futures.add(createTotempole(to));
     }

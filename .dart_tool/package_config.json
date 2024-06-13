@@ -3,15 +3,21 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-67.0.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-68.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "_macros",
+      "rootUri": "file:///Users/shibaprasadkar/fvm/versions/stable/bin/cache/dart-sdk/pkg/_macros",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/analyzer-6.4.1",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/analyzer-6.5.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "args",
@@ -57,9 +63,9 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_runner-2.4.9",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/build_runner-2.4.11",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "build_runner_core",
@@ -111,7 +117,7 @@
     },
     {
       "name": "dart_appwrite",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_appwrite-11.0.2",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/dart_appwrite-11.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -141,7 +147,7 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed-2.5.2",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed-2.5.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -213,15 +219,21 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/lints-3.0.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     },
     {
       "name": "logging",
       "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/logging-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "macros",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/macros-0.1.0-main.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "matcher",
@@ -377,10 +389,13 @@
       "name": "totempole_services",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-05-02T17:04:25.641386Z",
+  "generated": "2024-06-13T05:03:48.977567Z",
   "generator": "pub",
-  "generatorVersion": "3.3.4"
+  "generatorVersion": "3.4.3",
+  "flutterRoot": "file:///Users/shibaprasadkar/fvm/versions/stable",
+  "flutterVersion": "3.22.2",
+  "pubCache": "file:///Users/shibaprasadkar/.pub-cache"
 }

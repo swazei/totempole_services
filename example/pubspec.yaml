@@ -7,7 +7,7 @@ environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
-  dart_appwrite: ^11.0.3
+  dart_appwrite: ^12.1.0
   dotenv: ^4.2.0
   faker: ^2.1.0
   totempole_services:

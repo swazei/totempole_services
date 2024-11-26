@@ -129,7 +129,7 @@
     },
     {
       "name": "faker",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/faker-2.1.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/faker-2.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -147,15 +147,15 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed-2.5.3",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed-2.5.7",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "freezed_annotation",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.4",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "frontend_server_client",
@@ -213,9 +213,9 @@
     },
     {
       "name": "json_serializable",
-      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/json_serializable-6.8.0",
+      "rootUri": "file:///Users/shibaprasadkar/.pub-cache/hosted/pub.dev/json_serializable-6.9.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "lints",
@@ -389,10 +389,10 @@
       "name": "totempole_services",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-11-25T07:13:04.632004Z",
+  "generated": "2024-11-26T06:10:49.968630Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/shibaprasadkar/fvm/versions/stable",

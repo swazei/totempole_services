@@ -1,13 +1,13 @@
 name: totempole_services
 description: Totempole services
-version: 1.0.0
+version: 1.0.1
 publish_to: "none"
 
 environment:
   sdk: "^3.3.0"
 
 dependencies:
-  dart_appwrite: ^12.1.0
+  dart_appwrite: ^13.0.0
   faker: ^2.2.0
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
